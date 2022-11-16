@@ -1,7 +1,9 @@
 Este es el proyecto integrador del grupo 1 de Digital House 22/23 
 ======================================================================
-Este e-commers esta orientado a todas aquellas personas que tienen una mascota en su vida.
-El amor por una mascota no tiene precio, sin embargo, los productos para consentirlas si pueden venderse. En las tiendas para mascotas, las personas compran desde lo vital y necesario, hasta artículos como accesorios, juguetes, premios y muchos artículos más. 
+Este ecommerce esta orientado a todas aquellas personas que tienen una mascota en su vida.
+El amor por una mascota no tiene precio, sin embargo, los productos para consentirlas si pueden venderse. 
+En las tiendas para mascotas, las personas compran desde lo vital y necesario, hasta artículos como 
+accesorios, juguetes, premios y muchos artículos más. 
 
 Esta pagina mostrara algunos productos que pueden adquirir para consentir a nuestras mascotas.
 A continuacion alguno de los productos y su importancia. 
