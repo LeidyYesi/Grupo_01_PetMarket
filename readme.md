@@ -41,14 +41,16 @@ A continuacion alguno de los productos y su importancia.
  
 ======================================================================================================================
 
-# Pablo Picasso dijo alguna vez: “Los grandes artistas copian, los genios roban”. Para nuestro sitio, encontramos en Internet muy buenos referentes de donde tomar algunas ideas e inspirarnos para realizar este proyecto.
- 
- ° https://www.natural-life.com.ar/ Por la variedad productos que ofrecen
- ° https://www.petsmart.com/ Por la estética que presenta la pagina.
- ° https://petstore.com/ El orden y lo minimalista de la pagina, pero aun asi muy completo.
+° Pablo Picasso dijo alguna vez: “Los grandes artistas copian, los genios roban”. Para nuestro sitio, encontramos en Internet muy buenos referentes de donde tomar algunas ideas e inspirarnos para realizar este proyecto.
+
+# links:
+
+  => https://www.natural-life.com.ar/ Por la variedad productos que ofrecen
+  => https://www.petsmart.com/ Por la estética que presenta la pagina.
+  => https://petstore.com/ El orden y lo minimalista de la pagina, pero aun asi muy completo.
     Para estas ultimas dos las funcionalidades que implementa la pagina, ya sea en la distribucion, como la facilidad de acceder a los productos.
- ° https://laika.com.co/ 
- ° https://centropet.com/ 
+  => https://laika.com.co/ 
+  => https://centropet.com/ 
 
 =======================================================================================================================
 
@@ -58,4 +60,3 @@ A continuacion alguno de los productos y su importancia.
     => German Bogomolni.
     => Martin Faraguna.
     => Yesica Farias. 
-    
