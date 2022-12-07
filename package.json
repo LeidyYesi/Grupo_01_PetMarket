@@ -1,0 +1,24 @@
+{
+  "name": "proyecto-integrador",
+  "version": "1.0.0",
+  "description": "======================================================================\r Este ecommerce esta orientado a todas aquellas personas que tienen una mascota en su vida.\r El amor por una mascota no tiene precio, sin embargo, los productos para consentirlas si pueden venderse. \r En las tiendas para mascotas, las personas compran desde lo vital y necesario, hasta artículos como \r accesorios, juguetes, premios y muchos artículos más.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeidyYesi/Grupo_01_PetMarket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeidyYesi/Grupo_01_PetMarket/issues"
+  },
+  "homepage": "https://github.com/LeidyYesi/Grupo_01_PetMarket#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
