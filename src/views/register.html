@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Registro</title>
+    <!-- Link de Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!--Link Normalize-->
+    <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+
+    <!--Link de inconos-->
+    <script
+      src="https://kit.fontawesome.com/fa6449574a.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Link Css-->
+    <link href="css/style-register.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <header class="main-header">
+        <div class="main-header-top-bar">
+        
+        <section>
+          <img src="img/Logo-pet-Market.jpg" whith= "360" alt="Cafetera" class="img"/>
+      </section>
+
+      </header>
+
+  <main>
+
+  <section class="formu-registro">
+    <h4> Formulario de Registro</h4>
+      <form action="/register" method="POST" class="crear-formu">
+
+        <div class="control-formu">
+          <input class="control" type="text" name="Nombre" id="Nombre" placeholder="Nombre" required />
+        </div>
+
+        <div class="control-formu">
+          <input class="control" type="text" name="Apellido" id="Apellido" placeholder="Apellido" required />
+        </div>
+
+        <div class="control-formu">
+          <input class="control" type="email" name="email" id="email" placeholder="Correo Electonico" required />
+        </div>
+
+        <div class="control-formu">
+          <input class="control" type="password" name="password" id="password" placeholder="Contraceña" required />
+        </div>
+
+        <div class="control-formu">
+          <input class="control" type="password" name="password" id="password" placeholder="Confirmar Contraceña" required />
+        </div>
+
+        <div class="checkbox">
+            <label for="terminos" > Acepto los terminos y condiciones.</label>
+            <input type="checkbox" name="terminos" required>
+        </div>
+
+        <div>
+          <input class="bottom" type="submit" name="registrar" Value="Registrar" />
+        </div>
+
+        <div> 
+          <p><a href="/login"> Ya estoy registrado </a></p>
+        </div>
+
+      </form>
+    </section>
+  </main>
+  </body>
+</html>
