@@ -27,39 +27,48 @@
     ></script>
 
     <!--Link Css-->
-    <link href="css/style-login.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.login.css" rel="stylesheet" type="text/css" />
 
   </head> 
 <body>
   <header>
-    <section>
-        <img src="img/Logo-pet-Market.jpg" whith= "360" alt="Cafetera" class="img"/>
+
+    <section class="formu-registro">
+      <h4> Iniciar sesion</h4>
+      <img src="img/Logo-pet-Market.jpg" whith= "360" alt="Cafetera" class="img"/>
     </section>
+
   </header>
+
   <main>
-
-    <section>
-        <h4> Ingresar</h4>
-      <form action="/login" method="POST" class="crear-formu">
+    <section class="formu-registro">
+        <form action="/login" method="POST" class="crear-formu">
 
         <div class="control-formu">
-          <label>Nombre de usuari@</label>
-          <input type="text" name="Nombre" id="Nombre" placeholder="Usuario" required class="control"/>
+          <input class="control" type="email" name="email" id="email" placeholder="Correo Electonico" required />
         </div>
 
         <div class="control-formu">
-          <label>Contraceña</label>
-          <input type="password" name="password" id="password" required />
+          <input class="control" type="password" name="password" id="password" placeholder="Contraseña" required />
         </div>
 
         <div class="control-formu">
-          <label>Confirmar Contraceña</label>
-          <input type="password" name="password" id="password" required />
+          <input class="control" type="password" name="password" id="password" placeholder="Confirmar Contraseña"required />
         </div>
+
+        <p class="olvidaste"><a href="#"> ¿Olvidaste tu contraceña? </a></p>
+
         <div>
-        <button type="submit" class="boton-formu"> <a href="/">Ingresar</a> </button>
-    </div>
+        <button class="bottom" type="submit" ><a href="/">Iniciar Sesion</a></button> </button>
+        </div>
+
+        <div>
+          <button class="bottom" type="submit" > <a href="/register">Eres nuevo? Registrate aqui. </a></button> </button>
+        </div>
+    
+
         </form>
+        </section>
   </main>
 <footer>
 

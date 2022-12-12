@@ -42,7 +42,7 @@ h4{
 }
 
 .control{
-width: 100%;
+width: 90%;
 background: var(--azul);
 padding: 10px;
 border-radius: 4px;
@@ -65,7 +65,7 @@ border: 1px solid var(--gris-oscuro);
 
 .bottom{
   width: 100%;
-  background:#1D3557;
+  background: var(--azul);
   padding: 9px;
   color: var(--gris-claro);
   margin: 16px 0;
@@ -74,7 +74,16 @@ border: 1px solid var(--gris-oscuro);
 p{
   color: var(--Negro);
   height: 40px;
-  text-align: center;
-  font-size: 18px;
-  line-height: 40px;
+  font-size: 14px;
+  
+}
+
+.formu-registro a{
+  color: var(--Negro);
+  text-decoration: none;
+}
+
+.formu-registro a:hover{
+  color: var(--Negro);
+  text-decoration: underline;
 }
