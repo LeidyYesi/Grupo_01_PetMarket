@@ -22,12 +22,24 @@ body {
   background: linear-gradient(90deg, rgba(18, 129, 144, 0.74), rgba(141, 215, 215, 0.98))
 }
 
+.inicio-header{
+width: 100%;
+padding: 0 20%;
+display: flex; 
+}
+
+h4{
+  font-size: 22px;
+  margin: auto;
+  color: var(--Negro);
+}
+
 .img{
   width: 20%;
 }
 
 .formu-registro {
-  width: 400px;
+  width: 300px;
   background: #C7EFCF;
   padding: 30px;
   margin:  auto;
@@ -35,14 +47,8 @@ body {
   color: var(--gris-claro)
 }
 
-h4{
-  font-size: 22px;
-  margin-bottom: 20px;
-  color: var(--Negro);
-}
-
 .control{
-width: 90%;
+width: 100%;
 background: var(--azul);
 padding: 10px;
 border-radius: 4px;
