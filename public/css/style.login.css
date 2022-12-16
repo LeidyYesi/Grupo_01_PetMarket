@@ -7,13 +7,12 @@
 }
 
 :root {
-  --aereo-blue: #C7EFCF;
-  --azul: #1D3557;
-  --celeste: #1259c3;
+  --Azul-Oscuro: #0D3450;
+  --Azul-Claro: #1259c3;
   --gris-oscuro: #666;
   --gris-claro: #ebebeb;
   --Negro: #02020A;
-
+  --Naranja: #EC673F;
 }
 
 body {

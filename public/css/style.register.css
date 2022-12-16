@@ -7,13 +7,12 @@
 }
 
 :root {
-  --aereo-blue: #C7EFCF;
-  --azul: #1D3557;
-  --celeste: #1259c3;
+  --Azul-Oscuro: #0D3450;
+  --Azul-Claro: #1259c3;
   --gris-oscuro: #666;
   --gris-claro: #ebebeb;
   --Negro: #02020A;
-
+  --Naranja: #EC673F;
 }
 
 body {
@@ -43,7 +42,7 @@ h4{
 
 .control{
 width: 100%;
-background: var(--azul);
+background: var(--Naranja);
 padding: 10px;
 border-radius: 4px;
 margin-bottom: 15px;
@@ -65,10 +64,11 @@ border: 1px solid var(--gris-oscuro);
 
 .bottom{
   width: 100%;
-  background:#1D3557;
+  background: var(--Naranja);
   padding: 9px;
-  color: var(--gris-claro);
+  color: var(--gris-oscuro);
   margin: 16px 0;
+  border: none;
 }
 
 p{
