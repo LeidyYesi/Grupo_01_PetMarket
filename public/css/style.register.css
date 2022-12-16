@@ -1,0 +1,80 @@
+@import url(normalize.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Azul-Oscuro: #0D3450;
+  --Azul-Claro: #1259c3;
+  --gris-oscuro: #666;
+  --gris-claro: #ebebeb;
+  --Negro: #02020A;
+  --Naranja: #EC673F;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background: linear-gradient(90deg, rgba(18, 129, 144, 0.74), rgba(141, 215, 215, 0.98))
+}
+
+.img{
+  width: 20%;
+}
+
+.formu-registro {
+  width: 400px;
+  background: #C7EFCF;
+  padding: 30px;
+  margin:  auto;
+  border-radius: 4px;
+  color: var(--gris-claro)
+}
+
+h4{
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: var(--Negro);
+}
+
+.control{
+width: 100%;
+background: var(--Naranja);
+padding: 10px;
+border-radius: 4px;
+margin-bottom: 15px;
+border: 1px solid var(--gris-oscuro);
+}
+
+.control-formu {
+   color: var(--Negro);
+
+}
+
+.checkbox{
+  color: var(--Negro);
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.bottom{
+  width: 100%;
+  background: var(--Naranja);
+  padding: 9px;
+  color: var(--gris-oscuro);
+  margin: 16px 0;
+  border: none;
+}
+
+p{
+  color: var(--Negro);
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
