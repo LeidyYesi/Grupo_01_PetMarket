@@ -145,5 +145,16 @@ html, body {
     flex-direction: row;
     margin-top: 3rem;
     display: flex;
+    width: 100%;
   }
+
+  .left-column {
+    width: 25%;
+    margin: 1rem;
+  }
+
+  .right-column{
+    width: 50%;
+  } 
+
 }
