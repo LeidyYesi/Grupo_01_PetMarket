@@ -43,7 +43,7 @@ A continuacion alguno de los productos y su importancia.
 
 ° Pablo Picasso dijo alguna vez: “Los grandes artistas copian, los genios roban”. Para nuestro sitio, encontramos en Internet muy buenos referentes de donde tomar algunas ideas e inspirarnos para realizar este proyecto.
 
-# links:
+# links de inspiración:
 
   => https://www.natural-life.com.ar/ Por la variedad productos que ofrecen
   => https://www.petsmart.com/ Por la estética que presenta la pagina.
@@ -59,4 +59,18 @@ A continuacion alguno de los productos y su importancia.
     => Carlos Andres Noreña Cruz.
     => German Bogomolni.
     => Martin Faraguna.
-    => Yesica Farias. 
+    => Yesica Farias: Empece en la progrmacion e manera autodidacta, viendo tutoriales en YouTube y cursos gratuitos como freecodecamp.org pero me faltaba una base para centrar ese conocimiento. 
+    Este año me salio una gran oportunidad en el trabajo para poder realizar este curo y no lo dude ni por un omento. 
+    Cada clase o actividad que realizo desde que comence me apasiona mas. 
+
+====================================================================================================================
+
+# Links de trabajo:
+
+° Trello:
+
+  https://trello.com/invite/b/UDlO3ory/ATTI45b7153ae51e66211676c971e43e12aa63EE7751/grupo01petmarket
+
+° HitGub:
+
+  https://github.com/LeidyYesi/Grupo_01_PetMarket.git
