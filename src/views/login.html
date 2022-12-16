@@ -7,7 +7,7 @@
     <!-- etiqueta de response -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Marquet Pets Login</title>
+    <title>Login</title>
     <!-- Link de Fonts-->
     <link
       href="https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Roboto&display=swap"
@@ -27,51 +27,40 @@
     ></script>
 
     <!--Link Css-->
-    <link href="css/style.login.css" rel="stylesheet" type="text/css" />
+    <link href="css/login.css" rel="stylesheet" type="text/css" />
 
   </head> 
 <body>
-  <header>
 
-    <section class="inicio-header">
-      <h4> Iniciar sesion</h4>
-      <img src="img/Logo-pet-Market.jpg" whith= "360" alt="Cafetera" class="img"/>
-    </section>
-
-  </header>
-
-  <main>
     <section class="formu-registro">
+
+      <section class="inicio-logo">
+        <h4> Iniciar Sesión</h4>
+        <img src="img/Logo-pet-Market.jpg" alt="Logo" class="img"/>
+      </section>
+
         <form action="/login" method="POST" class="crear-formu">
 
         <div class="control-formu">
-          <input class="control" type="email" name="email" id="email" placeholder="Correo Electonico" required />
+          <input class="control" type="email" name="email" id="email" placeholder="Correo Electrónico" required />
         </div>
 
         <div class="control-formu">
           <input class="control" type="password" name="password" id="password" placeholder="Contraseña" required />
         </div>
 
-        <div class="control-formu">
-          <input class="control" type="password" name="password" id="password" placeholder="Confirmar Contraseña"required />
-        </div>
-
-        <p class="olvidaste"><a href="#"> ¿Olvidaste tu contraceña? </a></p>
+        <p class="olvidaste"><a href="#"> ¿Olvidaste tu contraseña? </a></p>
 
         <div>
-        <button class="bottom" type="submit" ><a href="/">Iniciar Sesion</a></button> </button>
+        <button class="bottom" type="submit" ><a href="/">Iniciar Sesión</a></button> </button>
         </div>
 
         <div>
-          <button class="bottom" type="submit" > <a href="/register">Eres nuevo? Registrate aqui. </a></button> </button>
+          <button class="bottom" type="submit" > <a href="/register">Eres nuevo? Regístrate aquí. </a></button> </button>
         </div>
-    
 
         </form>
         </section>
-  </main>
-<footer>
 
-</footer>
 </body>
 </html>
