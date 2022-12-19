@@ -1,33 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style-productCart.css" rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/productCart.css" rel="stylesheet" />
     <title>Carrito de compras</title>
-</head>
-<body>
-    <header>
-        <img src="/img/Logo-pet-market.jpg" alt="Logo de Pet Market" >
-        <nav>
-          <ul>
-            <li><a href="#">Perros</a></li>
-            <li><a href="#">Gatos</a></li>
-            <li><a href="#">Destacados</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>  
-        </nav>
-    </header>
+  </head>
+  <body>
+    <header></header>
 
     <main>
+      <div class="head">
         <h2>Carrito de compras</h2>
-        <h4>Aun no estas listo? <a href="#">Continua comprando</a></h4>
+        <p>Aun no estas listo? <a href="#">Continua comprando</a></p>
+      </div>
+
+      <section class="carrito">
+        <article class="producto">
+          <img
+            src="/img/logo-pet-market.jpg"
+            alt="foto producto"
+            class="foto-producto"
+          />
+          <div class="info">
+            <p class="cantidad">1x</p>
+            <p class="nombre-producto">Nombre Producto</p>
+            <p class="precio">$19000</p>
+          </div>
+          <a href="#" class="remover">Remover</a>
+        </article>
+        <div class="linea"></div>
+        <article class="producto">
+          <img
+            src="/img/logo-pet-market.jpg"
+            alt="foto producto"
+            class="foto-producto"
+          />
+          <div class="info">
+            <p class="cantidad">1x</p>
+            <p class="nombre-producto">Nombre Producto</p>
+            <p class="precio">$19000</p>
+          </div>
+          <a href="#" class="remover">Remover</a>
+        </article>
+        <div class="linea"></div>
+        <article class="producto">
+          <img
+            src="/img/logo-pet-market.jpg"
+            alt="foto producto"
+            class="foto-producto"
+          />
+          <div class="info">
+            <p class="cantidad">1x</p>
+            <p class="nombre-producto">Nombre Producto</p>
+            <p class="precio">$19000</p>
+          </div>
+          <a href="#" class="remover">Remover</a>
+        </article>
+      </section>
     </main>
 
-    <footer>
-
-
-    </footer>
-</body>
+    <footer></footer>
+  </body>
 </html>
