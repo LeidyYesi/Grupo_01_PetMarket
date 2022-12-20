@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* input {
@@ -29,9 +29,9 @@ a {
 }
 
 .carrito {
-  background-color: rgb(255, 185, 24, .5);
+  background-color: rgb(255, 185, 24, 0.5);
   border: 1px solid #000000;
-  border-radius: 2%;
+  border-radius: 5px;
   margin: 10%;
   margin-bottom: 2%;
   margin-top: 10px;
@@ -58,7 +58,7 @@ a {
   width: 75px;
   height: 75px;
   border: 1px solid #000000;
-  border-radius: 2%;
+  border-radius: 5px;
 }
 
 .info {
@@ -84,7 +84,7 @@ a {
 }
 
 .linea {
-  border-top: 2px solid rgb(0,0,0,.5);
+  border-top: 2px solid rgb(0, 0, 0, 0.5);
   max-width: 90%;
   padding: 0;
   margin: auto;
@@ -93,9 +93,9 @@ a {
 /* ----------------------- RESUMEN ----------------------- */
 
 .resumen {
-  background-color: rgb(255, 185, 24, .5);
+  background-color: rgb(255, 185, 24, 0.5);
   border: 1px solid #000000;
-  border-radius: 2%;
+  border-radius: 5px;
   margin: 10%;
   margin-top: 10px;
   padding: 3%;
@@ -104,8 +104,12 @@ a {
 .cupon {
   font-size: 12px;
   margin-top: 3%;
+  
 }
 
+#cupon {
+  width: 70%;
+}
 
 .resumen-precios {
   display: flex;
@@ -125,5 +129,6 @@ a {
   padding: 2%;
   font-weight: bold;
   border: 1px solid #000000;
+  border-radius: 5px;
   box-shadow: 0px 0px 5px 1px rgba(255, 185, 24);
 }
