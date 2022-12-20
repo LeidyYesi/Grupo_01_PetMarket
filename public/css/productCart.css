@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* input {
@@ -21,29 +22,33 @@ a {
   color: green;
 }
 
+/* ----------------------- CARRITO -----------------------*/
+
 .head {
   margin-left: 10%;
 }
 
 .carrito {
-  background-color: #ffb918;
+  background-color: rgb(255, 185, 24, .5);
   border: 1px solid #000000;
   border-radius: 2%;
   margin: 10%;
+  margin-bottom: 2%;
   margin-top: 10px;
+  padding: 3%;
 }
 
 .producto {
   display: flex;
   position: relative;
-  padding: 10px;
+  margin: 2%;
 }
 
 .remover {
   color: red;
   position: absolute;
   right: 10%;
-  bottom: 20%;
+  bottom: 17%;
   text-decoration: underline;
   font-weight: bold;
   font-size: 12px;
@@ -52,6 +57,8 @@ a {
 .foto-producto {
   width: 75px;
   height: 75px;
+  border: 1px solid #000000;
+  border-radius: 2%;
 }
 
 .info {
@@ -72,14 +79,51 @@ a {
 }
 
 .precio {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
 }
 
 .linea {
-  border-top: 2px solid black;
-  height: 2px;
+  border-top: 2px solid rgb(0,0,0,.5);
   max-width: 90%;
   padding: 0;
   margin: auto;
+}
+
+/* ----------------------- RESUMEN ----------------------- */
+
+.resumen {
+  background-color: rgb(255, 185, 24, .5);
+  border: 1px solid #000000;
+  border-radius: 2%;
+  margin: 10%;
+  margin-top: 10px;
+  padding: 3%;
+}
+
+.cupon {
+  font-size: 12px;
+  margin-top: 3%;
+}
+
+
+.resumen-precios {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.precio-resumen {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.boton {
+  background-color: rgb(255, 185, 24);
+  width: 100%;
+  padding: 2%;
+  font-weight: bold;
+  border: 1px solid #000000;
+  box-shadow: 0px 0px 5px 1px rgba(255, 185, 24);
 }
