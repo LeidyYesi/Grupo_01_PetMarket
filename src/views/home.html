@@ -1,60 +1,216 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Links de fuente-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet" />
-    <!-- Links de iconos-->
-    <script
-      src="https://kit.fontawesome.com/fa6449574a.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Links de CSS-->
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PetMarket - Home</title>
 
-    <title>Marquet Pets</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div>
-            <img src="/img/Logo-Pet-Market.png" alt="Logo de Pet Market" >
-        </div>
-        <ul class="nav-derecho">
-          <li>
-            <a href="/register">Creá tu cuenta <i class="fa-regular fa-address-card"></i
-            ></a>
-          </li>
-          <li>
-            <a href="/login">Ingresar <i class="fa-solid fa-right-to-bracket"></i></a>
-          </li>
-          <li>
-            <a href="#"
-              >Mis compras <i class="fa-solid fa-basket-shopping"></i
-            ></a>
-          </li>
-        </ul>
-        </nav>
-        <selec>
-            <ul>
-                <li>Perros</li>
-                <li>Gatos</li>
-                <li>Destacados</li>
-                <li>Categorias</li>
-            </ul>
-        </selec>
-    <div>
-    <input type="text" nema="busqueda" id="buscar" placeholder="Buscador" > <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
+        <!-- Links para Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
 
+        <!-- Link para iconos -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 
-        </section>
-    </header>
-    <main></main>
-    <footer></footer>
-  </body>
+        <!-- Mi css -->
+        <link rel="stylesheet" href="/css/normalize.css"/>
+        <link rel="stylesheet" href="/css/styles.css"/>
+        <link rel="stylesheet" href="/css/stylesresponsive.css"/>
+
+    </head>
+
+    <body>
+        <header>
+
+            <section class="encabezado">
+                <div class="imagen_encabezado">
+                    <a href="/"><img src="img/Logo-pet-market-small.png" alt="Logo PetMarket"></a>
+                </div>
+
+                <nav>
+                  <ul class="nav_opciones">
+                      <li>
+                          <a href="#">Perros</a>
+                      </li>
+                      <li>
+                          <a href="#">Gatos</a>
+                      </li>
+                      <li>
+                          <a href="#">Promociones</a>
+                      </li>
+                  </ul>
+                  <ul class="nav_opciones">
+                      <li>
+                          <a href="#">Categorías</a>
+                      </li>
+                      <li>
+                          <a href="login">Iniciar Sesión</a>
+                      </li>
+                  </ul>
+              </nav>
+
+                <section class="barra_busqueda">
+                    <form action="/" method="POST">
+                        <div class="campo_busqueda">
+                            <input type="text" placeholder="Buscá productos, marcas y más" required>
+                        </div>
+
+                        <div class="icono_busqueda">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </section>
+            </section>
+
+            <div class="burger_menu">
+                <i class="fa fa-bars burger"></i>
+            </div>
+
+            <div class="imagen_banner">
+                <img src="img/img-home-banner-small.jpg" alt="banner">
+            </div>
+
+        </header>
+
+        <main>
+            <section class="contenido">
+
+                <section class="contenido_ultima_visita">
+                    <h2 class="titulo">Promociones</h2>
+                    <article class="producto">
+                        <img src="/img/accesorios/Gatos/casa-rascador.jpg" alt="casa rascador">
+                        <section class="descripcion_producto">
+                            <i class="fas fa-cat"></i>
+                            <section class="descripcion_producto_detalle">
+                                <p class="valor">$6.770</p>
+                                <p class="descuento">40% off</p>
+                            </section>
+                            <p class="nombre_producto">Casa Rascador</p>
+                        </section>
+                    </article>
+
+                    <article class="producto">
+                        <img src="/img/accesorios/Gatos/collar-animalprint.jpg" alt="">
+                        <section class="descripcion_producto">
+                            <i class="fas fa-dog"></i>
+                            <section class="descripcion_producto_detalle">
+                                <p class="valor">$230.000</p>
+                                <p class="descuento">20% off</p>
+                            </section>
+                            <p class="nombre_producto">Collar AnimalPrint</p>
+                        </section>
+                    </article>
+
+                    <article class="producto">
+                        <img src="/img/camas/Perros/cama-circular.jpg" alt="">
+                        <section class="descripcion_producto">
+                            <i class="fas fa-cat"></i>
+                            <section class="descripcion_producto_detalle">
+                                <p class="valor">$70.500</p>
+                                <p class="descuento">10% off</p>
+                            </section>
+                            <p class="nombre_producto">Cama Circular</p>
+                        </section>
+
+                    </article>
+
+                    <article class="producto">
+                        <img src="/img/accesorios/Perros/correa-extensible.jpg" alt="">
+                        <section class="descripcion_producto">
+                            <i class="fas fa-dog"></i>
+                            <section class="descripcion_producto_detalle">
+                                <p class="valor">$23.200</p>
+                                <p class="descuento">5% off</p>
+                            </section>
+                            <p class="nombre_producto">Peluche Leon</p>
+                        </section>
+                    </article>
+                </section>
+
+                <section class="oferta">
+                    <h2 class="titulo">Categorias</h2>
+
+                    <article class="producto">
+                        <img src="/img/alimentos/Perros/dog-bones.jpg" alt="">
+                        <section class="descripcion_producto">
+                            <i class="fas fa-dog"></i>
+                            <section class="descripcion_producto_detalle">
+                                <p class="valor">Alimento</p>
+                            </section>
+                            <p class="nombre_producto">En esta sección encontrara todo lo relacionado para alimentar a su mascota.</p>
+                        </section>
+                    </article>
+
+                    <article class="producto">
+                        <img src="/img/accesorios/pet-accessories.jpg" alt="">
+                        <section class="descripcion_producto">
+                            <i class="fas fa-cat"></i>
+                            <section class="descripcion_producto_detalle">
+                                <p class="valor">Accesorios</p>
+                            </section>
+                            <p class="nombre_producto">En esta sección encontrara accesorios muy útiles para su mascota.</p>
+                        </section>
+                    </article>
+
+                    <article class="producto">
+                      <img src="/img/juguetes_mascotas/Perros/peluches.jpg" alt="">
+                      <section class="descripcion_producto">
+                          <i class="fas fa-dog"></i>
+                          <section class="descripcion_producto_detalle">
+                              <p class="valor">Juguetes</p>
+                          </section>
+                          <p class="nombre_producto">En esta sección encontrara todo lo relacionado para divertirse con su mascota.</p>
+                      </section>
+                  </article>
+
+                    <article class="producto">
+                        <img src="/img/aseo/aseo_mascotas.jpeg" alt="">
+                        <section class="descripcion_producto">
+                            <i class="fas fa-cat"></i>
+                            <section class="descripcion_producto_detalle">
+                                <p class="valor">Cuidado e Higiene</p>
+                            </section>
+                            <p class="nombre_producto">En esta sección encontrara todo para el aseo de su mascota.</p>
+                        </section>
+                    </article>
+                </section>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="pie_de_pagina">
+                <section class="pie_de_pagina_detalle">
+                    <div class= "pie_de_pagina_detalle_icono">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h2>Pagá con tarjeta o en efectivo</h2>
+                    <p>En PetStore, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
+                </section>
+
+                <section class="pie_de_pagina_detalle">
+                    <div class= "pie_de_pagina_detalle_icono">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h2>Envío gratis desde $2.500</h2>
+                    <p>Solo por estar registrad@ en PetStore tenés envíos gratis en miles de productos.</p>
+                </section>
+
+                <section class="pie_de_pagina_detalle">
+                    <div class= "pie_de_pagina_detalle_icono">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h2>Seguridad, de principio a fin</h2>
+                    <p>¿No te gusta? ¡Devolvelo! En PetStore, no hay nada que no puedas hacer, porque estás siempre protegid@.</p>
+                </section>
+            </div>
+
+            <div class="centrar">
+                <p class="copyright">Copyright © 1999-2022 PetStore</p>
+            </div>
+
+        </footer>
+
+    </body>
 </html>

@@ -1,0 +1,78 @@
+:root {
+    --gris-oscuro: #666666;
+}
+
+@media (min-width: 361px){
+
+    .imagen_encabezado{
+        width: 20%;
+    }
+
+    .barra_busqueda{
+        width: 20%;
+    }
+
+    .credito{
+        width: 30%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 1.5rem;
+    }
+
+    .nav_opciones{
+        width: 40%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        text-align: center;
+        padding: 2rem 0;
+        align-items: center;
+    }
+
+    .burger_menu{
+        display: none;
+    }
+
+    .contenido_ultima_visita, .oferta{
+        justify-content: space-between;
+    }
+
+    .producto{
+        width: 45%;
+    }
+
+    .producto:hover{
+        box-shadow : 0px 0px 10px var(--gris-oscuro);
+    }
+
+    .precio{
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 769px){
+
+    .producto{
+        width: 23%;
+    }
+
+    .pie_de_pagina{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .campo_de_texto{
+        width: 40%;
+    }
+
+    .boton{
+        width: 40%;
+    }
+}

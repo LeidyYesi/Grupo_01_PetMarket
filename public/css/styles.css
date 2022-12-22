@@ -1,0 +1,362 @@
+header {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--azul-header);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+img{
+    max-width: 100%;
+    vertical-align: top;
+}
+
+button, input{
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+input[type='checkbox']:hover {
+    cursor: pointer;
+}
+
+li {
+    padding: 5px;
+}
+
+:root {
+    --amarillo: #EAC926;
+    --azul: #03264C;
+    --celeste: #1259c3;
+    --gris-oscuro: #666666;
+    --gris-claro: #ebebeb;
+    --verde: #39b54a;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --azul-header: #254969;
+}
+
+.encabezado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 2rem 0;
+}
+
+.imagen_encabezado {
+    vertical-align: top;
+    width: 25%;
+}
+
+.barra_busqueda{
+    background-color: var(--blanco);
+    width: 35%;
+    align-self: center;
+    display: flex;
+    border-radius: 4px;
+}
+
+.barra_busqueda form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+.campo_busqueda{
+    width: 100%;
+    display: inline;
+}
+
+.campo_busqueda input{
+    width: 100%;
+}
+
+.icono_busqueda{
+    background-color: var(--blanco);
+    justify-self: flex-end;
+    display: inline;
+}
+
+.credito{
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.credito div{
+    display: inline;
+}
+
+nav{
+    display: none;
+}
+
+
+p, li{
+    font-size: 12px;
+}
+
+li{
+    list-style: none;
+}
+
+.burger_menu{
+    padding-bottom: 1rem;
+    color: var(--blanco);
+    width: 50%;
+    align-self: center;
+    text-align: center;
+    margin: auto;
+}
+
+.burger_menu i{
+    padding: 0.5rem;
+    border-radius: 15%;
+    background-color:  var(--azul);
+}
+
+.imagen_banner img{
+    width: -webkit-fill-available;
+}
+
+main{
+    background-color:  var(--gris-claro);
+}
+
+.contenido{
+    width: 90%;
+    margin: auto;
+}
+
+.contenido_ultima_visita, .oferta{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.titulo{
+    font-size: 24px;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.producto{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.descripcion_producto{
+    background-color: var(--blanco);
+    border-top: solid 1px  var(--gris-claro);
+    position: relative;
+    padding: 1rem;
+}
+
+.descripcion_producto i{
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    color: var(--verde);
+    border: 1px solid var(--verde);
+    background-color: var(--blanco);
+    border-radius: 50%;
+    position: absolute;
+    right: 6px;
+    top: -16px;
+    transition:
+        ease-out transform .5s,
+        ease-out right .5s;
+}
+
+.producto:hover .descripcion_producto i{
+    transform: rotateZ(-90deg);
+}
+
+.descripcion_producto_detalle{
+    display: flex;
+}
+
+.valor{
+    font-size: 1.2rem;
+    padding-right: 0.5rem;
+}
+
+.descuento{
+    color: var(--verde);
+}
+
+.nombre_producto{
+    display: none;
+}
+
+.producto:hover .nombre_producto{
+    display: block;
+    padding-top: 1rem;
+}
+
+footer{
+    background-color: var(--blanco);
+}
+
+.pie_de_pagina{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pie_de_pagina_detalle{
+    padding: 2rem 3rem;
+    text-align: center;
+    max-width: 30rem;
+}
+
+.pie_de_pagina_detalle{
+    font-size: 2rem;
+    color: var(--azul);
+    padding-bottom: 0.625rem;
+}
+
+.pie_de_pagina_detalle_icono:hover{
+    color: var(--celeste);
+}
+
+.pie_de_pagina_detalle h2{
+    font-size: 16px
+}
+
+.copyright{
+    text-decoration: none;
+    padding: 1rem 1rem;
+}
+
+.contenido_formulario{
+    background-color: var(--gris-claro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 0;
+}
+
+.formulario_registro{
+    width: 70%;
+    margin: 1rem 0;
+}
+
+.campo_de_texto, .campo_de_texto_login{
+    display: block;
+    margin-bottom: 2rem;
+    padding-left: 0.75rem;
+    width: 100%;
+    background-color: var(--blanco);
+    border-radius: 4px;
+}
+
+.campo_de_texto, .campo_de_texto_login input{
+    width: 100%;
+    height: 100%;
+    padding: 0.75rem 0;
+}
+
+.campo_de_fecha{
+    margin-bottom: 2rem;
+}
+
+.campo_de_fecha label h2{
+    margin-bottom: 1rem;
+}
+
+.campo_de_fecha input{
+    background-color: var(--blanco);
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    padding: 0.75rem 0;
+}
+
+.perfil_usuario{
+    margin-bottom: 2rem;
+}
+
+.perfil_usuario label h2{
+    margin-bottom: 1rem;
+}
+
+.categoria{
+    margin-bottom: 2rem;
+}
+
+.entrada_checkbox{
+    display: flex;
+    flex-direction: column;
+}
+
+.entrada_checkbox div input{
+    display: inline;
+    margin: 1rem;
+}
+
+.foto_perfil{
+    margin-bottom: 2rem;
+}
+
+.foto_perfil input{
+    margin-top: 1rem;
+}
+
+.boton{
+    display: flex;
+    justify-content: space-between;
+}
+
+.boton_registro, .boton_borrar{
+    width: 45%;
+}
+
+.boton_registro button, .boton_borrar button{
+    width: 100%;
+    padding: 0.75rem;
+    background-color:var(--azul);
+    border-radius: 4px;
+    color: var(--blanco);
+}
+
+.boton_registro:hover button, .boton_borrar:hover button{
+    background-color: var(--celeste);
+    cursor: pointer;
+}
+
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton_ingresar button{
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--azul);
+    border-radius: 4px;
+    color: var(--blanco);
+}
+
+.boton_ingresar:hover button{
+    background-color: var(--celeste);
+    cursor: pointer;
+}
