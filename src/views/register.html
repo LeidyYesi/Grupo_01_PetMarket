@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de Registro</title>
-    <!-- Link de Fonts-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
-    <!--Link Normalize-->
-    <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PetMarket - Register</title>
+
+        <!-- Links para Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+        <!-- Link para iconos -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+        <!-- Mi css -->
+        <link rel="stylesheet" href="/css/normalize.css"/>
+        <link rel="stylesheet" href="/css/styles.css"/>
+        <link rel="stylesheet" href="/css/stylesresponsive.css"/>
 
     <!--Link de inconos-->
     <script
@@ -27,7 +28,7 @@
     <link href="css/register.css" rel="stylesheet" type="text/css" />
   </head>
 
-  <body>  
+  <body> 
 
     <header>
 
@@ -35,7 +36,7 @@
           <div class="imagen_encabezado">
               <a href="/"><img src="img/Logo-pet-market-small.png" alt="Logo PetMarket"></a>
           </div>
-  
+
           <nav>
             <ul class="nav_opciones">
                 <li>
@@ -52,33 +53,39 @@
                 <li>
                     <a href="#">Categorías</a>
                 </li>
+                <li>
+                    <a href="login">Iniciar Sesión</a>
+                </li>
+                <li>
+                  <a href="/productCart">Mis compras</a>
+              </li>
             </ul>
         </nav>
-  
+
           <section class="barra_busqueda">
               <form action="/" method="POST">
                   <div class="campo_busqueda">
                       <input type="text" placeholder="Buscá productos, marcas y más" required>
                   </div>
-  
+
                   <div class="icono_busqueda">
                       <button type="submit"><i class="fas fa-search"></i></button>
                   </div>
               </form>
           </section>
       </section>
-  
+
       <div class="burger_menu">
           <i class="fa fa-bars burger"></i>
       </div>
-  
+
       <div class="imagen_banner">
           <img src="img/img-home-banner-small.jpg" alt="banner">
       </div>
-  
+
   </header>
-  
-    <main>
+
+<main>
   <section class="formu-registro">
 
     <section class="inicio-logo">
@@ -121,10 +128,10 @@
         <div> 
           <p><a href="/login"> Ya estoy registrado </a></p>
         </div>
-    
+
       </form>
     </section>
-  </main>  
+  </main>
 
   <footer>
     <div class="pie_de_pagina">
