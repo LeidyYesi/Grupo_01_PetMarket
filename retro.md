@@ -4,16 +4,15 @@ qué deberíamos empezar a hacer y qué deberíamos dejar de hacer para poder af
 
 Qué deberíamos empezar a hacer al siguiente sprint?
 
-    ° Tener mas comunicacion como grupo para la toma de decisiones.
-    ° Ser mas proactivos y tomar iniciativas.
-    ° Tener reuniones fijas semanales para poder inspeccionar el progreso hacia el objetivo del Sprint
+    ° Tener mas comunicación como grupo para la toma de decisiones.
+    ° Ser mas proactivos y tomar iniciativas.
+    ° Tener reuniones fijas semanales para poder inspeccionar el progreso hacia el objetivo del Sprint
 
+Qué deberíamos continuar haciendo durante el siguiente Sprint?
 
-Qué deberíamos continuar haciendo durante el siguiente sprint?
+    ° Mantener el mismo compromiso con cada entrega de manera personal y grupal.
+    ° La distribución del trabajo.
 
-    ° Mantener el mismo compromiso con cada entrega de manera personal y grupal.
-    ° La distribucion del trabajo.
-
- Qué deberíamos hacer menos o dejar de hacer?
- 
-    ° El posponer las reuniones para planear el sprint
+ Qué deberíamos hacer menos o dejar de hacer?
+ 
+    ° El posponer las reuniones para planear el Sprint

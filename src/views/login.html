@@ -31,7 +31,55 @@
 
   </head> 
 <body>
+  <header>
 
+    <section class="encabezado">
+        <div class="imagen_encabezado">
+            <a href="/"><img src="img/Logo-pet-market-small.png" alt="Logo PetMarket"></a>
+        </div>
+
+        <nav>
+          <ul class="nav_opciones">
+              <li>
+                  <a href="#">Perros</a>
+              </li>
+              <li>
+                  <a href="#">Gatos</a>
+              </li>
+              <li>
+                  <a href="#">Promociones</a>
+              </li>
+          </ul>
+          <ul class="nav_opciones">
+              <li>
+                  <a href="#">Categorías</a>
+              </li>
+          </ul>
+      </nav>
+
+        <section class="barra_busqueda">
+            <form action="/" method="POST">
+                <div class="campo_busqueda">
+                    <input type="text" placeholder="Buscá productos, marcas y más" required>
+                </div>
+
+                <div class="icono_busqueda">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </section>
+    </section>
+
+    <div class="burger_menu">
+        <i class="fa fa-bars burger"></i>
+    </div>
+
+    <div class="imagen_banner">
+        <img src="img/img-home-banner-small.jpg" alt="banner">
+    </div>
+
+</header>
+<main>
     <section class="formu-registro">
 
       <section class="inicio-logo">
@@ -61,6 +109,39 @@
 
         </form>
         </section>
+      </main>
 
+      <footer>
+        <div class="pie_de_pagina">
+            <section class="pie_de_pagina_detalle">
+                <div class= "pie_de_pagina_detalle_icono">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h2>Pagá con tarjeta o en efectivo</h2>
+                <p>En PetMarket, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
+            </section>
+
+            <section class="pie_de_pagina_detalle">
+                <div class= "pie_de_pagina_detalle_icono">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h2>Envío gratis desde $2.500</h2>
+                <p>Solo por estar registrad@ en PetMarket tenés envíos gratis en miles de productos.</p>
+            </section>
+
+            <section class="pie_de_pagina_detalle">
+                <div class= "pie_de_pagina_detalle_icono">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h2>Seguridad, de principio a fin</h2>
+                <p>¿No te gusta? ¡Devolvelo! En PetMarket, no hay nada que no puedas hacer, porque estás siempre protegid@.</p>
+            </section>
+        </div>
+
+        <div class="centrar">
+            <p class="copyright">Copyright © 1999-2022 PetMarket</p>
+        </div>
+
+    </footer>
 </body>
 </html>
