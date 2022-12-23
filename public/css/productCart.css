@@ -19,8 +19,14 @@ ul {
 
 a {
   text-decoration: none;
-  color: green;
+  color: #ffffff;
 }
+
+.enlace{
+  color: #1259c3;;
+}
+
+
 
 /* ----------------------- CARRITO -----------------------*/
 
@@ -109,6 +115,8 @@ a {
 
 #cupon {
   width: 70%;
+  background-color: #ffffff;
+  padding: 5px;
 }
 
 .resumen-precios {
