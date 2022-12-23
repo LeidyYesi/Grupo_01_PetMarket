@@ -49,7 +49,7 @@ Los juguetes para mascotas son muy requeridos. Se venden porque los clientes bus
   => https://www.natural-life.com.ar/ Por la variedad productos que ofrecen
   => https://www.petsmart.com/ Por la estética que presenta la pagina.
   => https://petstore.com/ El orden y lo minimalista de la pagina, pero aun así muy completo.
-    Para estas ultimas dos las funcionalidades que implementa la pagina, ya sea en la distribución, como la facilidad de acceder a los productos.
+    Para estas ultimas dos las funcionalidades que implementa la pagina, ya sea en la distribución, como la         facilidad de acceder a los productos.
   => https://laika.com.co/
   => https://centropet.com/
 
@@ -59,10 +59,9 @@ Los juguetes para mascotas son muy requeridos. Se venden porque los clientes bus
 
     => Carlos Andrés Noreña Cruz. 
     => Germán Bogomolni.
-    => Martín Faraguna.
-    => Yesica Farias: Empece en la programación e manera autodidacta, viendo tutoriales en YouTube y cursos
-    gratuitos como freecodecamp.org pero me faltaba una base para centrar ese conocimiento.
-    Este año me salio una gran oportunidad en el trabajo para poder realizar este curo y no lo dude ni por un omento.
+    => Martín Faraguna. 
+    => Yesica Farias: Empece en la programación de manera autodidacta, viendo tutoriales en YouTube y cursos gratuitos como freecodecamp.org pero me faltaba una base para centrar ese conocimiento.
+    Este año me salio una gran oportunidad en el trabajo para poder realizar este curso y no lo dude ni por un momento.
     Cada clase o actividad que realizo desde que comencé me apasiona mas.
 ====================================================================================================================
 
