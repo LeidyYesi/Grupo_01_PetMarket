@@ -7,6 +7,18 @@
   font-family: "Roboto", sans-serif;
 }
 
+:root {
+  --Azul-Oscuro: #20165d;
+  --Azul-Claro: #28bed1;
+  --celeste: #def7fa;
+  --celeste-footer: #1259c3;
+  --gris-oscuro: #666;
+  --gris-claro: #ebebeb;
+  --Negro: #02020A;
+  --Naranja: #EC673F;
+  --azul-header: #254969;
+}
+
 /* input {
   border: none;
   box-shadow: none;
@@ -35,7 +47,7 @@ a {
 }
 
 .carrito {
-  background-color: rgb(255, 185, 24, 0.5);
+  background-color: rgb(222, 247, 250, 0.5);
   border: 1px solid #000000;
   border-radius: 5px;
   margin: 10%;
@@ -44,7 +56,7 @@ a {
   padding: 3%;
 }
 
-.producto {
+.producto1 {
   display: flex;
   position: relative;
   margin: 2%;
@@ -53,11 +65,12 @@ a {
 .remover {
   color: red;
   position: absolute;
-  right: 10%;
+  right: 0%;
   bottom: 17%;
   text-decoration: underline;
   font-weight: bold;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .foto-producto {
@@ -99,7 +112,7 @@ a {
 /* ----------------------- RESUMEN ----------------------- */
 
 .resumen {
-  background-color: rgb(255, 185, 24, 0.5);
+  background-color: rgb(222, 247, 250, 0.5);
   border: 1px solid #000000;
   border-radius: 5px;
   margin: 10%;
@@ -115,8 +128,9 @@ a {
 
 #cupon {
   width: 70%;
-  background-color: #ffffff;
+  background-color: var(--gris-claro);
   padding: 5px;
+  border: #000000 1px solid;
 }
 
 .resumen-precios {
@@ -132,11 +146,32 @@ a {
 }
 
 .boton {
-  background-color: rgb(255, 185, 24);
+  background-color: var(--Azul-Claro);
   width: 100%;
   padding: 2%;
   font-weight: bold;
   border: 1px solid #000000;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px 1px rgba(255, 185, 24);
+  box-shadow: 0px 0px 5px 1px var(--Azul-Claro);
+  cursor: pointer;
+  transition: all .3s
+}
+
+.boton:hover {
+  background-color: var(--Naranja);
+}
+
+@media (min-width: 768px) {
+  .flex {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .carrito {
+    width: 100%;
+  }
+
+  .resumen {
+    width: 100% 
+  }
 }
