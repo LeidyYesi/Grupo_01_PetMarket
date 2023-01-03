@@ -1,33 +1,23 @@
 const express = require("express");
 const app = express();
-
-// Modulo nativo para manejar las rutas de los archivos
-const path = require("path");
+const mainRouter = require("./routers/mainRouter.js");
+const productCartRouter = require("./routers/cartRouter.js");
+const detailRouter = require("./routers/detailRouter.js");
+const loginRouter = require("./routers/loginRouter.js");
+const registerRouter = require("./routers/registerRouter.js");
 
 // Usando recursos estáticos.
 app.use(express.static("public"));
 
+app.set('view engine','ejs');
 
 // Definimos las rutas a los distintos pedidos que nuestro sitio sabe responder
-app.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/home.html"))
-})
 
-app.get("/register", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/register.html"));
-  });
-
-  app.get("/login", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/login.html"));
-  });
-
-  app.get("/productDetail", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/productDetail.html"));
-  });
-
-  app.get("/productCart", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/productCart.html"));
-  });
+app.use("/", mainRouter);
+app.use("/productCart", productCartRouter);
+app.use("/productDetail", detailRouter);
+app.use("/login", loginRouter);
+app.use("/register", registerRouter);
 
 // Ponemos a escuchar el servidor
 app.listen(3030, () => {
