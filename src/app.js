@@ -7,7 +7,7 @@ const loginRouter = require("./routers/loginRouter.js");
 const registerRouter = require("./routers/registerRouter.js");
 
 // Usando recursos estáticos.
-app.use(express.static("public"));
+app.use(express.static("../public"));
 
 app.set('view engine','ejs');
 

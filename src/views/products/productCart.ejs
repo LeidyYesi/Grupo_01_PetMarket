@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head.ejs') %>
+
+    <title>PetMarket - productCart</title>
+    <!-- Mi css -->
+    <link rel="stylesheet" href="css/productCart.css" />
+  </head>
+
+  <body>
+
+    <%- include('../partials/header.ejs') %>
+
+    <main>
+      <div class="head">
+        <h2>Carrito de compras</h2>
+        <p>
+          Aun no estas listo? <a class="enlace" href="/">Continuar comprando</a>
+        </p>
+      </div>
+      <!-- CARRITO -->
+      <div class="flex">
+        <section class="carrito">
+          <article class="producto1">
+            <img
+              src="/img/logo-pet-market.jpg"
+              alt="foto producto"
+              class="foto-producto"
+            />
+            <div class="info">
+              <p class="cantidad">1x</p>
+              <p class="nombre-producto">Nombre Producto</p>
+              <p class="precio">$19000</p>
+            </div>
+            <!-- <a href="#" class="remover">Remover</a> -->
+            <input type="submit" class="remover" value="Remover" />
+          </article>
+          <div class="linea"></div>
+          <article class="producto1">
+            <img
+              src="/img/logo-pet-market.jpg"
+              alt="foto producto"
+              class="foto-producto"
+            />
+            <div class="info">
+              <p class="cantidad">1x</p>
+              <p class="nombre-producto">Nombre Producto</p>
+              <p class="precio">$19000</p>
+            </div>
+            <!-- <a href="#" class="remover">Remover</a> -->
+            <input type="submit" class="remover" value="Remover" />
+          </article>
+          <div class="linea"></div>
+          <article class="producto1">
+            <img
+              src="/img/logo-pet-market.jpg"
+              alt="foto producto"
+              class="foto-producto"
+            />
+            <div class="info">
+              <p class="cantidad">1x</p>
+              <p class="nombre-producto">Nombre Producto</p>
+              <p class="precio">$19000</p>
+            </div>
+            <!-- <a href="#" class="remover">Remover</a> -->
+            <input type="submit" class="remover" value="Remover" />
+          </article>
+        </section>
+        <!-- RESUMEN -->
+        <section class="resumen">
+          <h4>Resumen de compra</h4>
+          <form action="#" method="post">
+            <div class="cupon">
+              <label for="cupon">Cupon</label>
+              <br />
+
+              <input
+                type="text"
+                name="cupon"
+                id="cupon"
+                placeholder="Inserte cupon"
+              />
+            </div>
+
+            <article class="resumen-precios">
+              <p>Sub-total</p>
+              <p class="precio-resumen">$57000</p>
+            </article>
+
+            <article class="resumen-precios">
+              <p>Envío</p>
+              <p class="precio-resumen">En el siguiente paso</p>
+            </article>
+
+            <div class="linea"></div>
+
+            <article class="resumen-precios">
+              <p>Total</p>
+              <p class="precio-resumen">$57000</p>
+            </article>
+
+            <input type="submit" class="boton" value="Pasar al pago" />
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+
+  </body>
+</html>

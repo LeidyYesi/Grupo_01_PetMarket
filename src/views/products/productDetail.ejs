@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <%- include('../partials/head.ejs') %>
+
+      <title>PetMarket - productDetail</title>
+      <!-- Mi css -->
+      <link rel="stylesheet" href="css/productDetail.css"/>
+</head>
+
+<body>
+
+  <%- include('../partials/header.ejs') %>
+
+<main>
+    <p>Categoria > Producto</p>
+    <section class="container">
+      <!-- Left Column / Image -->
+      <section class="left-column">
+        <article class="image-product">
+          <figure class="image">
+            <img src="img/camas/Gatos/carpa.gato.jpg" alt="" class="product_img">
+          </figure>
+        </article>
+      </section>
+
+      <!-- Right Column / Details -->
+
+      <div class="right-column">
+        <!-- Product Description -->
+        <section class="product-description">
+          <h1>Titulo Producto X</h1>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, minima doloribus? Ut minima animi corrupti,
+            eveniet, culpa aliquid fugit hic autem et incidunt voluptatum illum sed aut sapiente quibusdam voluptatem!
+          </p>
+        </section>
+
+        <!-- Product Configuration -->
+        <section class="product-configuration">
+          <!-- Product option1 -->
+          <div class="product-option1">
+            <span>Option 1</span>
+            <section class="option1-choose">
+              <div>
+                <input type="radio" id="id1" name="option1" value="A" checked>
+                <label for="id1"></label>
+              </div>
+              <div>
+                <input type="radio" id="id2" name="option1" value="B">
+                <label for="id2"></label>
+              </div>
+              <div>
+                <input type="radio" id="id3" name="option1" value="C">
+                <label for="id3"></label>
+              </div>
+            </section>
+          </div>
+          <!-- Product option2 -->
+          <div class="product-option2">
+            <span>Option 2</span>
+            <section class="option2-choose">
+              <button>Button 1</button>
+              <button>Button 2</button>
+              <button>Button 3</button>
+            </section>
+          </div>
+                <!-- Product option3 -->
+          <div class="product-option3">
+            <span>Option 3</span>
+            <section class="option3-choose">
+              <select name="cantidad" id="cantidad" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </section>
+          </div>
+          <!-- Product Pricing -->
+          <div class="product-price">
+            <span>$8234,22</span>
+            <a href="#" class="cart-btn">Add to cart</a>
+          </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('../partials/footer.ejs') %>
+
+</body>
+</html>
