@@ -1,31 +1,40 @@
+// ************ Require's ************
 const express = require("express");
+const path = require('path');
+const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
+
+// ************ express() - (don't touch) ************
 const app = express();
+
+// ************ Middlewares - (don't touch) ************
+app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
+app.use(express.urlencoded({ extended: false })); // Para capturar el body
+app.use(express.json()); // Para capturar el body
+app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
+
+// ************ Template Engine - (don't touch) ************
+app.set('view engine', 'ejs'); // Define que el motor que utilizamos es EJS
+// app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
+
+// ************ Route System require and use() - (don't touch) ************
+
 const mainRouter = require("./routers/mainRouter.js");
 const productCartRouter = require("./routers/cartRouter.js");
-const detailRouter = require("./routers/detailRouter.js");
 const loginRouter = require("./routers/loginRouter.js");
 const registerRouter = require("./routers/registerRouter.js");
 const reportRouter = require("./routers/reportRouter.js");
-const createRouter = require("./routers/createRouter.js");
-const editRouter = require("./routers/editRouter.js");
-
-// Usando recursos estáticos.
-app.use(express.static("public"));
-
-app.set("view engine", "ejs");
+const productsRouter = require("./routers/productsRouter.js"); 
 
 // Definimos las rutas a los distintos pedidos que nuestro sitio sabe responder
 
 app.use("/", mainRouter);
 app.use("/productCart", productCartRouter);
-app.use("/productDetail", detailRouter);
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 app.use("/report", reportRouter);
-app.use("/productCreate", createRouter);
-app.use("/productEdit", editRouter);
+app.use("/products", productsRouter);
 
-// Ponemos a escuchar el servidor
+// ************ Set the server to listen - (don't touch) ************
 app.listen(3030, () => {
     console.log("Servidor corriendo en http://localhost:3030");
 });
