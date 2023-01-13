@@ -212,6 +212,7 @@ main{
 
 footer{
     background-color: var(--blanco);
+    font-family: 'Roboto', sans-serif;
 }
 
 .pie_de_pagina{
