@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <%- include('../partials/head.ejs') %>
 
-      <title>PetMarket - Register</title>
-      <!--Link Css-->
-      <link href="css/register.css" rel="stylesheet" type="text/css" />
-  </head>
+<head>
+  <%- include('../partials/head.ejs') %>
 
-  <body>
+  <title>PetMarket - Register</title>
+  <!--Link Css-->
+  <link href="css/register.css" rel="stylesheet" type="text/css" />
+</head>
 
-    <%- include('../partials/header.ejs') %>
+<body>
 
-<main>
-  <section class="formu-registro">
+  <%- include('../partials/header.ejs') %>
 
-    <section class="inicio-logo">
+  <main>
+    <section class="formu-registro">
 
-      <h4> Formulario de Registro</h4>
-      <img src="img/Logo-pet-market.jpg" whith= "360" alt="Cafetera" class="img"/>
-    </section>
+      <section class="inicio-logo">
+
+        <h4> Formulario de Registro</h4>
+        <img src="img/Logo-pet-market.jpg" whith="360" alt="Cafetera" class="img" />
+      </section>
 
       <form action="/register" method="POST" class="crear-formu">
 
@@ -40,19 +41,20 @@
         </div>
 
         <div class="control-formu">
-          <input class="control" type="password" name="password" id="password" placeholder="Confirmar Contraseña" required />
+          <input class="control" type="password" name="password" id="password" placeholder="Confirmar Contraseña"
+            required />
         </div>
 
         <div class="checkbox">
-            <label for="terminos" > Acepto los términos y condiciones.</label>
-            <input type="checkbox" name="terminos" required>
+          <label for="terminos"> Acepto los términos y condiciones.</label>
+          <input type="checkbox" name="terminos" required>
         </div>
 
         <div>
-          <button class="bottom" type="submit" ><a href="/">Registrar</a></button> </button>
+          <button class="bottom" type="submit"><a href="/">Registrar</a></button> </button>
         </div>
 
-        <div> 
+        <div>
           <p><a href="/login"> Ya estoy registrado </a></p>
         </div>
 
@@ -62,5 +64,6 @@
 
   <%- include('../partials/footer.ejs') %>
 
-  </body>
+</body>
+
 </html>

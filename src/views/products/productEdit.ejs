@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+
+    <title>PetMarket - Create Product</title>
+    <!-- Mi css -->
+    <link rel="stylesheet" href="css/productEdit.css" />
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+
+    <main>
+        <h2>Editar producto</h2>
+        <a href="http://localhost:3030/" class="a">Volver al home</a>
+
+        <form action="/productCreate" method="POST" class="create-form">
+            <p>Ingrese el titulo del producto:</p>
+            <input type="text" name="Titulo" id="Titulo" placeholder="Titulo del producto" required class="input">
+            <p>Ingrese la descripcion del producto:</p>
+            <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion del producto" required class="input">
+            <p>Ingrese el precio del producto:</p>
+            <input type="text" name="precio" id="precio" placeholder="Precio del producto" required class="input">
+            <p>Ingrese la imagen del producto:</p>
+            <input type="file" name="imagen" id="imagen" required class="input">
+            <input type="submit" class="boton" value="Editar Producto" />
+        </form>
+
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
