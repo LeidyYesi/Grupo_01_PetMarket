@@ -14,7 +14,7 @@ app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
 
 // ************ Template Engine - (don't touch) ************
 app.set('view engine', 'ejs'); // Define que el motor que utilizamos es EJS
-// app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
+app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
 
 // ************ Route System require and use() - (don't touch) ************
 
