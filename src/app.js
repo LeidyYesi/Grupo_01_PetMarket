@@ -9,7 +9,7 @@ const registerRouter = require("./routers/registerRouter.js");
 // Usando recursos estáticos.
 app.use(express.static("public"));
 
-app.set('view engine','ejs');
+app.set("view engine", "ejs");
 
 // Definimos las rutas a los distintos pedidos que nuestro sitio sabe responder
 
@@ -21,5 +21,5 @@ app.use("/register", registerRouter);
 
 // Ponemos a escuchar el servidor
 app.listen(3030, () => {
-    console.log("Servidor corriendo en http://localhost:3030")
+    console.log("Servidor corriendo en http://localhost:3030");
 });
