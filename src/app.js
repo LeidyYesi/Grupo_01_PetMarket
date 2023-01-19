@@ -19,19 +19,13 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 // ************ Route System require and use() - (don't touch) ************
 
 const mainRouter = require("./routers/mainRouter.js");
-const productCartRouter = require("./routers/cartRouter.js");
-const loginRouter = require("./routers/loginRouter.js");
-const registerRouter = require("./routers/registerRouter.js");
-const reportRouter = require("./routers/reportRouter.js");
+const usersRouter = require("./routers/usersRouter.js");
 const productsRouter = require("./routers/productsRouter.js"); 
 
 // Definimos las rutas a los distintos pedidos que nuestro sitio sabe responder
 
 app.use("/", mainRouter);
-app.use("/productCart", productCartRouter);
-app.use("/login", loginRouter);
-app.use("/register", registerRouter);
-app.use("/report", reportRouter);
+app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
 // ************ Set the server to listen - (don't touch) ************

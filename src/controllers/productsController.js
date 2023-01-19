@@ -8,39 +8,55 @@ guardados en la carpeta Data como Json (un array de objetos literales) */
 
 
 const productsController = {
-	// (get) Root - Mostrar todos los productos
-	index: (req, res) => {
-		res.render("products/product.ejs");	
-	},
+  // (get) Root - Mostrar todos los productos
+  index: (req, res) => {
+    res.render("products/product.ejs");
+  },
 
-	// (get) Detail - Detalle de un producto
-	detail: (req, res) => {
-        res.render("products/productDetail.ejs");
-	},
+  // (get) Detail - Detalle de un producto
+  detail: (req, res) => {
+    res.render("products/productDetail.ejs");
+  },
 
-	// (get) Create - Formulario para crear
-	create: (req, res) => {
-        res.render("products/productCreate.ejs");
-		},
-	
-	// (post) Create - Método para guardar la info
-	// processCreate: (req, res) => {
-		
-	// },
+  // (get) Create - Formulario para crear
+  create: (req, res) => {
+    res.render("products/productCreate.ejs");
+  },
 
-	// (get) Update - Formulario para editar
-	edit: (req, res) => {
-        res.render("products/productEdit.ejs");
-	},
-	// (put) Update - Método para actualizar la info
-	// processEdit: (req, res) => {
-		
-	// },
+  // (post) Create - Método para guardar la info
+  // processCreate: (req, res) => {
 
-	// (delete) Delete - Eliminar un producto de la DB
-	// destroy : (req, res) => {
-		
-	// }
+  // },
+
+  // (get) Update - Formulario para editar
+  edit: (req, res) => {
+    res.render("products/productEdit.ejs");
+  },
+  // (put) Update - Método para actualizar la info
+  // processEdit: (req, res) => {
+
+  // },
+
+  // (delete) Delete - Eliminar un producto de la DB
+  destroy: (req, res) => {
+    let id = req.params.id;
+    const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
+    let productosFiltrados = products.filter((producto) => {
+      return producto.id != id;
+    });
+
+    fs.writeFileSync(
+      productsFilePath,
+      JSON.stringify(productosFiltrados, null, " ")
+    );
+
+    res.redirect("/products");
+  },
+  cart: (req, res) => {
+    res.render("products/productCart.ejs");
+  },
+
 };
 
 
