@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "name": "Casa Rascador",
+      "description": "descripcion Casa Rascador",
+      "image": "casa-rascador.jpg",
+      "animal": "gato",
+      "category": "oferta",
+      "color": "azul",
+      "weight": "",
+      "size": "",
+      "price": "65.50",
+      "discount": "50"
+    },
+    {
+      "id": 2,
+      "name": "Besties - Alimento Perros Adultos Sabor Carne y Pollo",
+      "description": "Besties - Alimento Perros Adultos Sabor Carne y Pollo",
+      "image": "Besties-Alimento Perros Adultos Sabor Carne y Pollo.jpg",
+      "animal": "perro",
+      "category": "general",
+      "color": "",
+      "weight": "1kg",
+      "size": "grande",
+      "price": "65.50",
+      "discount": "50"
+    }
+  ]
