@@ -10,27 +10,27 @@ guardados en la carpeta Data como Json (un array de objetos literales) */
 const productsController = {
   // (get) Root - Mostrar todos los productos
   index: (req, res) => {
-    res.render("products/product.ejs");
+    res.render("products/product");
   },
 
   // (get) Detail - Detalle de un producto
   detail: (req, res) => {
-    res.render("products/productDetail.ejs");
+    res.render("products/productDetail");
   },
 
   // (get) Create - Formulario para crear
   create: (req, res) => {
-    res.render("products/productCreate.ejs");
+    res.render("products/productCreate");
   },
 
   // (post) Create - Método para guardar la info
-  // processCreate: (req, res) => {
-
-  // },
+  processCreate: (req, res) => {
+    res.send(req.body);
+  },
 
   // (get) Update - Formulario para editar
   edit: (req, res) => {
-    res.render("products/productEdit.ejs");
+    res.render("products/productEdit");
   },
   // (put) Update - Método para actualizar la info
   // processEdit: (req, res) => {
@@ -54,7 +54,7 @@ const productsController = {
     res.redirect("/products");
   },
   cart: (req, res) => {
-    res.render("products/productCart.ejs");
+    res.render("products/productCart");
   },
 
 };

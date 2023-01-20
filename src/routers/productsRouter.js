@@ -24,7 +24,7 @@ router.get('/', productsController.index);
 
 // Crear un producto
 router.get('/create/', productsController.create);
-// router.post('/create/', productsController.processCreate);
+router.post('/create/', productsController.processCreate);
 
 
 // Devolver un producto 

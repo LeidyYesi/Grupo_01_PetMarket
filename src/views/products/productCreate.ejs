@@ -15,7 +15,7 @@
       <a href="http://localhost:3030/" class="a">Volver al home</a>
 
       <form
-        action="/productCreate"
+        action="./products/productCreate"
         method="POST"
         class="create-form"
         enctype="multipart/form-data"
@@ -48,7 +48,7 @@
           class="input"
         />
         <p>Ingrese la imagen del producto:</p>
-        <input type="file" name="imagen" id="imagen" required class="input" />
+        <input type="file" name="imagen" id="imagen" class="input" />
         <input type="submit" class="boton" value="Crear" />
       </form>
     </main>
