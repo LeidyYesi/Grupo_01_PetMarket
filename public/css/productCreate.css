@@ -10,7 +10,7 @@
 :root {
   --Azul-Oscuro: #20165d;
   --Azul-Claro: #28bed1;
-  --celeste: #def7fa;
+  --caleste: #def7fa;
   --celeste-footer: #1259c3;
   --gris-oscuro: #666;
   --gris-claro: #ebebeb;
@@ -22,6 +22,46 @@
 .a {
   color: var(--celeste-footer);
   text-decoration: underline;
+}
+
+h2{
+  font-size: 22px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  color: var(--Negro);
+  text-align: center;
+}
+
+h4{
+  font-size: 15px;
+  margin-bottom: 5px; 
+  color: var(--Negro);
+}
+
+.inicio-logo{
+  width: 100%;
+  background-color:var(--caleste);
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  justify-content: flex-end; 
+  padding: 2%;
+  }
+
+.img {
+  width: 40%;
+  margin-bottom: 4%;
+}
+
+.formu-create {
+  width: 60%;
+  background: #def7fa;
+  padding: 30px;
+  margin:  auto;
+  border-radius: 4px;
+  color: var(--gris-claro);
+  border: 1px solid var(--gris-claro);
+  border-radius: 4px ;
 }
 
 .create-form {
@@ -36,30 +76,39 @@
   padding: 3%;
 }
 
-.input {
-  border: 2px solid black;
-  border-radius: 5px;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  font-size: 12px;
-  padding: 2%;
+input {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  color: var(--gris-oscuro);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
 }
 
-.boton {
+.botton {
   background-color: var(--Azul-Claro);
+  color: #02020a;
   padding: 2%;
+  width: 20%;
   font-weight: bold;
   border: 1px solid #000000;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px 1px var(--Azul-Claro);
+  box-shadow: none;
   cursor: pointer;
   transition: all 0.3s;
 }
 
-.boton:hover {
+.botton:hover {
   background-color: var(--Naranja);
 }
 
+.radio{
+color: var(--#02020a);
+}
+
+/*-------mediaqueri--------*/
 @media (min-width: 768px) {
   .input {
     border: 2px solid black;

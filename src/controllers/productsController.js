@@ -25,6 +25,22 @@ const productsController = {
 
   // (post) Create - Método para guardar la info
   processCreate: (req, res) => {
+   /* const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+    let productoNuevo = {
+      id: , 
+      name: req.body.name,
+      description: req.body.description,
+      image: req.body.image,
+      animal: req.body.animal,
+      category: req.body.category,
+      color: req.body.color,
+      weight: req.body.weight,
+      size: req.body.size,
+      price: req.body.price,
+      discount: req.body.discount
+    };
+    products.push(productoNuevo);*/
     res.send(req.body);
   },
 

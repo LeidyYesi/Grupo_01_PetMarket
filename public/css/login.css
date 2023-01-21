@@ -1,9 +1,10 @@
 @import url(normalize.css);
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  ;
 }
 
 :root {
@@ -33,7 +34,7 @@ img{
   vertical-align: top;
 }
 
-button, input{
+.bottom, input{
   border: none;
   background-image: none;
   background-color: transparent;
@@ -213,6 +214,7 @@ border: 1px solid var(--gris-oscuro);
   color: var(--gris-claro);
   margin: 16px 0;
   border: none;
+  border-radius: 5px;
 }
 
 .formu-registro a{

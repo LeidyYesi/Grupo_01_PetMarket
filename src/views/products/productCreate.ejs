@@ -5,52 +5,90 @@
 
     <title>PetMarket - Create Product</title>
     <!-- Mi css -->
-    <link rel="stylesheet" href="/css/productCreate.css" />
+    <link rel="stylesheet" href="/css/productCreate.css">
   </head>
   <body>
     <%- include('../partials/header.ejs') %>
 
     <main>
-      <h2>Crear nuevo producto</h2>
-      <a href="http://localhost:3030/" class="a">Volver al home</a>
+      <section class="inicio-logo">
+      <a href="http://localhost:3030/" class="a">
+        <img src="/img/Logo-pet-Market.jpg" alt="Logo" class="img">
+      </a>
+    </section>
 
+ <section class="formu-create">
+ 
+      <h2>Crear nuevo producto</h2>
+     
       <form
-        action="./products/productCreate"
+        action="/products/create"
         method="POST"
         class="create-form"
         enctype="multipart/form-data"
       >
-        <p>Ingrese el titulo del producto:</p>
-        <input
-          type="text"
-          name="Titulo"
-          id="Titulo"
-          placeholder="Titulo del producto"
-          required
-          class="input"
-        />
-        <p>Ingrese la descripcion del producto:</p>
-        <input
-          type="text"
-          name="descripcion"
-          id="descripcion"
-          placeholder="Descripcion del producto"
-          required
-          class="input"
-        />
-        <p>Ingrese el precio del producto:</p>
-        <input
-          type="text"
-          name="precio"
-          id="precio"
-          placeholder="Precio del producto"
-          required
-          class="input"
-        />
-        <p>Ingrese la imagen del producto:</p>
-        <input type="file" name="imagen" id="imagen" class="input" />
-        <input type="submit" class="boton" value="Crear" />
+      <div class="create-form">
+        <input class="control" type="text" name="name" id="name" placeholder="Nombre del Producto" >
+      </div>
+
+      <div class="create-form">
+        <input type="text" name="Mascota"  id="Mascota"  placeholder="Mascota"  class="control">
+        <select name="Elegir Mascota">
+        <option value= "Perro"> Perro</option>
+        <option value="Gato"> Gato</option> 
+      </select>
+      </div>
+
+      <div class="create-form">
+        <input class="control" type="text" name="descrption" id="descrption" placeholder="Descrption del producto">
+      </div>
+
+
+      <div class="create-form">
+        <input class="control" type="text" name="color" id="color" placeholder="Color del producto">
+      </div>
+
+      <div class="create-form">
+        <input type="text" name="weight"  id="weight"  placeholder="Peso de la unidad"  class="control">
+        <select name="Peso de la unidad">
+        <option value="1kg"> 1kg</option>
+        <option value="3kg"> 3kg</option> 
+        <option value="7.5kg"> 7.5kg</option>
+        <option value="15kg"> 15kg</option>
+        <option value=""> </option>
+      </select>
+      </div>
+
+      <div class="create-form">
+        <input type="text" name="size"  id="size"  placeholder="Tamaño de la raza"  class="control">
+        <select name="Tamaño de la raza">
+        <option value= "Small"> Small</option>
+        <option value="Medium"> Medium</option> 
+        <option value= "Big"> Big</option>
+      </select>
+      </div>
+
+      <div class="create-form">
+        <input class="control" type="text" name="price" id="price" placeholder="Precio del producto">
+      </div>
+
+      <div class="create-form">
+        <input class="control" type="text" name="discount" id="discount" placeholder="Descuento del producto">
+      </div>
+
+        
+      <div class="create-form">
+        <h4>Ingrese la imagen del producto:</h4>
+        <input type="file" name="imagen" id="imagen" >
+      </div>
+
+        <div>
+          <button class="botton" type="submit" class="boton" value="Crear">Crear</button> 
+        </div>
+        
       </form>
+    </section>  
+  
     </main>
 
     <%- include('../partials/footer.ejs') %>
