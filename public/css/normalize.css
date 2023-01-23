@@ -347,3 +347,7 @@ template {
 [hidden] {
   display: none;
 }
+
+.text-danger {
+  color:red
+}

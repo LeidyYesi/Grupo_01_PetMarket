@@ -1,69 +1,147 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <%- include('../partials/head.ejs') %>
 
-<head>
-  <%- include('../partials/head.ejs') %>
+    <title>PetMarket - Register</title>
+    <!--Link Css-->
+    <link href="/css/register.css" rel="stylesheet" type="text/css" />
+  </head>
 
-  <title>PetMarket - Register</title>
-  <!--Link Css-->
-  <link href="/css/register.css" rel="stylesheet" type="text/css" />
-</head>
+  <body>
+    <%- include('../partials/header.ejs') %>
 
-<body>
+    <main>
+      <section class="formu-registro">
+        <section class="inicio-logo">
+          <h4>Formulario de Registro</h4>
+          <img
+            src="/img/Logo-pet-market.jpg"
+            whith="360"
+            alt="logo-pet-market"
+            class="img"
+          />
+        </section>
 
-  <%- include('../partials/header.ejs') %>
+        <form action="/users/register" method="POST" enctype="multipart/form-data" class="crear-formu" >
+          <div class="control-formu">
+            <input
+             class="control"
+              type="text"
+              name="nombre"
+              id="nombre"
+              placeholder="Nombre"
+              value="<%= locals.oldData ? oldData.nombre : null %>"
+            />
+            <% if (locals.errors && errors.nombre) { %>
+              <div class="text-danger">
+                <%= errors.nombre.msg %> 
+              </div>
+            <% } %>
+          </div>
 
-  <main>
-    <section class="formu-registro">
+          <div class="control-formu">
+            <input
+              class="control"
+              type="text"
+              name="apellido"
+              id="apellido"
+              placeholder="Apellido"
+              value="<%= locals.oldData ? oldData.apellido : null %>"
+            />
+            <% if (locals.errors && errors.apellido) { %>
+              <div class="text-danger">
+                <%= errors.apellido.msg %> 
+              </div>
+            <% } %>
+          </div>
 
-      <section class="inicio-logo">
+          <div class="control-formu">
+            <input
+              class="control"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Correo Electrónico"
+              value="<%= locals.oldData ? oldData.email : null %>"
+            />
+            <% if (locals.errors && errors.email) { %>
+              <div class="text-danger">
+                <%= errors.email.msg %> 
+              </div>
+            <% } %>
+          </div>
 
-        <h4> Formulario de Registro</h4>
-        <img src="img/Logo-pet-market.jpg" whith="360" alt="Cafetera" class="img" />
+          <div class="control-formu">
+            <input
+              class="control"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Contraseña"
+              value="<%= locals.oldData ? oldData.password : null %>"
+            />
+            <% if (locals.errors && errors.password) { %>
+              <div class="text-danger">
+                <%= errors.password.msg %> 
+              </div>
+            <% } %>
+          </div>
+          
+          <div class="control-formu">
+								<select 
+									name="category" 
+								>
+									<option value="">Elegí una categoria</option>
+									<%  
+										let categories = ['Administrador', 'Super-User', 'Normal'];
+									%>
+									<% for (const oneCategory of categories) { %>
+										<option 
+											value="<%= oneCategory %>"
+											<%= locals.oldData && (oneCategory === oldData.category) ? 'selected' : null %> 
+										> <%= oneCategory %> </option>
+									<% } %>
+								</select>
+								<% if (locals.errors && errors.category) { %>
+									<div class="text-danger">
+										<%= errors.category.msg %>
+									</div>
+								<% } %>
+							</div>
+              
+
+          <p>Imagen:</b>
+          <div class="control-formu">
+            <input
+              class="control"
+              type="file"
+              name="avatar"
+              placeholder="Imagen del perfil"
+            />
+            <% if (locals.errors && errors.avatar) { %>
+              <div class="text-danger">
+                <%= errors.avatar.msg %>
+              </div>
+            <% } %>
+          </div>
+
+          <div class="checkbox">
+            <label for="terminos"> Acepto los términos y condiciones.</label>
+            <input type="checkbox" name="terminos" />
+          </div>
+
+          <div>
+            <button class="bottom" type="submit">Registrar</button>
+          </div>
+
+          <div>
+            <p><a href="/login"> Ya estoy registrado </a></p>
+          </div>
+        </form>
       </section>
+    </main>
 
-      <form action="/register" method="POST" class="crear-formu">
-
-        <div class="control-formu">
-          <input class="control" type="text" name="Nombre" id="Nombre" placeholder="Nombre" required />
-        </div>
-
-        <div class="control-formu">
-          <input class="control" type="text" name="Apellido" id="Apellido" placeholder="Apellido" required />
-        </div>
-
-        <div class="control-formu">
-          <input class="control" type="email" name="email" id="email" placeholder="Correo Electrónico" required />
-        </div>
-
-        <div class="control-formu">
-          <input class="control" type="password" name="password" id="password" placeholder="Contraseña" required />
-        </div>
-
-        <div class="control-formu">
-          <input class="control" type="password" name="password" id="password" placeholder="Confirmar Contraseña"
-            required />
-        </div>
-
-        <div class="checkbox">
-          <label for="terminos"> Acepto los términos y condiciones.</label>
-          <input type="checkbox" name="terminos" required>
-        </div>
-
-        <div>
-          <button class="bottom" type="submit"><a href="/">Registrar</a></button> </button>
-        </div>
-
-        <div>
-          <p><a href="/login"> Ya estoy registrado </a></p>
-        </div>
-
-      </form>
-    </section>
-  </main>
-
-  <%- include('../partials/footer.ejs') %>
-
-</body>
-
+    <%- include('../partials/footer.ejs') %>
+  </body>
 </html>
