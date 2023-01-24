@@ -5,19 +5,20 @@ const product = model('productsDataBase');
 
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
-
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
 
 const productsController = {
   // (get) Root - Mostrar todos los productos
   index: (req, res) => {
-    //const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-   //res.render("products/product", {productos: products});
-   
-		res.render("products/product");
-    
+    // (get) Root - Mostrar todos los productos
+    index: (req, res) => {
+
+      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+  
+      res.render("products/productList", {productos: products})
+    }
+
   },
 
   // (get) Detail - Detalle de un producto
