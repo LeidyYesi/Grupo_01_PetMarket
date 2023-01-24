@@ -54,15 +54,6 @@
   "Imagen": "http://dummyimage.com/237x208.jpg/5fa2dd/ffffff"
  },
  {
-  "id": 7,
-  "Nombre": "Arch",
-  "Apellido": "Thorwarth",
-  "email": "athorwarth6@bandcamp.com",
-  "Contraceña": "RREbGPMo",
-  "Categoria": null,
-  "Imagen": "http://dummyimage.com/215x211.jpg/cc0000/ffffff"
- },
- {
   "id": 8,
   "Nombre": "Royce",
   "Apellido": "Sparrowe",
@@ -96,6 +87,24 @@
   "email": "gbogom@gmail.com",
   "password": "$2a$10$f4grqX2HRL97LTe2.jOd6ee9wD5tEfMjKhrajr6Uke4WpuFgk1M1.",
   "category": "Administrador",
-  "avatar": "1674521199107_img.png"
+  "imagen": "1674521199107_img.png"
+ },
+ {
+  "id": 12,
+  "nombre": "German",
+  "apellido": "BOGOMOLNI",
+  "email": "gbogom@gmail.edu",
+  "password": "$2a$10$Zeu/BsPoIACp/..R6Ld.i.3eOnQLcBuGUNGppxjqU04rTfEVP34Su",
+  "category": "Administrador",
+  "imagen": "1674523384767_img.png"
+ },
+ {
+  "id": 13,
+  "nombre": "Lionel",
+  "apellido": "Messi",
+  "email": "leo@gmail.com",
+  "password": "$2a$10$/X5EbdHjrJ7V6UTN2ATITenClIL4g/O3wcQTsDVY6/Iy.NMFNZCE2",
+  "category": "Administrador",
+  "imagen": "1674526775439_img.png"
  }
 ]

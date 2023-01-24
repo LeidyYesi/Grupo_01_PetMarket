@@ -9,7 +9,7 @@ const validations = [
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
 	body('password').notEmpty().withMessage('Tienes que ingresar una contraseña'),
     body('category').notEmpty().withMessage('Tienes que elegir una categoria'),
-	body('avatar').custom((value, { req }) => {
+	body('imagen').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif'];
 		
