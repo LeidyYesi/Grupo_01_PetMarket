@@ -32,10 +32,23 @@ const productsController = {
 
   // (post) Create - Método para guardar la info
   processCreate: (req, res) => {
+    console.log(req.body);
     let productoNuevo = {
 			...req.body
     }
+
+    let destinationPath = './public/img/' + req.body.size + '/' + req.body.Mascota;
+    console.log("destinationPath",destinationPath);
+    //moveFile(req.file.filename, req.file.destination,destinationPath);
+    
+
 		let productCreated = product.create(productoNuevo);
+
+
+    
+		
+
+
     res.redirect("/products");
   },
 

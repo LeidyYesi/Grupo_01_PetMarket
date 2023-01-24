@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const model = require('../models/jsonTableFunctions');
+const moveFile = require('../models/imageDistribution');
 const user = model('users');
 
 
@@ -12,7 +13,7 @@ let userController = {
         res.render("users/register.ejs");
     },
     processRegister: function(req,res) {
-        const resultValidation  = validationResult(req)
+		const resultValidation  = validationResult(req)
 
         if (resultValidation.errors.length > 0) {
 			return res.render('users/register.ejs', {
@@ -41,6 +42,10 @@ let userController = {
 		}
 
 		let userCreated = user.create(userToCreate);
+
+		// mover la imagen de temp al repositorio de img de usuario
+		let destinationPath = './public/img/users'
+		moveFile(req.file.filename, req.file.destination,destinationPath);
 
 		return res.redirect('/users/login');
     }

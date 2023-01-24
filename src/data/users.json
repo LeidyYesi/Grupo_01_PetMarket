@@ -106,5 +106,68 @@
   "password": "$2a$10$/X5EbdHjrJ7V6UTN2ATITenClIL4g/O3wcQTsDVY6/Iy.NMFNZCE2",
   "category": "Administrador",
   "imagen": "1674526775439_img.png"
+ },
+ {
+  "id": 14,
+  "nombre": "a",
+  "apellido": "a",
+  "email": "aa@aa.coma",
+  "password": "$2a$10$K6ngNG.uvfOG.RureNCTGef4jas1jGG71XvUveW/YgJSo8xwg.KAy",
+  "category": "Administrador",
+  "imagen": "1674579225105_img.png"
+ },
+ {
+  "id": 15,
+  "nombre": "sadasdas",
+  "apellido": "dasasdasd",
+  "email": "asdasd@asdasd.cvom",
+  "password": "$2a$10$9G9uPtT1RCZuD/fyjL4fsu5yD.AJ9egAz0Oh4wlTxfILYY8U7W9pS",
+  "category": "Administrador",
+  "imagen": "1674579586744_img.jpg"
+ },
+ {
+  "id": 16,
+  "nombre": "aaa",
+  "apellido": "aaa",
+  "email": "aaaa@aaa.aa",
+  "password": "$2a$10$9ITmv78BxjfEtoZ6igIoLufrPD4vBO0Tm2YJw.wXoQ8bvRbde4KK6",
+  "category": "Administrador",
+  "imagen": "1674581635320_img.png"
+ },
+ {
+  "id": 17,
+  "nombre": "aaaaaaaaaaa",
+  "apellido": "aaaaaaaaaaaaa",
+  "email": "aaa@cc.co",
+  "password": "$2a$10$uyBjEft8D3AezY1SnttyRO8ZAUDbDGCnI53l.0GcunvrOXa0mFt1y",
+  "category": "Administrador",
+  "imagen": "1674581796389_img.jpg"
+ },
+ {
+  "id": 18,
+  "nombre": "asdasd",
+  "apellido": "adssdasd",
+  "email": "aa@aa.com",
+  "password": "$2a$10$yyL5Y8XliDNYdFB92sjQIO6fFOopa1.EnC3pTzgOz16oXXRy1uzZ2",
+  "category": "Administrador",
+  "imagen": "1674581982155_img.jpg"
+ },
+ {
+  "id": 19,
+  "nombre": "aaaaaaa",
+  "apellido": "aaaaaaaaaaa",
+  "email": "aaa@dd.dd",
+  "password": "$2a$10$8HwMjF2hyjJCakJyfHiY0usKTYc6KSOFQGbjsjLAWfMEACF0EbPpW",
+  "category": "Administrador",
+  "imagen": "1674583423110_img.jpg"
+ },
+ {
+  "id": 20,
+  "nombre": "sadasd",
+  "apellido": "sadasd",
+  "email": "gbogom@gmail.coma",
+  "password": "$2a$10$jpzc5Xs0MzpBqZugH2/8kep5Xj25ehVVHDbVno2xCRjMpvmouwDrq",
+  "category": "Administrador",
+  "imagen": "gbogom@gmail.coma1674583719421_img.jpg"
  }
 ]
