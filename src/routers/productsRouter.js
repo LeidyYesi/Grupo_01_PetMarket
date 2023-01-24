@@ -5,7 +5,7 @@ const multer = require("multer");
 const path = require("path");
 
 // ************ Controller Require ************
-const productsController = require('../controllers/productsController.js');
+const productsController = require('../controllers/productsController');
 
 // ************ Multer ************
 const storage = multer.diskStorage({
@@ -19,15 +19,15 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage})
 
-// Devolver todos los productos  
-router.get('/', productsController.index); 
+// Devolver todos los productos
+router.get('/list/', productsController.index);
 
 // Crear un producto
 router.get('/create/', productsController.create);
 router.post('/create/', productsController.processCreate);
 
 
-// Devolver un producto 
+// Devolver un producto
 router.get('/detail/:id/', productsController.detail);
 
 

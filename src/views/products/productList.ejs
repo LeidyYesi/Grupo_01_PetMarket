@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('./partials/head.ejs') %>
+
+    <title>PetMarket - Listado Productos</title>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+        <section class="contenido">
+            <section class="contenido_ultima_visita">
+                <h2 class="titulo">Listado de Productos</h2>
+
+                <% productos.forEach(producto => { %>
+                    <article class="producto">
+                        <a href="/products/detail/1"><img src="img/<%= producto.category %>/<%= producto.pet %>/<%= producto.image %>" alt="" class="product_img" /></a>
+                        <section class="descripcion_producto">
+                            <% if(producto.pet == 'gatos'){ %>
+                                <i class="fas fa-cat"></i>
+                            <% } else{ %>
+                                <i class="fas fa-dog"></i>
+                            <% } %>
+                            <section class="descripcion_producto_detalle">
+                                <p class="valor">$<%= producto.price %></p>
+                                <p class="descuento"><%= producto.discount %>% off</p>
+                            </section>
+                            <p class="nombre_producto"><%= producto.name %></p>
+                        </section>
+                    </article>
+                <% }) %>
+            </section>
+        </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
