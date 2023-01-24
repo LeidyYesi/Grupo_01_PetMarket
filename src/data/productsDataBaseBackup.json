@@ -1,28 +1,54 @@
 [
-    {
-      "id": 1,
-      "name": "Casa Rascador",
-      "description": "descripcion Casa Rascador",
-      "image": "casa-rascador.jpg",
-      "animal": "gato",
-      "category": "oferta",
-      "color": "azul",
-      "weight": "",
-      "size": "",
-      "price": "65.50",
-      "discount": "50"
-    },
-    {
-      "id": 2,
-      "name": "Besties - Alimento Perros Adultos Sabor Carne y Pollo",
-      "description": "Besties - Alimento Perros Adultos Sabor Carne y Pollo",
-      "image": "Besties-Alimento Perros Adultos Sabor Carne y Pollo.jpg",
-      "animal": "perro",
-      "category": "general",
-      "color": "",
-      "weight": "1kg",
-      "size": "grande",
-      "price": "65.50",
-      "discount": "50"
-    }
-  ]
+  {
+    "id": 1,
+    "name": "carpa portatil gato",
+    "description": "carpa portatil gato",
+    "category": "accesorios",
+    "pet": "gatos",
+    "color": "gris",
+    "weight": "",
+    "size": "",
+    "price": "230000",
+    "discount": "40",
+    "image": "carpa_portatil_gato.jpg"
+  },
+  {
+    "id": 2,
+    "name": "collar para perros resistente al desgaste",
+    "description": "collar para perros resistente al desgaste",
+    "category": "accesorios",
+    "pet": "perros",
+    "color": "naranja",
+    "weight": "",
+    "size": "mediano",
+    "price": "16770",
+    "discount": "20",
+    "image": "collar-para-perros-resistente-al-desgaste.jpg"
+  },
+  {
+    "id": 3,
+    "name": "caña mariposa",
+    "description": "caña mariposa",
+    "category": "juguetes",
+    "pet": "gatos",
+    "color": "azul",
+    "weight": "",
+    "size": "",
+    "price": "70500",
+    "discount": "10",
+    "image": "caña-mariposa.jpg"
+  },
+  {
+    "id": 4,
+    "name": "correa extensible",
+    "description": "correa extensible",
+    "category": "accesorios",
+    "pet": "perros",
+    "color": "negro",
+    "weight": "",
+    "size": "",
+    "price": "23200",
+    "discount": "5",
+    "image": "correa-extensible.jpg"
+  }
+]
