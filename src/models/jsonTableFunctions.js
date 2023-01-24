@@ -47,13 +47,34 @@ let model = function(tableName) {
 			let finalRows = allRows.filter(oneRow => oneRow.id !== id);
 			fs.writeFileSync(this.fileName, JSON.stringify(finalRows, null, ' '));
 			return true;
-		}
+		},
+		update(rowData) {
+			let allRows = this.findAll();
+            let updatedRows = allRows.map(oneRow => {
+                if (oneRow.id == rowData.id) {
+                    return rowData;
+                }
+                return oneRow;
+            }); 
+
+			fs.writeFileSync(this.fileName, JSON.stringify(updatedRows, null,  ' '));
+
+            return rowData.id;
+        },
 	}
 }
 
-// const groupsModel1 = model('productsDataBase');
+const groupsModel1 = model('users');
 
-// console.log(groupsModel1.findByField('color','rojo'))
+// console.log(groupsModel1.update({
+// 	"id": 7,
+// 	"nombre": "Ger",
+// 	"apellido": "Man",
+// 	"email": "gbogom@gmail.edu",
+// 	"password": "$2a$10$Zeu/BsPoIACp/..R6Ld.i.3eOnQLcBuGUNGppxjqU04rTfEVP34Su",
+// 	"category": "Administrador",
+// 	"imagen": "1674523384767_img.png"
+//    }))
 
 
 module.exports = model;
