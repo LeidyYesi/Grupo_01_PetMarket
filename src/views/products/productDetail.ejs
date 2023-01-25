@@ -2,72 +2,66 @@
 <html>
 
 <head>
-    <%- include('../partials/head.ejs') %>
+  <%- include('../partials/head.ejs') %>
 
-    <title>PetMarket - Detalle del Producto</title>
-    <!-- Mi css -->
-    <link rel="stylesheet" href="/css/productDetail.css">
+  <title>PetMarket - Detalle del Producto</title>
+  <!-- Mi css -->
+  <link rel="stylesheet" href="/css/productDetail.css">
 </head>
 
 <body>
 
-<%- include('../partials/header.ejs') %>
+  <%- include('../partials/header.ejs') %>
 
-<!-- product detail -->
-<main>
-  <div class="container products-wrapper">
-    <div class="row">
-      <div class="col-12">
-        <h2 class="products-title">
-          Detalle del producto: <%= producto.name %>
-        </h2>
-      </div>
-    </div>
-    <div class="product-detail">
+  <!-- product detail -->
+  <main>
+    <div class="container products-wrapper">
       <div class="row">
-        <div class="col-12 col-lg-8">
-          <img src="/img/<%= producto.category %>/<%= producto.pet %>/<%= producto.image %>" alt="" class="product_img" />
-          <p class="product-detail-description">
-            <%= producto.description %>
-          </p>
+        <div class="col-12">
+          <h2 class="products-title">
+            Detalle del producto: <%= producto.name %>
+          </h2>
         </div>
-        <div class="col-12 col-lg-4">
-          <article class="product-detail-info">
-            <h2 class="product-detail-price"><%= producto.pet %></h2>
-            <p class="product-detail-price"><%= producto.category%></p>
-            <p class="product-detail-title"><%= producto.name %></p>
-            <p class="product-detail-price"><%= producto.description%></p>
+      </div>
+      <div class="product-detail">
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <img src="/img/<%= producto.category %>/<%= producto.pet %>/<%= producto.image %>" alt=""
+              class="product_img" />
+          </div>
+          <div class="col-12 col-lg-4">
+            <article class="product-detail-info">
+              <h2 class="product-detail-title">Producto Para <%= producto.pet %></h2>
+              <p class="product-detail-description"><b>Categoria:</b> <%= producto.category %></p>
+              <p class="product-detail-description"><b>Descripcion:</b> <%= producto.description %></p>
+              <p class="product-detail-price">Precio: $<%= producto.price %></p>
 
-            <ul class="actions-list">
-              <li>
-                <i class="fas fa-credit-card"></i>
-                <p>Pagá en 12 cuotas sin interes</p>
-              </li>
-              <li>
-                <i class="fas fa-store"></i>
-                <p>Retiro gratis en locales del vendedor</p>
-              </li>
-            </ul>
+              <ul class="actions-list">
+                <li>
+                  <i class="fas fa-credit-card"></i>
+                  <p>Pagá en 12 cuotas sin interes</p>
+                </li>
+                <li>
+                  <i class="fas fa-store"></i>
+                  <p>Retiro gratis en locales del vendedor</p>
+                </li>
+              </ul>
 
-            <a
-              href="/products/edit/<%= producto.id %>"
-              class="action-button edit"
-              >EDITAR PRODUCTO</a
-            >
-            <form
-              action="/products/delete/<%= producto.id %>?_method=DELETE"
-              method="POST"
-              style="display: inline-flex"
-            >
-              <button class="action-button delete">ELIMINAR</button>
-            </form>
-          </article>
+              <a href="#" class="now-button cart-button">AGREGAR AL CARRITO</a>
+
+              <a href="/products/edit/<%= producto.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+
+              <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST"
+                style="display: inline-flex">
+                <button class="action-button delete">ELIMINAR</button>
+              </form>
+            </article>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</main>
-<!-- /product detail -->
+  </main>
+  <!-- /product detail -->
 
   <%- include('../partials/footer.ejs') %>
 </body>

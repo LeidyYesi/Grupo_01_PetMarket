@@ -54,14 +54,27 @@
  {
   "id": 5,
   "name": "pedigree - alimento para perro adulto raza pequeña",
-  "description": "Alimento para perrro adulto raza pequeña",
+  "description": "contiene proteína de alta calidad para ayudar a su metabolismo mas acelerado, equilibrio ideal de aminoácidos para músculos fuertes. Granos texturizados que ayudan a reducir la formación de sarro y a mantener dientes y encías sanas, contiene omega 6 para una piel y pelo saludable, concentrado con fibras naturales para una digestión óptima y heces firmes.",
   "category": "alimentos",
   "pet": "perros",
   "color": "",
-  "weight": "1 KG",
+  "weight": "3",
   "size": "",
   "price": "15900",
   "discount": "",
   "image": "Pedigree_Alimento_Para_Perro_Adulto_Raza_Pequeña.jpg"
+ },
+ {
+  "id": 6,
+  "name": "rascador gato",
+  "description": "rascador para gatos",
+  "category": "accesorios",
+  "pet": "gatos",
+  "color": "gris",
+  "weight": "",
+  "size": "mediano",
+  "price": "29500",
+  "discount": "",
+  "image": "1674623474218_img.jpg"
  }
 ]

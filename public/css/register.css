@@ -155,9 +155,11 @@ main {
   background-color: var(--caleste);
   display: flex;
   flex-direction: row-reverse;
-  align-items: flex-end;
-  justify-content: flex-end; 
+  align-items: center;
+  justify-content: space-between;
   padding: 2%;
+  align-content: space-around;
+  flex-wrap: nowrap;
   }
 
 .img{

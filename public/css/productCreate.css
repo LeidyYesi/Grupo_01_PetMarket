@@ -24,32 +24,27 @@
   text-decoration: underline;
 }
 
-h2{
+h4{
   font-size: 22px;
   margin-bottom: 20px;
   padding-left: 20px;
   color: var(--Negro);
-  text-align: center;
-}
-
-h4{
-  font-size: 15px;
-  margin-bottom: 5px; 
-  color: var(--Negro);
 }
 
 .inicio-logo{
-  width: 100%;
-  background-color:var(--caleste);
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-end;
-  justify-content: flex-end; 
-  padding: 2%;
+    width: 100%;
+    background-color: var(--caleste);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2%;
+    align-content: space-around;
+    flex-wrap: nowrap;
   }
 
 .img {
-  width: 40%;
+  width: 20%;
   margin-bottom: 4%;
 }
 

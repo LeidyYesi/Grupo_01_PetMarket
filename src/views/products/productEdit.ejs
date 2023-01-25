@@ -1,58 +1,105 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%- include('../partials/head.ejs') %>
 
-    <title>PetMarket - Create Product</title>
-    <!-- Mi css -->
-    <link rel="stylesheet" href="/css/productEdit.css" />
-  </head>
-  <body>
-    <%- include('../partials/header.ejs') %>
+<head>
+  <%- include('../partials/head.ejs') %>
 
-    <main>
-      <h2>Editar producto</h2>
-      <a href="http://localhost:3030/" class="a">Volver al home</a>
+  <title>PetMarket - Editar Producto</title>
+  <!-- Mi css -->
+  <link rel="stylesheet" href="/css/productEdit.css">
+</head>
 
-      <form
-        action="/productCreate"
-        method="POST"
-        class="create-form"
-        enctype="multipart/form-data"
-      >
-        <p>Ingrese el titulo del producto:</p>
-        <input
-          type="text"
-          name="Titulo"
-          id="Titulo"
-          placeholder="Titulo del producto"
-          required
-          class="input"
-        />
-        <p>Ingrese la descripcion del producto:</p>
-        <input
-          type="text"
-          name="descripcion"
-          id="descripcion"
-          placeholder="Descripcion del producto"
-          required
-          class="input"
-        />
-        <p>Ingrese el precio del producto:</p>
-        <input
-          type="text"
-          name="precio"
-          id="precio"
-          placeholder="Precio del producto"
-          required
-          class="input"
-        />
-        <p>Ingrese la imagen del producto:</p>
-        <input type="file" name="imagen" id="imagen" required class="input" />
-        <input type="submit" class="boton" value="Editar" />
+<body>
+  <%- include('../partials/header.ejs') %>
+
+  <main>
+
+    <section class="formu-edit">
+      <section class="inicio-logo">
+        <h4>Editar Producto: <%= producto.name %></h4>
+        <img src="/img/Logo-pet-market.jpg" whith="360" alt="logo-pet-market" class="img" />
+      </section>
+
+      <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" class="edit-form" enctype="multipart/form-data">
+
+        <div class="edit-form">
+          <input value="<%= producto.name %>" class="control" type="text" name="name" id="name" placeholder="Nombre del Producto">
+        </div>
+
+        <div class="edit-form">
+          <input value="<%= producto.description %>" class="control" type="text" name="description" id="description" placeholder="Descripción del producto">
+        </div>
+
+        <div class="edit-form">
+          <input type="text" id="category" placeholder="Categoria" class="control">
+          <select name="category">
+            <option value="">Elegí una categoria</option>
+            <option value="alimentos" <%= producto.category == 'alimentos' ? 'selected' : '' %>> Alimentos</option>
+            <option value="accesorios" <%= producto.category == 'accesorios' ? 'selected' : '' %>> Accesorios</option>
+            <option value="aseo" <%= producto.category == 'aseo' ? 'selected' : '' %>> Aseo</option>
+            <option value="juguetes" <%= producto.category == 'juguetes' ? 'selected' : '' %>> Juguetes</option>
+          </select>
+        </div>
+
+        <div class="edit-form">
+          <input type="text" id="mascota" placeholder="Mascota" class="control">
+          <select name="pet">
+            <option value=""> Elegi una mascota</option>
+            <option value="perros" <%= producto.pet == 'perros' ? 'selected' : '' %>> Perro</option>
+            <option value="gatos" <%= producto.pet == 'gatos' ? 'selected' : '' %>> Gato</option>
+          </select>
+        </div>
+
+        <div class="edit-form">
+          <input value="<%= producto.color %>" class="control" type="text" name="color" id="color" placeholder="Color del producto">
+        </div>
+
+        <div class="edit-form">
+          <input type="text" id="weight" placeholder="Peso de la unidad" class="control">
+          <select name="weight">
+            <option value=""> Ingresa el peso</option>
+            <option value="1" <%= producto.weight == '1' ? 'selected' : '' %>> 1 kg</option>
+            <option value="3" <%= producto.weight == '3' ? 'selected' : '' %>> 3 kg</option>
+            <option value="5" <%= producto.weight == '5' ? 'selected' : '' %>> 5 kg</option>
+            <option value="15" <%= producto.weight == '15' ? 'selected' : '' %>> 15 kg</option>
+            <option value=""> </option>
+          </select>
+        </div>
+
+        <div class="edit-form">
+          <input type="text" id="size" placeholder="Tamaño" class="control">
+          <select name="size">
+            <option value="">Elegí un tamaño</option>
+            <option value="chico" <%= producto.size == 'chico' ? 'selected' : '' %>> Chico</option>
+            <option value="mediano" <%= producto.size == 'mediano' ? 'selected' : '' %>> Mediano</option>
+            <option value="grande" <%= producto.size == 'grande' ? 'selected' : '' %>> Grande</option>
+          </select>
+        </div>
+
+        <div class="edit-form">
+          <input value="<%= producto.price %>" class="control" type="text" name="price" id="price" placeholder="Precio del producto">
+        </div>
+
+        <div class="edit-form">
+          <input value="<%= producto.discount %>" class="control" type="text" name="discount" id="discount" placeholder="Descuento del producto">
+        </div>
+
+
+        <div class="edit-form">
+          <h4>Ingrese la imagen del producto:</h4>
+          <input type="file" name="image" id="image">
+        </div>
+
+        <div>
+          <button class="botton" type="submit" class="boton" value="Crear">Editar</button>
+        </div>
+
       </form>
-    </main>
+    </section>
 
-    <%- include('../partials/footer.ejs') %>
-  </body>
+  </main>
+
+  <%- include('../partials/footer.ejs') %>
+</body>
+
 </html>

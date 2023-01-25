@@ -11,16 +11,18 @@
     <%- include('../partials/header.ejs') %>
 
     <main>
-      <section class="inicio-logo">
-      <a href="http://localhost:3030/" class="a">
-        <img src="/img/Logo-pet-Market.jpg" alt="Logo" class="img">
-      </a>
-    </section>
 
  <section class="formu-create">
- 
-      <h2>Crear nuevo producto</h2>
-     
+  <section class="inicio-logo">
+    <h4>Crear Nuevo Producto</h4>
+    <img
+      src="/img/Logo-pet-market.jpg"
+      whith="360"
+      alt="logo-pet-market"
+      class="img"
+    />
+  </section>
+
       <form
         action="/products/create"
         method="POST"
@@ -32,43 +34,7 @@
       </div>
 
       <div class="create-form">
-        <input type="text"   id="mascota"  placeholder="Mascota"  class="control">
-        <select name="pet">
-        <option value=""> Elegi una mascota</option> 
-        <option value= "perros"> Perro</option>
-        <option value="gatos"> Gato</option> 
-      </select>
-      </div>
-
-      <div class="create-form">
-        <input class="control" type="text" name="descrption" id="descrption" placeholder="Description del producto">
-      </div>
-Peso de la unidad
-
-      <div class="create-form">
-        <input class="control" type="text" name="color" id="color" placeholder="Color del producto">
-      </div>
-
-      <div class="create-form">
-        <input type="text"   id="weight"  placeholder="Peso de la unidad"  class="control">
-        <select name="weight">
-        <option value=""> Ingresa el peso</option> 
-        <option value="1"> 1 kg</option>
-        <option value="3"> 3 kg</option> 
-        <option value="7.5"> 7.5 kg</option>
-        <option value="15"> 15 kg</option>
-        <option value=""> </option>
-      </select>
-      </div>
-
-      <div class="create-form">
-        <input type="text" id="size"  placeholder="Tamaño"  class="control">
-        <select name="size">
-        <option value="">Elegí un tamaño</option>
-        <option value= "small"> Chico</option>
-        <option value="medium"> Mediano</option> 
-        <option value= "big"> Grande</option>
-      </select>
+        <input class="control" type="text" name="description" id="description" placeholder="Descripción del producto">
       </div>
 
       <div class="create-form">
@@ -83,6 +49,41 @@ Peso de la unidad
       </div>
 
       <div class="create-form">
+        <input type="text"   id="mascota"  placeholder="Mascota"  class="control">
+        <select name="pet">
+        <option value=""> Elegi una mascota</option>
+        <option value= "perros"> Perro</option>
+        <option value="gatos"> Gato</option>
+      </select>
+      </div>
+
+      <div class="create-form">
+        <input class="control" type="text" name="color" id="color" placeholder="Color del producto">
+      </div>
+
+      <div class="create-form">
+        <input type="text"   id="weight"  placeholder="Peso de la unidad"  class="control">
+        <select name="weight">
+        <option value=""> Ingresa el peso</option>
+        <option value="1"> 1 kg</option>
+        <option value="3"> 3 kg</option>
+        <option value="5"> 5 kg</option>
+        <option value="15"> 15 kg</option>
+        <option value=""> </option>
+      </select>
+      </div>
+
+      <div class="create-form">
+        <input type="text" id="size"  placeholder="Tamaño"  class="control">
+        <select name="size">
+        <option value="">Elegí un tamaño</option>
+        <option value= "small"> Chico</option>
+        <option value="medium"> Mediano</option>
+        <option value= "big"> Grande</option>
+      </select>
+      </div>
+
+      <div class="create-form">
         <input class="control" type="text" name="price" id="price" placeholder="Precio del producto">
       </div>
 
@@ -90,19 +91,18 @@ Peso de la unidad
         <input class="control" type="text" name="discount" id="discount" placeholder="Descuento del producto">
       </div>
 
-        
       <div class="create-form">
         <h4>Ingrese la imagen del producto:</h4>
-        <input type="file" name="imagen" id="imagen" >
+        <input type="file" name="image" id="image" >
       </div>
 
         <div>
-          <button class="botton" type="submit" class="boton" value="Crear">Crear</button> 
+          <button class="botton" type="submit" class="boton" value="Crear">Crear</button>
         </div>
-        
+
       </form>
-    </section>  
-  
+    </section>
+
     </main>
 
     <%- include('../partials/footer.ejs') %>
