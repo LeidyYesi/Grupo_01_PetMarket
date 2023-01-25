@@ -17,7 +17,7 @@
 
                 <% productos.forEach(producto => { %>
                     <article class="producto">
-                        <a href="/products/detail/1"><img src="/img/<%= producto.category %>/<%= producto.pet %>/<%= producto.image %>" alt="" class="product_img" /></a>
+                        <a href="/products/detail/<%= producto.id %>"><img src="/img/<%= producto.category %>/<%= producto.pet %>/<%= producto.image %>" alt="" class="product_img" /></a>
                         <section class="descripcion_producto">
                             <% if(producto.pet == 'gatos'){ %>
                                 <i class="fas fa-cat"></i>
@@ -26,7 +26,7 @@
                             <% } %>
                             <section class="descripcion_producto_detalle">
                                 <p class="valor">$<%= producto.price %></p>
-                                <p class="descuento"><%= producto.discount %>% off</p>
+                                <p class="descuento"><%= producto.discount %><% if(producto.discount){ %> % off <% } %></p>
                             </section>
                             <p class="nombre_producto"><%= producto.name %></p>
                         </section>
