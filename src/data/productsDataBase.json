@@ -63,51 +63,5 @@
   "price": "15900",
   "discount": "",
   "image": "Pedigree_Alimento_Para_Perro_Adulto_Raza_Pequeña.jpg"
- },
- {
-  "id": 6,
-  "name": "",
-  "Mascota": "Perro",
-  "descrption": "",
-  "color": "",
-  "weight": "1kg",
-  "size": "Small",
-  "price": "",
-  "discount": "",
-  "imagen": "carpa.gato2.jpg"
- },
- {
-  "id": 7,
-  "name": "",
-  "Mascota": "Perro",
-  "descrption": "",
-  "color": "",
-  "weight": "1kg",
-  "size": "Small",
-  "price": "",
-  "discount": "",
-  "imagen": "carpa.gato2.jpg"
- },
- {
-  "id": 8,
-  "name": "",
-  "Mascota": "Perro",
-  "descrption": "",
-  "color": "",
-  "weight": "1kg",
-  "size": "Small",
-  "price": "",
-  "discount": ""
- },
- {
-  "id": 9,
-  "name": "",
-  "Mascota": "Perro",
-  "descrption": "",
-  "color": "",
-  "weight": "1kg",
-  "size": "Small",
-  "price": "",
-  "discount": ""
  }
 ]
