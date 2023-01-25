@@ -25,7 +25,14 @@ const productsController = {
 
   // (get) Detail - Detalle de un producto
   detail: (req, res) => {
-    res.render("products/productDetail");
+    let id = req.params.id;
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+		let productoFiltrado = products.find(producto => {
+			return producto.id == id
+		})
+
+		res.render("products/productDetail", {producto: productoFiltrado})
   },
 
   // (get) Create - Formulario para crear

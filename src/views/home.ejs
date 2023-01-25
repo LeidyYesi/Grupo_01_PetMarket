@@ -18,7 +18,7 @@
                 <% productos.forEach(producto => { %>
                     <% if(producto.discount){ %>
                     <article class="producto">
-                        <a href="/products/detail/1"><img src="img/<%= producto.category %>/<%= producto.pet %>/<%= producto.image %>" alt="" class="product_img" /></a>
+                        <a href="/products/detail/<%= producto.id %>"><img src="img/<%= producto.category %>/<%= producto.pet %>/<%= producto.image %>" alt="" class="product_img" /></a>
                         <section class="descripcion_producto">
                             <% if(producto.pet == 'gatos'){ %>
                                 <i class="fas fa-cat"></i>
