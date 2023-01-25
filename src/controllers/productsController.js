@@ -45,13 +45,16 @@ const productsController = {
     console.log(req.body);
     let productoNuevo = {
       ...req.body,
-      image: req.file.filename,
+      image: req.file ? req.file.filename : "default-image.png"
     };
 
-    let destinationPath =
+
+    if(req.file) {
+      let destinationPath =
       "./public/img/" + req.body.category + "/" + req.body.pet;
-    console.log("destinationPath", destinationPath);
-    moveFile(req.file.filename, req.file.destination, destinationPath);
+      console.log("destinationPath", destinationPath);
+      moveFile(req.file.filename, req.file.destination, destinationPath)  
+    }
 
     let productCreated = product.create(productoNuevo);
 
@@ -61,50 +64,57 @@ const productsController = {
   // (get) Update - Formulario para editar
 	edit: (req, res) => {
     let id = req.params.id;
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-		let productoFiltrado = products.find(producto => {
-			return producto.id == id
-		})
-
+   
+    let productoFiltrado = product.findByPk(id);
+		// let productoFiltrado = products.find(producto => {
+		// 	return producto.id == id
+		// })
 		res.render("products/productEdit", {producto: productoFiltrado})
 	},
 
   // (put) Update - Método para actualizar la info
   processEdit: (req, res) => {
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
     let id = req.params.id;
-		let productoAnterior = products.find(producto => {
-			return producto.id == id
-		})
+		// let productoAnterior = products.find(producto => {
+		// 	return producto.id == id
+		// })
+    let productoAnterior = product.findByPk(id);
+
+    // let productoEditado = {
+    //   /* dejar el id anterior */
+    //   id: productoAnterior.id,
+    //   name: req.body.name,
+    //   description: req.body.description,
+    //   category: req.body.category,
+    //   pet: req.body.pet,
+    //   color: req.body.color,
+    //   weight: req.body.weight,
+    //   size: req.body.size,
+    //   price: req.body.price,
+    //   discount: req.body.discount,
+    //   image: req.file ? req.file.filename : productoAnterior.image,
+    // };
 
     let productoEditado = {
-      /* dejar el id anterior */
       id: productoAnterior.id,
-      name: req.body.name,
-      description: req.body.description,
-      category: req.body.category,
-      pet: req.body.pet,
-      color: req.body.color,
-      weight: req.body.weight,
-      size: req.body.size,
-      price: req.body.price,
-      discount: req.body.discount,
-      image: req.file ? req.file.filename : productoAnterior.image,
+      ...req.body,
+      image: req.file ? req.file.filename : productoAnterior.image
     };
 
+    console.log(productoEditado);
     /* Modificar el array en la posición correspondiente */
 
-		let indice = products.findIndex(product => {
-			return product.id == id
-		})
+    if(req.file) {
+      let destinationPath =
+      "./public/img/" + req.body.category + "/" + req.body.pet;
+      console.log("destinationPath", destinationPath);
+      moveFile(req.file.filename, req.file.destination, destinationPath)  
+    }
 
-		products[indice] = productoEditado;
-
-		/* Convertir a JSON */
-		/* Escribir sobre el archivo json */
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+		let indice = product.update(productoEditado)
+		console.log(indice);
 
     res.redirect("/");
   },
