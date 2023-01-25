@@ -27,19 +27,14 @@
         action="/products/create"
         method="POST"
         class="create-form"
-        enctype="multipart/form-data" 
+        enctype="multipart/form-data"
       >
       <div class="create-form">
         <input class="control" type="text" name="name" id="name" placeholder="Nombre del Producto" >
       </div>
 
       <div class="create-form">
-        <input type="text"   id="mascota"  placeholder="Mascota"  class="control">
-        <select name="pet">
-        <option value="">Elegi una mascota</option> 
-        <option value= "perros">Perro</option>
-        <option value="gatos">Gato</option> 
-      </select>
+        <textarea name="description" id="description" placeholder="Descripcion del Producto" class="form-input"></textarea>
       </div>
 
       <div class="create-form">
@@ -54,16 +49,25 @@
       </div>
 
       <div class="create-form">
+        <input type="text"   id="mascota"  placeholder="Mascota"  class="control">
+        <select name="pet">
+        <option value="">Elegi una mascota</option> 
+        <option value= "perros">Perro</option>
+        <option value="gatos">Gato</option> 
+      </select>
+      </div>
+
+      <div class="create-form">
         <input class="control" type="text" name="color" id="color" placeholder="Color del producto">
       </div>
 
       <div class="create-form">
         <input type="text"   id="weight"  placeholder="Peso de la unidad"  class="control">
         <select name="weight">
-        <option value=""> Ingresa el peso</option> 
+        <option value=""> Ingresa el peso</option>
         <option value="1"> 1 kg</option>
-        <option value="3"> 3 kg</option> 
-        <option value="7.5"> 7.5 kg</option>
+        <option value="3"> 3 kg</option>
+        <option value="5"> 5 kg</option>
         <option value="15"> 15 kg</option>
       </select>
       </div>
@@ -72,9 +76,9 @@
         <input type="text" id="size"  placeholder="Tamaño"  class="control">
         <select name="size">
         <option value="">Elegí un tamaño</option>
-        <option value= "small"> Chico</option>
-        <option value="medium"> Mediano</option> 
-        <option value= "big"> Grande</option>
+        <option value= "chico"> Chico</option>
+        <option value="mediano"> Mediano</option>
+        <option value= "grande"> Grande</option>
       </select>
       </div>
 
@@ -86,10 +90,6 @@
         <input class="control" type="text" name="discount" id="discount" placeholder="Descuento del producto">
       </div>
 
-      <div class="create-form">
-        <textarea name="description" id="description" placeholder="Descripcion del Producto" class="form-input"></textarea>
-      </div>
-        
       <div class="create-form">
         <h4>Ingrese la imagen del producto:</h4>
         <input type="file" name="image" id="image">
