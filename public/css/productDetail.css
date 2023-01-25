@@ -42,6 +42,7 @@ h2 {
   font-size: 2.4em;
   font-weight: 400;
   color: gray;
+  text-transform: capitalize;
 }
 
 .product-detail {
