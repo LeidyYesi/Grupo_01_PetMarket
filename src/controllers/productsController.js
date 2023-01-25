@@ -45,7 +45,7 @@ const productsController = {
     console.log(req.body);
     let productoNuevo = {
 			...req.body,	
-      imagen: req.file.filename
+      image: req.file.filename
     }
 
     let destinationPath = './public/img/' + req.body.category + '/' + req.body.pet;
