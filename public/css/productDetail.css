@@ -1,154 +1,155 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --Main_background: blue;
-  --Amarillo: #EAC926;
-  --Azul: #03264C;
-  --Celeste: #1259c3;
-  --Gris_oscuro: #666;
-  --Gris_claro: #ebebeb;
-  --Verde: #39b54a;
-  --Blanco: #ffffff;
-  --Azul_hover: #0022AA;
-  --Negro: black;
-}
-
-img {
-  border-style: none;
-}
-
-ul li {
-  list-style-type: none;
-}
-
-input {
-  border: none;
-  box-shadow: none;
-  outline: none;
-}
-
-/* Basic Styling */
-html, body {
-  width: 100%;
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
 }
 
 .container {
-  flex-direction: column;
-  margin-top: 3rem;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-/* Left Column */
-.left-column {
-  width: 100%;
+.col-12 {
+  position: relative;
+  width: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
-.left-column img {
-  width: 100%;
-  display: inline-block;
+h2 {
+  display: block;
+  /* font-size: 1.5em; */
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  /* font-weight: bold; */
 }
 
-/* Right Column */
-
-.right-column {
-  width: 100%;
-  margin-top: 2rem;
+.products-wrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-/* Product Description */
-.product-description h1 {
-  font-weight: 300;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.products-title {
+  font-size: 2.4em;
+  font-weight: 400;
+  color: gray;
 }
 
-.product-description p {
-  font-size: 1rem;
-  font-weight: 300;
-  color: var(--Gris_oscuro);
-  line-height: 1.5rem;
-  margin-bottom: 1rem;
+.product-detail {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-/* Product Configuration */
-.product-option1 span,
-.product-option2 span,
-.product-option3 span {
-  font-size: 1rem;
-  font-weight: 300;
-  color: var(--Gris_oscuro);
-  margin-bottom: 20px;
-  display: inline-block;
+.product-detail-img {
+  width: 70%;
+  display: block;
+  margin: auto;
 }
 
-/* Product Configuration */
-
-.product-option1,.product-option2,.product-option3 {
-  margin-bottom: 1rem;
+.product-detail-info {
+  border-left: 1px solid grey;
+  padding: 15px;
+  height: 100%;
 }
 
-.product-option1 div {
-  display: inline-block;
+.product-detail article {
+  display: block;
 }
 
-/* Product Price */
-.product-price {
+.product-detail-title {
+  font-weight: 400;
+  font-size: 2.8em;
+}
+
+.product-detail-description {
+  padding: 15px;
+  font-size: 1.8em;
+  line-height: 1.5;
+}
+
+.product-detail-price {
+  font-size: 2.5em;
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+
+.small {
+  font-size: 1.8em;
+  color: #1259c3;
+}
+
+.small span {
+  text-decoration: line-through;
+}
+
+.actions-list {
+  margin-bottom: 50px;
+}
+
+.actions-list li {
   display: flex;
   align-items: center;
+  margin: 20px 0;
+  padding: 20px 0;
 }
 
-.product-price span {
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: var(--Gris_oscuro);
-  margin-right: 1rem;
+.actions-list i {
+  color: #1259c3;
+  font-size: 2em;
+  margin-right: 15px;
 }
 
-.cart-btn {
-  display: inline-block;
-  background-color: var(--Azul);
-  border-radius: 6px;
-  font-size: 1rem;
-  color: var(--Blanco);
-  text-decoration: none;
+.actions-list p {
+  color: gray;
+  font-size: 1.7em;
+  margin: 0;
+}
+
+.cart-button {
+  background-color: #01baefe6;
+}
+
+.buy-button {
+  background-color: #1259c3;
+}
+
+.now-button {
+  /* font-size: 1.6em; */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+}
+
+.action-button {
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 15px 30px;
-  transition: all .5s;
+  margin-top: 15px;
 }
 
-.cart-btn:hover {
-  background-color: var(--Azul_hover);
+.action-button.edit {
+  background-color: #03264C;
 }
-
-
-/* Responsive */
-
-@media (min-width: 414px) {
-
-
-}
-
-@media (min-width: 769px) {
-
-  .container {
-    flex-direction: row;
-    margin-top: 3rem;
-    display: flex;
-    width: 100%;
-  }
-
-  .left-column {
-    width: 25%;
-    margin: 1rem;
-  }
-
-  .right-column{
-    width: 50%;
-  } 
-
+.action-button.delete {
+  background-color: #FF0000;
 }
