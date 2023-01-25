@@ -16,6 +16,10 @@ router.get('/list/:pet/', productsController.index);
 // Crear un producto
 router.get('/create/', productsController.create);
 router.post('/create/', uploadFile.single('image'), productsController.processCreate);
+<<<<<<< HEAD
+=======
+
+>>>>>>> e2cc3ad185b95da9361926297585d4134eeb6dd9
 
 // Devolver un producto
 router.get('/detail/:id/', productsController.detail);

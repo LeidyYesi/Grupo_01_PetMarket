@@ -44,9 +44,15 @@ const productsController = {
   processCreate: (req, res) => {
     console.log(req.body);
     let productoNuevo = {
+<<<<<<< HEAD
       ...req.body,
       image: req.file.filename,
     };
+=======
+			...req.body,	
+      image: req.file.filename
+    }
+>>>>>>> e2cc3ad185b95da9361926297585d4134eeb6dd9
 
     let destinationPath =
       "./public/img/" + req.body.category + "/" + req.body.pet;
