@@ -12,10 +12,15 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const productsController = {
   // (get) Root - Mostrar todos los productos
   index: (req, res) => {
-    // (get) Root - Mostrar todos los productos
-      let products = product.findAll();
-      
-      res.render("products/productList", {productos: products})
+    let pet = req.params.pet;
+
+    let products = product.findAll();
+
+    let productosFiltrados = products.filter(producto => {
+			return producto.pet == pet
+		})
+
+    res.render("products/productList", {productos: productosFiltrados})
   },
 
   // (get) Detail - Detalle de un producto
