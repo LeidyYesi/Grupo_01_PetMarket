@@ -25,6 +25,7 @@
         action="/products/create"
         method="POST"
         class="create-form"
+        enctype="multipart/form-data" 
       >
       <div class="create-form">
         <input class="control" type="text" name="name" id="name" placeholder="Nombre del Producto" >
@@ -59,11 +60,12 @@ Peso de la unidad
       </div>
 
       <div class="create-form">
-        <input type="text" id="size"  placeholder="Tamaño de la raza"  class="control">
+        <input type="text" id="size"  placeholder="Tamaño"  class="control">
         <select name="size">
-        <option value= "Small"> Small</option>
-        <option value="Medium"> Medium</option> 
-        <option value= "Big"> Big</option>
+        <option value="">Elegí un tamaño</option>
+        <option value= "small"> Chico</option>
+        <option value="medium"> Mediano</option> 
+        <option value= "big"> Grande</option>
       </select>
       </div>
 
@@ -78,7 +80,7 @@ Peso de la unidad
         
       <div class="create-form">
         <h4>Ingrese la imagen del producto:</h4>
-        <input type="file" name="image" id="image" >
+        <input type="file" name="imagen" id="imagen" >
       </div>
 
         <div>
