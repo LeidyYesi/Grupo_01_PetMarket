@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const model = require('../models/jsonTableFunctions');
 const product = model('productsDataBase');
+const moveFile = require('../models/imageDistribution');
 
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
@@ -12,13 +13,9 @@ const productsController = {
   // (get) Root - Mostrar todos los productos
   index: (req, res) => {
     // (get) Root - Mostrar todos los productos
-    index: (req, res) => {
-
-      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-  
+      let products = product.findAll();
+      
       res.render("products/productList", {productos: products})
-    }
-
   },
 
   // (get) Detail - Detalle de un producto
@@ -40,7 +37,7 @@ const productsController = {
 
     let destinationPath = './public/img/' + req.body.size + '/' + req.body.Mascota;
     console.log("destinationPath",destinationPath);
-    //moveFile(req.file.filename, req.file.destination,destinationPath);
+    moveFile(req.file.filename, req.file.destination,destinationPath);
     
 
 		let productCreated = product.create(productoNuevo);
@@ -50,7 +47,7 @@ const productsController = {
 		
 
 
-    res.redirect("/products");
+    res.redirect("/products/list/");
   },
 
   // (get) Update - Formulario para editar

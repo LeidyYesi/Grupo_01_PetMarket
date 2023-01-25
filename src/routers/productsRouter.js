@@ -1,30 +1,21 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
-const multer = require("multer");
-const path = require("path");
+
 
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
 
 // ************ Multer ************
-const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, "public/img/products")
-    },
-    filename: function(req, file, cb) {
-        cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
-    }
-})
+const uploadFile = require('../middlewares/multerMiddleware');
 
-const upload = multer({storage: storage})
 
 // Devolver todos los productos
 router.get('/list/', productsController.index);
 
 // Crear un producto
 router.get('/create/', productsController.create);
-router.post('/create/', productsController.processCreate);
+router.post('/create/', uploadFile.single('imagen'), productsController.processCreate);
 
 
 // Devolver un producto
