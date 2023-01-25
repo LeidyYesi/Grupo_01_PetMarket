@@ -52,18 +52,6 @@ li {
 }
 
 
-.encabezado {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-content: center;
-  padding: 2rem 0;
-}
-
-.imagen_encabezado {
-  vertical-align: top;
-  width: 25%;
-}
 
 .barra_busqueda{
   background-color: var(--gris-claro);
@@ -283,11 +271,7 @@ footer{
 
 @media (min-width: 361px){
 
-  .imagen_encabezado{
-      width: 20%;
-  }
-
-  .barra_busqueda{
+    .barra_busqueda{
       width: 20%;
   }
 
