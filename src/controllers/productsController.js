@@ -37,22 +37,19 @@ const productsController = {
   processCreate: (req, res) => {
     console.log(req.body);
     let productoNuevo = {
-			...req.body
+			...req.body,	
+      imagen: req.file.filename
     }
 
-    let destinationPath = './public/img/' + req.body.size + '/' + req.body.Mascota;
+    let destinationPath = './public/img/' + req.body.category + '/' + req.body.pet;
     console.log("destinationPath",destinationPath);
     moveFile(req.file.filename, req.file.destination,destinationPath);
     
 
 		let productCreated = product.create(productoNuevo);
-
-
-    
 		
 
-
-    res.redirect("/products/list/");
+    res.redirect("/");
   },
 
   // (get) Update - Formulario para editar
@@ -68,7 +65,7 @@ const productsController = {
   destroy: (req, res) => {
     let id = req.params.id;
     product.delete(id);
-    res.redirect("/products");
+    res.redirect("/");
   },
   cart: (req, res) => {
     res.render("products/productCart");
