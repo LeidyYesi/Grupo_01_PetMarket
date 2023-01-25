@@ -41,9 +41,15 @@
       </div>
 
       <div class="create-form">
-        <input class="control" type="text" name="descrption" id="descrption" placeholder="Description del producto">
+        <input type="text" id="category"  placeholder="Categoria"  class="control">
+        <select name="category">
+        <option value="">Elegí una categoria</option>
+        <option value= "alimentos"> Alimentos</option>
+        <option value="accesorios"> Accesorios</option> 
+        <option value= "aseo"> Aseo</option>
+        <option value= "juguetes"> Juguetes</option>
+      </select>
       </div>
-Peso de la unidad
 
       <div class="create-form">
         <input class="control" type="text" name="color" id="color" placeholder="Color del producto">
@@ -57,7 +63,6 @@ Peso de la unidad
         <option value="3"> 3 kg</option> 
         <option value="7.5"> 7.5 kg</option>
         <option value="15"> 15 kg</option>
-        <option value=""> </option>
       </select>
       </div>
 
@@ -72,17 +77,6 @@ Peso de la unidad
       </div>
 
       <div class="create-form">
-        <input type="text" id="category"  placeholder="Categoria"  class="control">
-        <select name="category">
-        <option value="">Elegí una categoria</option>
-        <option value= "alimentos"> Alimentos</option>
-        <option value="accesorios"> Accesorios</option> 
-        <option value= "aseo"> Aseo</option>
-        <option value= "juguetes"> Juguetes</option>
-      </select>
-      </div>
-
-      <div class="create-form">
         <input class="control" type="text" name="price" id="price" placeholder="Precio del producto">
       </div>
 
@@ -90,6 +84,9 @@ Peso de la unidad
         <input class="control" type="text" name="discount" id="discount" placeholder="Descuento del producto">
       </div>
 
+      <div class="create-form">
+        <textarea name="description" id="description" class="form-input">Descripcion del Producto</textarea>
+      </div>
         
       <div class="create-form">
         <h4>Ingrese la imagen del producto:</h4>
