@@ -10,8 +10,8 @@ const productsController = require('../controllers/productsController');
 const uploadFile = require('../middlewares/multerMiddleware');
 
 
-// Devolver todos los productos
-router.get('/list/:pet/', productsController.index);
+// Devolver todos los productos de un determinado pet o categoria
+router.get('/list/:filtro/', productsController.index);
 
 // Devolver todos los productos por categoria
 router.get('/listCategory/:category/', productsController.categoryList);

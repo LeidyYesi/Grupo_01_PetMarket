@@ -12,12 +12,15 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const productsController = {
   // (get) List - Mostrar todos los productos
   index: (req, res) => {
-    let pet = req.params.pet;
-
+    let filtro = req.params.filtro;
     let products = product.findAll();
 
     let productosFiltrados = products.filter((producto) => {
-      return producto.pet == pet;
+      if(filtro == "perros" || filtro == "gatos") {
+        return producto.pet == filtro;
+      } else {
+      return producto.category == filtro;
+      }
     });
 
     res.render("products/productList", { productos: productosFiltrados });
