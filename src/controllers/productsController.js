@@ -26,18 +26,6 @@ const productsController = {
     res.render("products/productList", { productos: productosFiltrados });
   },
 
-  categoryList: (req, res) => {
-    let category = req.params.category;
-
-    let products = product.findAll();
-
-    let productosCategoria = products.filter((producto) => {
-      return producto.category == category;
-    });
-
-    res.render("products/productList", { productos: productosCategoria });
-  },
-
   // (get) Detail - Detalle de un producto
   detail: (req, res) => {
     let id = req.params.id;
