@@ -70,11 +70,50 @@
     "description": "rascador para gatos",
     "category": "accesorios",
     "pet": "gatos",
+    "color": "Cafe",
+    "weight": "",
+    "size": "mediano",
+    "price": "26500",
+    "discount": "",
+    "image": "1674668262947_img.jpg"
+   },
+   {
+    "id": 7,
+    "name": "collar animalprint",
+    "description": "",
+    "category": "accesorios",
+    "pet": "gatos",
+    "color": "rosado",
+    "weight": "",
+    "size": "chico",
+    "price": "19500",
+    "discount": "",
+    "image": "1674670501050_img.jpg"
+   },
+   {
+    "id": 8,
+    "name": "cama circular",
+    "description": "cama circular para perros",
+    "category": "accesorios",
+    "pet": "perros",
     "color": "gris",
     "weight": "",
     "size": "mediano",
-    "price": "29500",
+    "price": "68500",
     "discount": "",
-    "image": "rascador-gato.jpg"
+    "image": "1674670903896_img.jpg"
+   },
+   {
+    "id": 9,
+    "name": "Petys - Tapetes Absorbentes",
+    "description": "Tapetes absorbentes petys 12 unidades, Ayuda a neutralizar el olor de la orina.",
+    "category": "aseo",
+    "pet": "perros",
+    "color": "",
+    "weight": "",
+    "size": "grande",
+    "price": "35900",
+    "discount": "",
+    "image": "1674847407504_img.jpg"
    }
   ]

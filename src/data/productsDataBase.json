@@ -102,5 +102,18 @@
   "price": "68500",
   "discount": "",
   "image": "1674670903896_img.jpg"
+ },
+ {
+  "id": 9,
+  "name": "Petys - Tapetes Absorbentes",
+  "description": "Tapetes absorbentes petys 12 unidades, Ayuda a neutralizar el olor de la orina.",
+  "category": "aseo",
+  "pet": "perros",
+  "color": "",
+  "weight": "",
+  "size": "grande",
+  "price": "35900",
+  "discount": "",
+  "image": "1674847407504_img.jpg"
  }
 ]

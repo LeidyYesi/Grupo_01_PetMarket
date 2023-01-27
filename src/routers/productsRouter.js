@@ -13,6 +13,9 @@ const uploadFile = require('../middlewares/multerMiddleware');
 // Devolver todos los productos
 router.get('/list/:pet/', productsController.index);
 
+// Devolver todos los productos por categoria
+router.get('/listCategory/:category/', productsController.categoryList);
+
 // Crear un producto
 router.get('/create/', productsController.create);
 router.post('/create/', uploadFile.single('image'), productsController.processCreate);
