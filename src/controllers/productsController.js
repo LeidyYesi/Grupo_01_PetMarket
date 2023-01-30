@@ -14,16 +14,19 @@ const productsController = {
   index: (req, res) => {
     let filtro = req.params.filtro;
     let products = product.findAll();
-
+    let titulo 
     let productosFiltrados = products.filter((producto) => {
-      if(filtro == "perros" || filtro == "gatos") {
+    if(filtro == "perros" || filtro == "gatos") {
+      titulo = "Productos para " + filtro
         return producto.pet == filtro;
       } else {
+      titulo = filtro
+      titulo = titulo.replace("aseo", "Cuidado e Higiene");
       return producto.category == filtro;
       }
     });
-
-    res.render("products/productList", { productos: productosFiltrados });
+    titulo= titulo.toUpperCase()
+    res.render("products/productList", { productos: productosFiltrados,titulo:titulo });
   },
 
   // (get) Detail - Detalle de un producto
