@@ -6,21 +6,34 @@
 <head>
   <%- include('../partials/head.ejs') %>
 
-  <title>PetMarket - Login</title>
+  <title>PetMarket - Perfil de usuario</title>
   <!--Link Css-->
-  <link href="/css/login.css" rel="stylesheet" type="text/css" />
+  <link href="/css/userProfile.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
   <%- include('../partials/header.ejs') %>
 
-  <main>
-    
-
+        <main>
+          <section class="perfil">
+            <div class="content">
+              
+              <img class="imagUser" src="/img/users/<%= user.imagen%>" alt="Profile Image" width="100" height="100">
+              <h2>Bienvenida</h2>
+              <div>
+                <h2><%= user.nombre %></h2>
+                
+                </div>
+              
+              <div>
+                <button class="bottom"><a href="/users/logout">Cerrar sesion</a></button>
+              </div>
+             
+            </div>
+          </section>
   </main>
 
-  
   <%- include('../partials/footer.ejs') %>
 
 </body>

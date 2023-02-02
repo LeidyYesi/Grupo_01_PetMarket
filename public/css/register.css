@@ -157,9 +157,8 @@ main {
 .formu-registro {
   width: 400px;
   background: #def7fa;
-  padding: 30px;
+  padding: 17px;
   margin:  auto;
-  border-radius: 4px;
   color: var(--gris-claro);
   border: 1px solid var(--gris-claro);
   border-radius: 4px ;

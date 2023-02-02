@@ -179,5 +179,14 @@
   "category": "Administrador",
   "terminos": "on",
   "imagen": "1675270894690_img.jpg"
+ },
+ {
+  "id": 22,
+  "nombre": "Gaara",
+  "apellido": "Baez",
+  "email": "princesagaara15@gmail.com",
+  "password": "$2a$10$6YATYyO4Tf72XpUEq/qvEOBZNAhUZfEqHQ2TmKlXJ8t5/It5xSjMS",
+  "category": "Administrador",
+  "imagen": "1675366541660_img.jpg"
  }
 ]
