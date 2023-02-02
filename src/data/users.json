@@ -188,5 +188,15 @@
   "password": "$2a$10$6YATYyO4Tf72XpUEq/qvEOBZNAhUZfEqHQ2TmKlXJ8t5/It5xSjMS",
   "category": "Administrador",
   "imagen": "1675366541660_img.jpg"
+ },
+ {
+  "id": 23,
+  "nombre": "Ger",
+  "apellido": "Bogo",
+  "email": "gerbogo@gmail.com",
+  "password": "$2a$10$CB5kjE8SGopJwhrzb.XqR.BmzE3gueJqc.n2PH3glumuF5NcFk5v.",
+  "category": "Administrador",
+  "terminos": "on",
+  "imagen": "1675376839166_img.png"
  }
 ]
