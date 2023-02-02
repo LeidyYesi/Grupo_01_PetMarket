@@ -5,7 +5,8 @@
       <nav class="navbar navbar-expand-lg navbar-dark" data-bs-theme="light" style="background-color: transparent">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <a class="nav-link active" style="color: white" aria-current="page" href="/"><img src="/img/Logo-pet-market-small.png" alt="Logo" class="d-inline-block align-text-top"></a>
+            <a class="nav-link active" style="color: white" aria-current="page" href="/"><img
+                src="/img/Logo-pet-market-small.png" alt="Logo" class="d-inline-block align-text-top"></a>
           </a>
           <a class="navbar-brand">Pet Market</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -47,31 +48,33 @@
               </span>
             </form>
             <ul class="navbar-nav navbar-right">
-
               <ul class="navbar-nav aling-items-center">
-                <% if (locals.user) { %>
-                 
-                <% } %>
-
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id=""dropUser rol="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="/img/default-image" width="40" style="border-radius:100%;">
-                  Hola 
-                </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item"  href="/users/userProfile"> Mi Perfil</a>
-                <li><hr class="dropdown-divider"></li>
-                <a  class="dropdown-item" href="/users/logout">Cerrar sesion</a>
-              </ul>  
-          </li>
+                <% if (locals.isLog) { %>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropUser" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <img src="/img/users/<%= locals.userLogueado.imagen %>" width="40" style="border-radius: 100%;">
+                      Hola <%= locals.userLogueado.nombre %>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/users/userProfile"> Mi Perfil</a>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <a class="dropdown-item" href="/users/logout">Cerrar sesion</a>
+                    </ul>
+                  </li>
               </ul>
-
-              <li class="nav-item">
-                <a class="nav-link" href="/users/register"><i class="fas fa-user-plus"></i> Registrarse</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/users/login"> <i class="fas fa-right-to-bracket"></i> Iniciar Sesion</a>
-              </li>
+              <% } else { %>
+                <ul class="navbar-nav aling-items-center">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/register"><i class="fas fa-user-plus"></i> Registrarse</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/login"> <i class="fas fa-right-to-bracket"></i> Iniciar Sesion</a>
+                  </li>
+                  <% } %>
+                </ul>
             </ul>
           </div>
         </div>

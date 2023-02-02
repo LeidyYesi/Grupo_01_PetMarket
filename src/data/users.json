@@ -198,5 +198,15 @@
   "category": "Administrador",
   "terminos": "on",
   "imagen": "1675376839166_img.png"
+ },
+ {
+  "id": 24,
+  "nombre": "pepe",
+  "apellido": "sela",
+  "email": "pepe@pepe.pepe",
+  "password": "$2a$10$iCyG8jct8PiIivmDHf49Ne9idTS4jdRDlgsjP1gSjfUq1mezKc23q",
+  "category": "Super-User",
+  "terminos": "on",
+  "imagen": "1675381999296_img.jpg"
  }
 ]
