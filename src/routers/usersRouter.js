@@ -7,8 +7,8 @@ const usersController = require("../controllers/usersController.js");
 // Middlewares
 const uploadFile = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validateRegisterMiddleware');
-const logMiddelware = require("../middlewares/logMiddelware")
-const authLogMiddelware = require("../middlewares/authLogMiddelware")
+const logMiddelware = require("../middlewares/logMiddleware")
+const authLogMiddelware = require("../middlewares/authLogMiddleware")
 
 // Formulario de registro
 router.get("/register", logMiddelware ,usersController.register);
