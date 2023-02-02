@@ -169,5 +169,15 @@
   "password": "$2a$10$jpzc5Xs0MzpBqZugH2/8kep5Xj25ehVVHDbVno2xCRjMpvmouwDrq",
   "category": "Administrador",
   "imagen": "gbogom@gmail.coma1674583719421_img.jpg"
+ },
+ {
+  "id": 21,
+  "nombre": "Yesica",
+  "apellido": "Farias",
+  "email": "cantamosaleluya@gmail.com",
+  "password": "$2a$10$wTSwNICcm02/mCWE5RXGE.k7UQlrlexS0h.UWQlAmCsBgnsba7Ljq",
+  "category": "Administrador",
+  "terminos": "on",
+  "imagen": "1675270894690_img.jpg"
  }
 ]
