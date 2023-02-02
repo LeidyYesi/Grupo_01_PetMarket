@@ -20,7 +20,7 @@ let userController = {
 			return res.render("users/login", {
 				errors: {
 					password: {
-						msg: "Contraceña Incorrecta"
+						msg: "Contraseña incorrecta"
 					}
 				}
 	

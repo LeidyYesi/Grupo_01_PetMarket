@@ -111,7 +111,7 @@
 							</div>
               
 
-          <p>Imagen:</b>
+ 
           <div class="control-formu">
             <input
               class="control"
@@ -126,10 +126,18 @@
             <% } %>
           </div>
 
-          <div class="checkbox">
-            <label for="terminos"> Acepto los términos y condiciones.</label>
-            <input type="checkbox" name="terminos" />
-          </div>
+            <div class="control-formu">
+              <div class="checkbox">
+                <label for="terminos"> Acepto los términos y condiciones.</label>
+                <input type="checkbox" name="terminos"  <%= locals.oldData && oldData.terminos ? 'checked' : null %>  />
+              </div>             
+              <% if (locals.errors && errors.terminos) { %>
+                <div class="text-danger">
+                  <%= errors.terminos.msg %>
+                </div>
+              <% } %>
+            </div>
+    
 
           <div>
             <button class="bottom" type="submit">Registrar</button>
