@@ -209,5 +209,15 @@
   "category": "Administrador",
   "terminos": "on",
   "imagen": "1675436277991_img.jpg"
+ },
+ {
+  "id": 26,
+  "nombre": "pepe",
+  "apellido": "galleta",
+  "email": "pepe@gmail.com",
+  "password": "$2a$10$aT0MlVOh7/egts9FkbGJRejSDzgxxA49SQqdPBfajkQdwhQnh/Voe",
+  "category": "Normal",
+  "terminos": "on",
+  "imagen": "1676470732898_img.jpg"
  }
 ]

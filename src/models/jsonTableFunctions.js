@@ -71,6 +71,7 @@ let model = function (tableName) {
 	};
 };
 
+
 const groupsModel1 = model("users");
 
 module.exports = model;
