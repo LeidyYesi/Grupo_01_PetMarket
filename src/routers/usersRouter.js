@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Controller
 const usersController = require("../controllers/usersController.js");
-
+const { body, validationResult, check } = require("express-validator"); //requerimos express-validator para validar datos del body
 // Middlewares
 const uploadFile = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validateRegisterMiddleware');
@@ -21,7 +21,10 @@ router.post("/register",uploadFile.single('imagen'),validations, usersController
 router.get("/login", logMiddelware, usersController.login);
 
 // Proceso de Login
-router.post("/login",usersController.processLogin);
+router.post("/login", [
+    check("email").isEmail().withMessage("Email invalido"),
+    check("password").isLength({min : 8}).withMessage("La contraceña debe tener almenos 8 caracteres")
+] ,usersController.processLogin);
 
 //Perfil de Usuario
 router.get("/userProfile", authLogMiddelware, usersController.profile);

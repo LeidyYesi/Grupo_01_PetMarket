@@ -6,8 +6,6 @@ function logUserMiddleware(req, res, next) {
 
     let cookieEmail = req.cookies.userEmail; // en esta cookies existe un usuario
     let userFromCookie = User.findByField("email",cookieEmail );  // busco el usuario por el email q tengo en la cookie
-
-    console.log(userFromCookie);
     
     if (userFromCookie) {         // si tengo el usuario de la cookie
         req.session.userLogueado = userFromCookie;  // paso todo el usuario a session

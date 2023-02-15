@@ -9,7 +9,8 @@ let userController = {
     res.render("users/login");
   },
   processLogin: (req, res) => {
-    
+    let errors = validationResult (req);
+
     //Buscamos al usuario
     let userToLogin = user.findByField("email", req.body.email);
 
@@ -25,10 +26,10 @@ let userController = {
         req.session.userLogueado = userToLogin; //Guardamos el usuario en session
        
         if (req.body.remember_user) {
-          res.cookie("userEmail", req.body.email, {maxAge: (100*60)* 2});
+        res.cookie("userEmail", req.body.email, { maxAge: 900000 }); // 900000 milisegundos = 15 minutos
         }
        
-        return res.redirect("/users/userProfile");
+        return res.redirect("/");
       }
       return res.render("users/login", {
         errors: {
@@ -94,6 +95,7 @@ let userController = {
     });
   },
   logout: function (req, res) {
+    res.clearCookie("userEmail")
     req.session.destroy();
     return res.redirect("/");
   },
