@@ -9,6 +9,7 @@ let userController = {
     res.render("users/login");
   },
   processLogin: (req, res) => {
+    
     //Buscamos al usuario
     let userToLogin = user.findByField("email", req.body.email);
 
@@ -22,6 +23,11 @@ let userController = {
       if (passwordOk) {
         delete userToLogin.password; //Eliminamos el password x seguridad
         req.session.userLogueado = userToLogin; //Guardamos el usuario en session
+       
+        if (req.body.remember_user) {
+          res.cookie("userEmail", req.body.email, {maxAge: (100*60)* 2});
+        }
+       
         return res.redirect("/users/userProfile");
       }
       return res.render("users/login", {
@@ -82,6 +88,7 @@ let userController = {
     return res.redirect("/users/login");
   },
   profile: function (req, res) {
+    console.log(req.cookies.userEmail);;
     res.render("users/userProfile", {
       user: req.session.userLogueado, //enviamos la variable a la vista
     });

@@ -181,15 +181,6 @@
   "imagen": "1675270894690_img.jpg"
  },
  {
-  "id": 22,
-  "nombre": "Gaara",
-  "apellido": "Baez",
-  "email": "princesagaara15@gmail.com",
-  "password": "$2a$10$6YATYyO4Tf72XpUEq/qvEOBZNAhUZfEqHQ2TmKlXJ8t5/It5xSjMS",
-  "category": "Administrador",
-  "imagen": "1675366541660_img.jpg"
- },
- {
   "id": 23,
   "nombre": "Ger",
   "apellido": "Bogo",
@@ -208,5 +199,15 @@
   "category": "Super-User",
   "terminos": "on",
   "imagen": "1675381999296_img.jpg"
+ },
+ {
+  "id": 25,
+  "nombre": "Gaara",
+  "apellido": "Baez",
+  "email": "princesagaara15@gmail.com",
+  "password": "$2a$10$u2AnRE1tt8RU7gvx01rj7.e0R3DteK13YXKzGkxel3fU6qgR2kG56",
+  "category": "Administrador",
+  "terminos": "on",
+  "imagen": "1675436277991_img.jpg"
  }
 ]

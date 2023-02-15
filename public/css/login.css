@@ -46,6 +46,7 @@ img{
 
 input[type='checkbox']:hover {
   cursor: pointer;
+ 
 }
 
 li {
@@ -168,10 +169,8 @@ h4{
   padding: 30px;
   margin:  auto;
   border-radius: 4px;
-  color: var(--gris-claro);
+  color: var(--Negro);
   border: 1px solid var(--gris-claro);
-  border-radius: 4px ;
-  /*box-shadow: 10px 10px 5px 0px rgba(13,52,80,0.75);*/
 }
 
 .control{

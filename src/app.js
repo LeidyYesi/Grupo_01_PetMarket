@@ -2,8 +2,10 @@
 const express = require("express");
 const path = require('path');
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
-const session = require("express-session")
+const session = require("express-session")          //Para guardar la informacion del usuario
 const isLog = require("./middlewares/logUserMiddleware");
+const cookies = require("cookie-parser")
+
 // ************ express() - (don't touch) ************
 const app = express();
 
@@ -17,6 +19,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+app.use(cookies());
 app.use(isLog);
 
 // ************ Template Engine - (don't touch) ************
