@@ -1,87 +1,6 @@
 [
  {
   "id": 1,
-  "Nombre": "Hirsch",
-  "Apellido": "Close",
-  "email": "hclose0@slideshare.net",
-  "Contraceña": "bAMmXDcgt",
-  "Categoria": null,
-  "Imagen": "http://dummyimage.com/166x133.bmp/5fa2dd/ffffff"
- },
- {
-  "id": 2,
-  "Nombre": "Elianora",
-  "Apellido": "Wathen",
-  "email": "ewathen1@odnoklassniki.ru",
-  "Contraceña": "vG17rUfvmgV",
-  "Categoria": null,
-  "Imagen": "http://dummyimage.com/138x188.bmp/ff4444/ffffff"
- },
- {
-  "id": 3,
-  "Nombre": "Hieronymus",
-  "Apellido": "Critoph",
-  "email": "hcritoph2@ucoz.ru",
-  "Contraceña": "t0kMTw1dIXf",
-  "Categoria": null,
-  "Imagen": "http://dummyimage.com/174x209.bmp/5fa2dd/ffffff"
- },
- {
-  "id": 4,
-  "Nombre": "Douglass",
-  "Apellido": "Darnbrook",
-  "email": "ddarnbrook3@amazon.de",
-  "Contraceña": "GLY8HHHpXO",
-  "Categoria": null,
-  "Imagen": "http://dummyimage.com/129x161.png/dddddd/000000"
- },
- {
-  "id": 5,
-  "Nombre": "Lotta",
-  "Apellido": "Adamolli",
-  "email": "ladamolli4@webs.com",
-  "Contraceña": "h350KtQW",
-  "Categoria": null,
-  "Imagen": "http://dummyimage.com/111x168.png/cc0000/ffffff"
- },
- {
-  "id": 6,
-  "Nombre": "Edgardo",
-  "Apellido": "Romi",
-  "email": "eromi5@usatoday.com",
-  "Contraceña": "SUdULz",
-  "Categoria": null,
-  "Imagen": "http://dummyimage.com/237x208.jpg/5fa2dd/ffffff"
- },
- {
-  "id": 8,
-  "Nombre": "Royce",
-  "Apellido": "Sparrowe",
-  "email": "rsparrowe7@sohu.com",
-  "Contraceña": "Oij9V9UXsr",
-  "Categoria": null,
-  "Imagen": "http://dummyimage.com/127x133.bmp/cc0000/ffffff"
- },
- {
-  "id": 9,
-  "Nombre": "Honey",
-  "Apellido": "Wigginton",
-  "email": "hwigginton8@mayoclinic.com",
-  "Contraceña": "8FGrkhuZK",
-  "Categoria": null,
-  "Imagen": "http://dummyimage.com/159x133.jpg/cc0000/ffffff"
- },
- {
-  "id": 10,
-  "Nombre": "Shayne",
-  "Apellido": "Scemp",
-  "email": "sscemp9@amazon.com",
-  "Contraceña": "VZOpWQZFh5Qe",
-  "Categoria": "null",
-  "Imagen": "http://dummyimage.com/192x224.jpg/ff4444/ffffff"
- },
- {
-  "id": 11,
   "nombre": "dsfdssf",
   "apellido": "sdfsdfsdf",
   "email": "gbogom@gmail.com",
@@ -90,7 +9,7 @@
   "imagen": "1674521199107_img.png"
  },
  {
-  "id": 12,
+  "id": 2,
   "nombre": "German",
   "apellido": "BOGOMOLNI",
   "email": "gbogom@gmail.edu",
@@ -99,7 +18,7 @@
   "imagen": "1674523384767_img.png"
  },
  {
-  "id": 13,
+  "id": 3,
   "nombre": "Lionel",
   "apellido": "Messi",
   "email": "leo@gmail.com",
@@ -108,7 +27,7 @@
   "imagen": "1674526775439_img.png"
  },
  {
-  "id": 14,
+  "id": 4,
   "nombre": "a",
   "apellido": "a",
   "email": "aa@aa.coma",
@@ -117,7 +36,7 @@
   "imagen": "1674579225105_img.png"
  },
  {
-  "id": 15,
+  "id": 5,
   "nombre": "sadasdas",
   "apellido": "dasasdasd",
   "email": "asdasd@asdasd.cvom",
@@ -126,7 +45,7 @@
   "imagen": "1674579586744_img.jpg"
  },
  {
-  "id": 16,
+  "id": 6,
   "nombre": "aaa",
   "apellido": "aaa",
   "email": "aaaa@aaa.aa",
@@ -135,7 +54,7 @@
   "imagen": "1674581635320_img.png"
  },
  {
-  "id": 17,
+  "id": 7,
   "nombre": "aaaaaaaaaaa",
   "apellido": "aaaaaaaaaaaaa",
   "email": "aaa@cc.co",
@@ -144,7 +63,7 @@
   "imagen": "1674581796389_img.jpg"
  },
  {
-  "id": 18,
+  "id": 8,
   "nombre": "asdasd",
   "apellido": "adssdasd",
   "email": "aa@aa.com",
@@ -153,7 +72,7 @@
   "imagen": "1674581982155_img.jpg"
  },
  {
-  "id": 19,
+  "id": 9,
   "nombre": "aaaaaaa",
   "apellido": "aaaaaaaaaaa",
   "email": "aaa@dd.dd",
@@ -162,7 +81,7 @@
   "imagen": "1674583423110_img.jpg"
  },
  {
-  "id": 20,
+  "id": 10,
   "nombre": "sadasd",
   "apellido": "sadasd",
   "email": "gbogom@gmail.coma",
@@ -171,7 +90,7 @@
   "imagen": "gbogom@gmail.coma1674583719421_img.jpg"
  },
  {
-  "id": 21,
+  "id": 11,
   "nombre": "Yesica",
   "apellido": "Farias",
   "email": "cantamosaleluya@gmail.com",
@@ -181,7 +100,7 @@
   "imagen": "1675270894690_img.jpg"
  },
  {
-  "id": 23,
+  "id": 12,
   "nombre": "Ger",
   "apellido": "Bogo",
   "email": "gerbogo@gmail.com",
@@ -191,7 +110,7 @@
   "imagen": "1675376839166_img.png"
  },
  {
-  "id": 24,
+  "id": 13,
   "nombre": "pepe",
   "apellido": "sela",
   "email": "pepe@pepe.pepe",
@@ -201,7 +120,7 @@
   "imagen": "1675381999296_img.jpg"
  },
  {
-  "id": 25,
+  "id": 14,
   "nombre": "Gaara",
   "apellido": "Baez",
   "email": "princesagaara15@gmail.com",
@@ -211,7 +130,7 @@
   "imagen": "1675436277991_img.jpg"
  },
  {
-  "id": 26,
+  "id": 15,
   "nombre": "pepe",
   "apellido": "galleta",
   "email": "pepe@gmail.com",
@@ -219,5 +138,15 @@
   "category": "Normal",
   "terminos": "on",
   "imagen": "1676470732898_img.jpg"
+ },
+ {
+  "id": 16,
+  "nombre": "Carlos Andres",
+  "apellido": "Noreña Cruz",
+  "email": "canorena3d@gmail.com",
+  "password": "$2a$10$f9hpd.fp/y6fy/pOpqsH8.jfaUKNg0b5QQ1Yo4qGVVOdB7Tl.8U1e",
+  "category": "Administrador",
+  "terminos": "on",
+  "imagen": "1676476775168_img.jpg"
  }
 ]
