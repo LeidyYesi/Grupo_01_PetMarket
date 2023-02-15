@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  ;
+  
 }
 
 :root {
@@ -20,7 +20,7 @@
 }
 
 
-.contact {
+.content {
   position: relative;
   max-width: 420px;
   padding: 40px 20px;
@@ -46,13 +46,13 @@ main {
 
 .perfil {
     width: 400px;
-    background: #def7fa;
+    background: rgb(37,73,105);
+    background: linear-gradient(30deg, rgba(37,73,105,1) 13%, rgba(50,104,188,1) 100%);
     padding: 30px;
     margin:  auto;
-    border-radius: 4px;
     color: var(--gris-claro);
     border: 1px solid var(--gris-claro);
-    border-radius: 4px ;
+    border-radius: 10px ;
 }
 h2{
     color: var(--Azul-Oscuro);
