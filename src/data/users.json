@@ -148,5 +148,15 @@
   "category": "Administrador",
   "terminos": "on",
   "imagen": "1676476775168_img.jpg"
- }
+ },
+ {
+  "id": 17,
+  "nombre": "Maximiliano",
+  "apellido": "Baez",
+  "email": "maxne24@hotmail.com",
+  "password": "$2a$10$0Oh3WhMP2ueV.CcJqH.D/ewT7fDL578OXFrRCSl6k4ZdNT2BLgP6m",
+  "category": "Super-User",
+  "terminos": "on",
+  "imagen": "1676496013367_img.jpg"
+ },
 ]

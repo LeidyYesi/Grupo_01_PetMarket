@@ -140,7 +140,6 @@ main {
 
 .inicio-logo{
   width: 100%;
-  background-color: var(--caleste);
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -156,7 +155,8 @@ main {
 
 .formu-registro {
   width: 400px;
-  background: #def7fa;
+  background: rgb(37,73,105);
+    background: linear-gradient(30deg, rgba(37,73,105,1) 13%, rgba(50,104,188,1) 100%);
   padding: 17px;
   margin:  auto;
   color: var(--gris-claro);
