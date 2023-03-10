@@ -158,5 +158,25 @@
   "category": "Super-User",
   "terminos": "on",
   "imagen": "1676496013367_img.jpg"
+ },
+ {
+  "id": 18,
+  "nombre": "Martin",
+  "apellido": "Faraguna",
+  "email": "martin2@gmail.com",
+  "password": "$2a$10$prRN4A5K8Ch56kYKsbiK3OV9qL0cVNbn1.SFfAo6CPAHm3fkSILJ.",
+  "category": "Normal",
+  "terminos": "on",
+  "imagen": "1678310775710_img.jpg"
+ },
+ {
+  "id": 19,
+  "nombre": "Martin",
+  "apellido": "Faraguna",
+  "email": "martin@gmail.com",
+  "password": "$2a$10$Ri8./y2FjmqdD3DiqGknjOBrm7rMMqEzHNbarMHXkESvZ4GYiAP0K",
+  "category": "Administrador",
+  "terminos": "on",
+  "imagen": "1678311409311_img.jpg"
  }
 ]

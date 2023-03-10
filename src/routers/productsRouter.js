@@ -1,6 +1,7 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
+const adminAccess = require("../middlewares/adminAccess")
 
 
 // ************ Controller Require ************
@@ -8,10 +9,6 @@ const productsController = require('../controllers/productsController');
 
 // ************ Multer ************
 const uploadFile = require('../middlewares/multerMiddleware');
-
-// ************ Miderwares ************
-const adminAccess = require("../middlewares/adminAccess")
-
 
 // Devolver todos los productos de un determinado pet o categoria
 router.get('/list/:filtro/', productsController.index);

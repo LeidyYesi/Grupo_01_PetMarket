@@ -4,7 +4,8 @@ const path = require('path');
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 const session = require("express-session")          //Para guardar la informacion del usuario
 const isLog = require("./middlewares/logUserMiddleware");
-const cookies = require("cookie-parser")
+const cookies = require("cookie-parser");
+
 
 // ************ express() - (don't touch) ************
 const app = express();
@@ -31,6 +32,7 @@ const mainRouter = require("./routers/mainRouter.js");
 const usersRouter = require("./routers/usersRouter.js");
 const productsRouter = require("./routers/productsRouter.js");
 const logUserMiddleware = require("./middlewares/logUserMiddleware.js");
+const { createRequire } = require("module");
 
 // Definimos las rutas a los distintos pedidos que nuestro sitio sabe responder
 app.use("/", mainRouter);

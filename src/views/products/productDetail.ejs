@@ -48,13 +48,14 @@
               </ul>
 
               <a href="#" class="now-button cart-button">AGREGAR AL CARRITO</a>
-
+              <% if (locals.isAdmin) { %>
               <a href="/products/edit/<%= producto.id %>" class="action-button edit">EDITAR PRODUCTO</a>
 
               <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST"
                 style="display: inline-flex">
                 <button class="action-button delete">ELIMINAR</button>
               </form>
+              <% } %>
             </article>
           </div>
         </div>

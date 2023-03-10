@@ -37,9 +37,11 @@
                   <li><a class="dropdown-item" href="/products/list/aseo">Cuidado e Higiene</a></li>
                 </ul>
               </li>
+              <% if (locals.isAdmin) { %>
               <li class="nav-item">
                 <a class="nav-link" href="/products/create">Vender</a>
               </li>
+              <% } %>
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control rounded me-2" type="search" placeholder="Search" aria-label="Search">
