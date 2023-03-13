@@ -88,28 +88,7 @@
             <% } %>
           </div>
           
-          <div class="control-formu">
-								<select 
-									name="category" 
-								>
-									<option value="">Elegí una categoria</option>
-									<%  
-										let categories = ['Administrador', 'Super-User', 'Normal'];
-									%>
-									<% for (const oneCategory of categories) { %>
-										<option 
-											value="<%= oneCategory %>"
-											<%= locals.oldData && (oneCategory === oldData.category) ? 'selected' : null %> 
-										> <%= oneCategory %> </option>
-									<% } %>
-								</select>
-								<% if (locals.errors && errors.category) { %>
-									<div class="text-danger">
-										<%= errors.category.msg %>
-									</div>
-								<% } %>
-							</div>
-              
+
 
  
           <div class="control-formu">

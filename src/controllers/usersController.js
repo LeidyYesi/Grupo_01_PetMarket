@@ -15,41 +15,84 @@ let userController = {
   processLogin: (req, res) => {
     let errors = validationResult(req);
 
-    //Buscamos al usuario
-    let userToLogin = user.findByField("email", req.body.email);
-
-    if (userToLogin) {
-      //Verificamos el passwprd
-      let passwordOk = bcryptjs.compareSync(
-        req.body.password,
-        userToLogin.password
-      );
-
-      if (passwordOk) {
-        delete userToLogin.password; //Eliminamos el password x seguridad
-        req.session.userLogueado = userToLogin; //Guardamos el usuario en session
-
-        if (req.body.remember_user) {
-          res.cookie("userEmail", req.body.email, { maxAge: 900000 }); // 900000 milisegundos = 15 minutos
-        }
-
-        return res.redirect("/");
-      }
-      return res.render("users/login", {
-        errors: {
-          password: {
-            msg: "Contraseña Incorrecta",
-          },
-        },
-      });
-    }
-    return res.render("users/login", {
-      errors: {
-        email: {
-          msg: "Su email no esta registrado",
-        },
+     //Buscamos al usuario
+    let userToLogin = req.body.email;
+    User.findAll({
+      where: {
+        email: { [db.Sequelize.Op.eq]: userToLogin },
       },
-    });
+    })
+      .then((userInDB) => {
+        if (userInDB.length != 0) {
+          let passwordOk = bcryptjs.compareSync(
+            req.body.password,
+            userInDB[0].password
+          );
+          if (passwordOk) {
+            delete userToLogin.password; //Eliminamos el password x seguridad
+            req.session.userLogueado = userInDB[0]; //Guardamos el usuario en session
+            console.log("req.session.userLogueado",req.session.userLogueado);
+            if (req.body.remember_user) {
+              res.cookie("userEmail", req.body.email, { maxAge: 900000 }); // 900000 milisegundos = 15 minutos
+            }
+            return res.redirect("/");
+          }
+          return res.render("users/login", {
+            errors: {
+              password: {
+                msg: "Contraseña Incorrecta",
+              },
+            },
+          });
+        }
+        else
+        {
+          return res.render("users/login", {
+            errors: {
+              email: {
+                msg: "Su email no esta registrado",
+              },
+            },
+          });
+        }
+      })
+
+   
+    // // let userToLogin = user.findByField("email", req.body.email);
+
+
+    // if (userToLogin) {
+    //   //Verificamos el passwprd
+    //   let passwordOk = bcryptjs.compareSync(
+    //     req.body.password,
+    //     userToLogin.password
+    //   );
+
+    //   if (passwordOk) {
+    //     delete userToLogin.password; //Eliminamos el password x seguridad
+    //     req.session.userLogueado = userToLogin; //Guardamos el usuario en session
+
+    //     if (req.body.remember_user) {
+    //       res.cookie("userEmail", req.body.email, { maxAge: 900000 }); // 900000 milisegundos = 15 minutos
+    //     }
+
+    //     return res.redirect("/");
+    //   }
+    //   return res.render("users/login", {
+    //     errors: {
+    //       password: {
+    //         msg: "Contraseña Incorrecta",
+    //       },
+    //     },
+    //   });
+    // }
+    // return res.render("users/login", {
+    //   errors: {
+    //     email: {
+    //       msg: "Su email no esta registrado",
+    //     },
+    //   },
+    // });
   },
 
   register: function (req, res) {
@@ -71,7 +114,6 @@ let userController = {
         },
       })
         .then((userInDB) => {
-          console.log("email", userInDB);
           if (userInDB.length != 0) {
             res.render("users/register", {
               errors: {
@@ -90,7 +132,6 @@ let userController = {
               categories_id: 1,
               image: req.file.filename,
             };
-            console.log("UserToCreate", userToCreate);
             User.create(userToCreate)
               .then((user) => {
                 let destinationPath = "./public/img/users";
@@ -108,7 +149,6 @@ let userController = {
     }
   },
   profile: function (req, res) {
-    console.log(req.cookies.userEmail);
     res.render("users/userProfile", {
       user: req.session.userLogueado, //enviamos la variable a la vista
     });

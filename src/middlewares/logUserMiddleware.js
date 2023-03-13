@@ -1,28 +1,41 @@
 const model = require("../models/jsonTableFunctions");
-const User = model("users"); // models q nos permite hacer operaciones con la BD
+// const User = model("users"); // models q nos permite hacer operaciones con la BD
+const db = require("../database/models/");
+const User = db.User;// models q nos permite hacer operaciones con la BD
+
 
 function logUserMiddleware(req, res, next) {
-    res.locals.isLog = false;
-    res.locals.isAdmin = false;
+  res.locals.isLog = false;
+  res.locals.isAdmin = false;
 
-    let cookieEmail = req.cookies.userEmail; // en esta cookies existe un usuario
-    let userFromCookie = User.findByField("email",cookieEmail );  // busco el usuario por el email q tengo en la cookie
-    
-    if (userFromCookie) {         // si tengo el usuario de la cookie
-        req.session.userLogueado = userFromCookie;  // paso todo el usuario a session
+  console.log("req.session",req.session);
+  console.log("req.cookies.userEmail",req.cookies.userEmail);
+  if (req.session.userLogueado) {
+    // tengo a alguien en sesion?
+    res.locals.isLog = true; // si hay alguien logueado = true
+    if (req.session.userLogueado.categories_id == 2) {
+      res.locals.isAdmin = true;
     }
-
-    if (req.session.userLogueado) {          // tengo a alguien en sesion?
-		res.locals.isLog = true;                // si hay alguien logueado = true
-        if (req.session.userLogueado.category == "Administrador") {
-            res.locals.isAdmin = true;
-        }
-		res.locals.userLogueado = req.session.userLogueado;   
-	}
- 
-    next();
-
+    res.locals.userLogueado = req.session.userLogueado;
+    return next();
+  } else if (req.cookies.userEmail) {
+    User.findOne({
+      where: {
+        email: { [db.Sequelize.Op.eq]: req.cookies.userEmail },
+      },
+    }).then((user) => {
+     console.log("user",user);
+      req.session.userLogueado = user;
+      res.locals.isLog = true;
+      if (req.session.userLogueado.categories_id  == 2) {
+        res.locals.isAdmin = true;
+      }
+      res.locals.userLogueado = req.session.userLogueado;
+      return next();
+    });
+  } else {
+    return next();
+  }
 }
-
 
 module.exports = logUserMiddleware;

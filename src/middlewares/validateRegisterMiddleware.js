@@ -8,7 +8,6 @@ const validations = [
 		.notEmpty().withMessage('Tienes que ingresar un correo electrónico').bail()
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
 	body('password').notEmpty().withMessage('Tienes que ingresar una contraseña'),
-    body('category').notEmpty().withMessage('Tienes que elegir una categoria'),
 	body('terminos').notEmpty().withMessage('Tienes que aceptar los terminos'),
 	body('imagen').custom((value, { req }) => {
 		let file = req.file;
