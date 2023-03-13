@@ -2,14 +2,18 @@ const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 const model = require("../models/jsonTableFunctions");
 const moveFile = require("../models/imageDistribution");
-const user = model("users");
+// const user = model("users");
+
+const db = require("../database/models/");
+const User = db.User;
+const Category = db.Category;
 
 let userController = {
   login: function (req, res) {
     res.render("users/login");
   },
   processLogin: (req, res) => {
-    let errors = validationResult (req);
+    let errors = validationResult(req);
 
     //Buscamos al usuario
     let userToLogin = user.findByField("email", req.body.email);
@@ -24,11 +28,11 @@ let userController = {
       if (passwordOk) {
         delete userToLogin.password; //Eliminamos el password x seguridad
         req.session.userLogueado = userToLogin; //Guardamos el usuario en session
-       
+
         if (req.body.remember_user) {
-        res.cookie("userEmail", req.body.email, { maxAge: 900000 }); // 900000 milisegundos = 15 minutos
+          res.cookie("userEmail", req.body.email, { maxAge: 900000 }); // 900000 milisegundos = 15 minutos
         }
-       
+
         return res.redirect("/");
       }
       return res.render("users/login", {
@@ -59,43 +63,58 @@ let userController = {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
-    }
-
-    let userInDB = user.findByField("email", req.body.email);
-
-    if (userInDB) {
-      return res.render("users/register", {
-        errors: {
-          email: {
-            msg: "Este email ya está registrado",
-          },
+    } else {
+      let emailToFind = req.body.email;
+      User.findAll({
+        where: {
+          email: { [db.Sequelize.Op.eq]: emailToFind },
         },
-        oldData: req.body,
-      });
+      })
+        .then((userInDB) => {
+          console.log("email", userInDB);
+          if (userInDB.length != 0) {
+            res.render("users/register", {
+              errors: {
+                email: {
+                  msg: "Este email ya está registrado",
+                },
+              },
+              oldData: req.body,
+            });
+          } else {
+            let userToCreate = {
+              name: req.body.nombre,
+              lastname: req.body.apellido,
+              email: req.body.email,
+              password: bcryptjs.hashSync(req.body.password, 10),
+              categories_id: 1,
+              image: req.file.filename,
+            };
+            console.log("UserToCreate", userToCreate);
+            User.create(userToCreate)
+              .then((user) => {
+                let destinationPath = "./public/img/users";
+                moveFile(
+                  req.file.filename,
+                  req.file.destination,
+                  destinationPath
+                );
+                return res.redirect("/users/login");
+              })
+              .catch((error) => console.log(error));
+          }
+        })
+        .catch((error) => res.send("error es " + error));
     }
-
-    let userToCreate = {
-      ...req.body,
-      password: bcryptjs.hashSync(req.body.password, 10),
-      imagen: req.file.filename,
-    };
-
-    let userCreated = user.create(userToCreate);
-
-    // mover la imagen de temp al repositorio de img de usuario
-    let destinationPath = "./public/img/users";
-    moveFile(req.file.filename, req.file.destination, destinationPath);
-
-    return res.redirect("/users/login");
   },
   profile: function (req, res) {
-    console.log(req.cookies.userEmail);;
+    console.log(req.cookies.userEmail);
     res.render("users/userProfile", {
       user: req.session.userLogueado, //enviamos la variable a la vista
     });
   },
   logout: function (req, res) {
-    res.clearCookie("userEmail")
+    res.clearCookie("userEmail");
     req.session.destroy();
     return res.redirect("/");
   },
