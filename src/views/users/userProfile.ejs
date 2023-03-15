@@ -20,7 +20,7 @@
             <div class="saludo">
               
               <img class="imagUser" src="/img/users/<%= user.image%>" alt="Profile Image" width="100" height="100">
-              <h2>Hola <%= user.nombre %></h2> 
+              <h2>Hola <%= user.name %></h2> 
               
 
             <article class="content">
@@ -29,6 +29,9 @@
                   <p>Nombre: <%= user.name %></p>
                   <p>Apellido: <%= user.lastname %></p>
                   <p>Email: <%= user.email %></p>
+                  <a href="/users/edit/<%= user.id %>"> <!-- completar parametro a requerir -->
+                    <button>Editar Mi Perfil</button>
+                  </a>
                </div> 
 
           </article>  

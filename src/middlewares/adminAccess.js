@@ -5,7 +5,7 @@ function adminAccess(req, res, next) {
         //si no hay nadie logueado
         res.redirect("/users/login"); //se redirige login para logueo
     } else {
-        if (user.category !== "Administrador") {
+        if (user.categories_id !== 2) {
             // res.send('No eres administrador') //si no es administrador
             res.redirect("/");
         } else {

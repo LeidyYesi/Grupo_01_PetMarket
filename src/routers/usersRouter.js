@@ -29,6 +29,9 @@ router.post("/login", [
 //Perfil de Usuario
 router.get("/userProfile", authLogMiddelware, usersController.profile);
 
+//edicion de usuario
+router.get("/edit/:id", usersController.edit);
+
 //Cerrar sesion
 router.get("/logout", usersController.logout);
 module.exports = router;
