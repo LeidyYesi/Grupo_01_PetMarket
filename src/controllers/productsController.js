@@ -14,12 +14,6 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const productsController = {
   // (get) List - Mostrar todos los productos
   index: (req, res) => {
-
-    Product.findAll()
-    .then((lista)=> {
-        res.send(lista)
-    }
-    )
     let filtro = req.params.filtro;
     let products = product.findAll();
     let titulo 
