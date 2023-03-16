@@ -30,7 +30,8 @@ router.post("/login", [
 router.get("/userProfile", authLogMiddelware, usersController.profile);
 
 //edicion de usuario
-router.get("/edit/:id", usersController.edit);
+router.get("/edit", usersController.edit);
+router.put("/edit", usersController.processEdit);
 
 //Cerrar sesion
 router.get("/logout", usersController.logout);

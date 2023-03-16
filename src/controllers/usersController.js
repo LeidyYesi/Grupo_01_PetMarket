@@ -158,15 +158,15 @@ let userController = {
     req.session.destroy();
     return res.redirect("/");
   },
-  edit: function (req, res) {
-    User.findByPk(req.params.id)
-    .then((resultado) => {
-      console.log('el resultado es: ' + resultado); //crear primero vista
-    })
-    .catch((error) => console.log(error));
-    
-    res.redirect(req.params.id);
-  }
+  edit: function (req, res) {   
+    res.render("users/edit", {
+      user: req.session.userLogueado, //enviamos la variable a la vista
+    });
+  },
+  processEdit: function(req, res) {
+    res.send(req.body)
+  } 
+
 };
 
 module.exports = userController;

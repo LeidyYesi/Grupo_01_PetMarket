@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+
+    <title>PetMarket - Editar Producto</title>
+    <!-- Mi css -->
+    <link rel="stylesheet" href="/css/userEdit.css" />
+  </head>
+  <body>
+    <%- include('../partials/header.ejs') %>
+
+    <main>
+      <section class="formu-edit">
+        <section class="inicio-logo">
+          <h4>Editar Perfil: <%= user.name %></h4>
+          <img
+            src="/img/users/<%= user.image%>"
+            alt="logo-pet-market"
+            class="img"
+          />
+        </section>
+
+        <form
+          action="/users/edit?_method=PUT"
+          method="POST"
+          class="edit-form"
+          enctype="multipart/form-data"
+        >
+          <div class="input-box">
+            <input type="text" name="name" value="<%= user.name %>" />
+            <label for="name">Ingrese el nuevo nombre</label>
+          </div>
+
+          <div class="input-box">
+            <input type="text" name="lastName" value="<%= user.lastname %>" />
+            <label for="lastName">Ingrese el nuevo apellido</label>
+          </div>
+
+          <div class="input-box">
+            <input type="text" name="email" value="<%= user.email %>" />
+            <label for="email">Ingrese su nuevo mail</label>
+          </div>
+
+          <button type="submit" id="edit-button">Editar Información</button>
+        </form>
+      </section>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

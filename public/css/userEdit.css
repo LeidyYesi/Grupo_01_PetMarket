@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --Azul-Oscuro: #20165d;
+  --Azul-Claro: #28bed1;
+  --celeste: #def7fa;
+  --celeste-footer: #1259c3;
+  --gris-oscuro: #666;
+  --gris-claro: #ebebeb;
+  --Negro: #02020a;
+  --Naranja: #ec673f;
+  --azul-header: #254969;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formu-edit {
+  position: relative;
+  border: 2px solid rgb(0, 0, 0, 0.5);
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--celeste);
+  max-width: 700px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.inicio-logo {
+  text-align: center;
+  background-color: var(--Azul-Claro);
+  font-weight: bold;
+}
+
+.img {
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+.edit-form {
+  /* width: 100%; */
+  padding: 3%;
+}
+
+.input-box {
+  font-size: 0.8em;
+  position: relative;
+  width: 100%;
+  height: 10%;
+  border-bottom: 2px solid black;
+  margin: 10% 0;
+  max-width: 300px;
+}
+
+.input-box input {
+  background-color: white;
+  border: 2px solid rgb(0, 0, 0, 0.5);
+  border-radius: .3em;
+  width: 100%;
+  height: 100%;
+}
+
+.input-box label {
+  top: 50%;
+  left: 5px;
+  font-weight: bold;
+}
+
+#edit-button {
+    border: 2px solid rgb(255, 255, 255, 0.5);
+    color: white;
+    background-color: var(--Azul-Claro);
+    font-weight: bold;
+    padding: 1em;
+}
