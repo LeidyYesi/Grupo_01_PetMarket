@@ -3,6 +3,8 @@ const fs = require("fs");
 const model = require("../models/jsonTableFunctions");
 const product = model("productsDataBase");
 const moveFile = require("../models/imageDistribution");
+const db = require("../database/models/");
+const Product = db.Product;
 
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
@@ -12,6 +14,12 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const productsController = {
   // (get) List - Mostrar todos los productos
   index: (req, res) => {
+
+    Product.findAll()
+    .then((lista)=> {
+        res.send(lista)
+    }
+    )
     let filtro = req.params.filtro;
     let products = product.findAll();
     let titulo 
