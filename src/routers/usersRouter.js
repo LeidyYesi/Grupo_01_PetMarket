@@ -7,6 +7,7 @@ const { body, validationResult, check } = require("express-validator"); //requer
 // Middlewares
 const uploadFile = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validateRegisterMiddleware');
+const editValidation = require('../middlewares/validateEditUserMiddleware')
 const logMiddelware = require("../middlewares/logMiddleware")
 const authLogMiddelware = require("../middlewares/authLogMiddleware")
 
@@ -30,8 +31,9 @@ router.post("/login", [
 router.get("/userProfile", authLogMiddelware, usersController.profile);
 
 //edicion de usuario
-router.get("/edit", usersController.edit);
-router.put("/edit", usersController.processEdit);
+router.get("/edit/:id", usersController.edit);
+
+router.put("/edit/:id", uploadFile.single('img'), editValidation , usersController.processEdit);
 
 //Cerrar sesion
 router.get("/logout", usersController.logout);

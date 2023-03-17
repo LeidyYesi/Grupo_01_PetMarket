@@ -22,24 +22,56 @@
         </section>
 
         <form
-          action="/users/edit?_method=PUT"
+          action="/users/edit/<%= user.id %>?_method=PUT"
           method="POST"
           class="edit-form"
           enctype="multipart/form-data"
         >
           <div class="input-box">
-            <input type="text" name="name" value="<%= user.name %>" />
+            <% if (locals.errors && errors.name) { %>
+            <div class="text-danger"><%= errors.name.msg %></div>
+            <% } %>
+            <input
+              type="text"
+              name="name"
+              value="<%= locals.oldData ? oldData.name : user.name %>"
+            />
             <label for="name">Ingrese el nuevo nombre</label>
           </div>
 
           <div class="input-box">
-            <input type="text" name="lastName" value="<%= user.lastname %>" />
+            <% if (locals.errors && errors.lastName) { %>
+            <div class="text-danger"><%= errors.lastName.msg %></div>
+            <% } %>
+            <input
+              type="text"
+              name="lastName"
+              value="<%= locals.oldData ? oldData.lastName : user.lastname %>"
+            />
             <label for="lastName">Ingrese el nuevo apellido</label>
           </div>
 
           <div class="input-box">
-            <input type="text" name="email" value="<%= user.email %>" />
+            <% if (locals.errors && errors.email) { %>
+            <div class="text-danger"><%= errors.email.msg %></div>
+            <% } %>
+            <input
+              type="text"
+              name="email"
+              value="<%= locals.oldData ? oldData.email : user.email %>"
+            />
             <label for="email">Ingrese su nuevo mail</label>
+          </div>
+
+          <div class="input-box">
+            <% if (locals.errors && errors.img) { %>
+            <div class="text-danger"><%= errors.img.msg %></div>
+            <% } %>
+            <input
+              type="file"
+              name="img"
+              placeholder="Editar imagen del perfil"
+            />
           </div>
 
           <button type="submit" id="edit-button">Editar Información</button>

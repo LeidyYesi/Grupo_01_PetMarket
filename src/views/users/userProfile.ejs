@@ -29,7 +29,7 @@
                   <p>Nombre: <%= user.name %></p>
                   <p>Apellido: <%= user.lastname %></p>
                   <p>Email: <%= user.email %></p>
-                  <a href="/users/edit"> <!-- completar parametro a requerir -->
+                  <a href="/users/edit/<%= user.id %>"> <!-- completar parametro a requerir -->
                     <button>Editar Mi Perfil</button>
                   </a>
                </div> 

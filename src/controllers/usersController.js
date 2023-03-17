@@ -164,9 +164,24 @@ let userController = {
     });
   },
   processEdit: function(req, res) {
-    res.send(req.body)
-  } 
+    let resultValidation = validationResult(req);
 
-};
+    if (resultValidation.errors.length > 0) {
+      return res.render("users/edit", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+        user: req.session.userLogueado
+      })
+    } else {
+      let newEmail = req.body.email;
+      User.findAll({
+        where: {
+          email: { [db.Sequelize.Op.eq]: emailToFind },
+        },
+      })
+    }
+  }
+
+}
 
 module.exports = userController;
