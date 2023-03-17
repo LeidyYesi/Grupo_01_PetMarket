@@ -20,5 +20,14 @@ module.exports = (sequelize, dataTypes) => {
 
   const Weight = sequelize.define(alias, cols, config);
 
+  Weight.associate = function (models) {
+    Weight.belongsTo(models.Product, {           // associate con el modelo de Product
+      as: "weights",
+      foreignKey: "weights_id",
+    });
+  };
+
+
+
   return Weight;
 };
