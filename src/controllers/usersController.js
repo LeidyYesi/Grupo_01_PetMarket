@@ -15,51 +15,46 @@ let userController = {
   processLogin: (req, res) => {
     let errors = validationResult(req);
 
-     //Buscamos al usuario
+    //Buscamos al usuario
     let userToLogin = req.body.email;
     User.findAll({
       where: {
         email: { [db.Sequelize.Op.eq]: userToLogin },
       },
-    })
-      .then((userInDB) => {
-        if (userInDB.length != 0) {
-          let passwordOk = bcryptjs.compareSync(
-            req.body.password,
-            userInDB[0].password
-          );
-          if (passwordOk) {
-            delete userToLogin.password; //Eliminamos el password x seguridad
-            req.session.userLogueado = userInDB[0]; //Guardamos el usuario en session
-            console.log("req.session.userLogueado",req.session.userLogueado);
-            if (req.body.remember_user) {
-              res.cookie("userEmail", req.body.email, { maxAge: 900000 }); // 900000 milisegundos = 15 minutos
-            }
-            return res.redirect("/");
+    }).then((userInDB) => {
+      if (userInDB.length != 0) {
+        let passwordOk = bcryptjs.compareSync(
+          req.body.password,
+          userInDB[0].password
+        );
+        if (passwordOk) {
+          delete userToLogin.password; //Eliminamos el password x seguridad
+          req.session.userLogueado = userInDB[0]; //Guardamos el usuario en session
+          console.log("req.session.userLogueado", req.session.userLogueado);
+          if (req.body.remember_user) {
+            res.cookie("userEmail", req.body.email, { maxAge: 900000 }); // 900000 milisegundos = 15 minutos
           }
-          return res.render("users/login", {
-            errors: {
-              password: {
-                msg: "Contraseña Incorrecta",
-              },
-            },
-          });
+          return res.redirect("/");
         }
-        else
-        {
-          return res.render("users/login", {
-            errors: {
-              email: {
-                msg: "Su email no esta registrado",
-              },
+        return res.render("users/login", {
+          errors: {
+            password: {
+              msg: "Contraseña Incorrecta",
             },
-          });
-        }
-      })
+          },
+        });
+      } else {
+        return res.render("users/login", {
+          errors: {
+            email: {
+              msg: "Su email no esta registrado",
+            },
+          },
+        });
+      }
+    });
 
-   
     // // let userToLogin = user.findByField("email", req.body.email);
-
 
     // if (userToLogin) {
     //   //Verificamos el passwprd
@@ -158,30 +153,42 @@ let userController = {
     req.session.destroy();
     return res.redirect("/");
   },
-  edit: function (req, res) {   
+  edit: function (req, res) {
     res.render("users/edit", {
       user: req.session.userLogueado, //enviamos la variable a la vista
     });
   },
-  processEdit: function(req, res) {
+  processEdit: function (req, res) {
     let resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
       return res.render("users/edit", {
         errors: resultValidation.mapped(),
         oldData: req.body,
-        user: req.session.userLogueado
-      })
+        user: req.session.userLogueado,
+      });
     } else {
-      let newEmail = req.body.email;
-      User.findAll({
-        where: {
-          email: { [db.Sequelize.Op.eq]: emailToFind },
+      let userId = req.params.id;
+      console.log(req.body)
+      User.update(
+        {
+          name: req.body.name,
+          lastname: req.body.lastName,
+          email: req.body.email,
+          // password: bcryptjs.hashSync(req.body.password, 10),
+          // categories_id: 1,
+          // image: req.file.filename,
         },
-      })
+        {
+          where: { id: userId },
+        }
+      )
+        .then(() => {
+          return res.redirect("/");
+        })
+        .catch((error) => res.send(error));
     }
-  }
-
-}
+  },
+};
 
 module.exports = userController;
