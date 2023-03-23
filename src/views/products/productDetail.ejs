@@ -26,13 +26,13 @@
       <div class="product-detail">
         <div class="row">
           <div class="col-12 col-lg-8">
-            <img src="/img/<%= producto.category %>/<%= producto.pet %>/<%= producto.image %>" alt=""
+            <img src="/img/<%= producto.categories.category %>/<%= producto.pets.pet %>/<%= producto.img %>" alt=""
               class="product_img" />
           </div>
           <div class="col-12 col-lg-4">
             <article class="product-detail-info">
-              <h2 class="product-detail-title">Producto Para <%= producto.pet %></h2>
-              <p class="product-detail-description"><b>Categoria:</b> <%= producto.category %></p>
+              <h2 class="product-detail-title">Producto Para <%= producto.pets.pet %></h2>
+              <p class="product-detail-description"><b>Categoria:</b> <%= producto.categories.category %></p>
               <p class="product-detail-description"><b>Descripcion:</b> <%= producto.description %></p>
               <p class="product-detail-price">Precio: $<%= producto.price %></p>
 

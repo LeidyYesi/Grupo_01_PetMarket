@@ -15,7 +15,7 @@ router.get('/list/:filtro/', productsController.index);
 
 // Crear un producto
 router.get('/create/', adminAccess, productsController.create);
-router.post('/create/', uploadFile.single('image'), productsController.processCreate);
+router.post('/create/', uploadFile.single('img'), productsController.processCreate);
 
 // Devolver un producto
 router.get('/detail/:id/', productsController.detail);

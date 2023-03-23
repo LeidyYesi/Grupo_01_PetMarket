@@ -42,9 +42,9 @@ module.exports = (sequelize, dataTypes) => {
 const User = sequelize.define(alias, cols, config); 
 
 User.associate = function (models) {
-    User.belongsTo(models.Category, { // models.Genre -> Genres es el valor de alias en genres.js
-        as: "categories",
-        foreignKey: "categories_id"
+    User.belongsTo(models.UsersCategory, { // models.Genre -> Genres es el valor de alias en genres.js
+        as: "userscategories",
+        foreignKey: "id"
     })
 }
 return User
