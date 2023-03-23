@@ -15,19 +15,18 @@ module.exports = (sequelize, dataTypes) => {
   let config = {
     tableName: "weights",
     underscore: true,
-    timetamps: false,
+    timestamps: false,
   };
 
   const Weight = sequelize.define(alias, cols, config);
 
   Weight.associate = function (models) {
-    Weight.belongsTo(models.Product, {           // associate con el modelo de Product
-      as: "weights",
+    Weight.hasMany(models.Product, {
+      //associate con el modelo de Weight
+      as: "products",
       foreignKey: "weights_id",
     });
   };
-
-
 
   return Weight;
 };

@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
       tableName: "pets",
       underscore: true,
-      timetamps: false,
+      timestamps: false,
     };
   
     const Pet = sequelize.define(alias, cols, config);
@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
     Pet.associate = function (models) {
       Pet.hasMany(models.Product, {
         //associate con el modelo de Pet
-        as: "pet",
+        as: "products",
         foreignKey: "pets_id",
       });
     };

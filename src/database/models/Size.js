@@ -16,16 +16,17 @@ module.exports = (sequelize, dataTypes) => {
   let config = {
     tableName: "sizes",
     underscore: true,
-    timetamps: false,
+    timestamps: false,
   };
 
   const Size = sequelize.define(alias, cols, config);
 
   
   Size.associate = function (models) {
-    Size.belongsTo(models.Product, {
-      as: "sizes",
-      foreignKey: "size_id",
+    Size.hasMany(models.Product, {
+      //associate con el modelo de Product
+      as: "products",
+      foreignKey: "sizes_id",
     });
   };
 
