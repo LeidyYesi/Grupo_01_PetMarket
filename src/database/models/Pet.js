@@ -23,8 +23,9 @@ module.exports = (sequelize, dataTypes) => {
   
     
     Pet.associate = function (models) {
-      Pet.belongsTo(models.Product, {           // associate con el modelo de Product
-        as: "pets",
+      Pet.hasMany(models.Product, {
+        //associate con el modelo de Pet
+        as: "pet",
         foreignKey: "pets_id",
       });
     };

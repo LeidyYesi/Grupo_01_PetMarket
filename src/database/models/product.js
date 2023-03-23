@@ -1,6 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-
-  let alias = "Product";   // este alias se usa en los controladores
+  let alias = "Product"; // este alias se usa en los controladores
 
   let cols = {
     id: {
@@ -34,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
     },
     img: {
       type: dataTypes.STRING,
-    }
+    },
   };
 
   let config = {
@@ -45,49 +44,48 @@ module.exports = (sequelize, dataTypes) => {
 
   const Product = sequelize.define(alias, cols, config);
 
- Product.associate = function (models){
-  Product.belongsToMany(models.Color, { // models.Color -> Actors es el Color de alias en Color.js
-    as: "productsColors",
-    through: 'products_colors',
-    foreignKey: 'product_id',
-    otherKey: 'color_id',
-    timestamps: false
-})
- Product.associate = function (models) {
-      Product.hasMany(models.Pet, {   //associate con el modelo de Pets
-        as: "productPet",
-        foreignKey: "pets_id"
-      })
+  Product.associate = function (models) {
+    Product.belongsToMany(models.Color, {
+      // models.Color -> Actors es el Color de alias en Color.js
+      as: "productsColors",
+      through: "products_colors",
+      foreignKey: "product_id",
+      otherKey: "color_id",
+      timestamps: false,
+    });
+
+    Product.associate = function (models) {
+      Product.belongTo(models.Pet, {
+        //associate con el modelo de Pet
+        as: "Pet",
+        foreignKey: "pets_id",
+      });
     };
 
     Product.associate = function (models) {
-      Product.hasMany(models.Pet, {   //associate con el modelo de Pet
-        as: "productPet",
-        foreignKey: "pets_id"
-      })
-    };
-
-    Product.associate = function (models) {
-      Product.hasMany(models.Weight, {   //associate con el modelo de Weight
+      Product.hasMany(models.Weight, {
+        //associate con el modelo de Weight
         as: "weightsProduct",
-        foreignKey: "weights_id"
-      })
+        foreignKey: "weights_id",
+      });
     };
 
     Product.associate = function (models) {
-      Product.hasMany(models.Category, {      //associate con el modelo de Category
+      Product.hasMany(models.Category, {
+        //associate con el modelo de Category
         as: "categories",
-        foreignKey: "categories_id"
-      })
+        foreignKey: "categories_id",
+      });
     };
 
     Product.associate = function (models) {
-      Product.hasMany(models.Size, {        //associate con el modelo de Size
+      Product.hasMany(models.Size, {
+        //associate con el modelo de Size
         as: "sizeProduct",
-        foreignKey: "size_id"
-      })
+        foreignKey: "size_id",
+      });
     };
-};
+  };
 
   return Product;
-}
+};
