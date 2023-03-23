@@ -12,7 +12,7 @@ const validations = [
     .withMessage("Debes escribir un formato de correo válido"),
   body("img").custom((value, { req }) => {
     let file = req.file;
-    let acceptedExtensions = [".jpg", ".png", ".gif"];
+    let acceptedExtensions = [".jpg", ".jpeg" ,".png", ".gif"];
 
     if (!file) {
       throw new Error("Tienes que subir una imagen");

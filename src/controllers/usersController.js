@@ -169,13 +169,13 @@ let userController = {
       });
     } else {
       let userId = req.params.id;
-      console.log(req.body)
+      // let pass = bcryptjs.hashSync(req.body.password, 10)
       User.update(
         {
           name: req.body.name,
           lastname: req.body.lastName,
           email: req.body.email,
-          // password: bcryptjs.hashSync(req.body.password, 10),
+          // password: pass,
           // categories_id: 1,
           // image: req.file.filename,
         },
@@ -184,7 +184,12 @@ let userController = {
         }
       )
         .then(() => {
-          return res.redirect("/");
+          req.session.userLogueado.name = req.body.name;
+          req.session.userLogueado.lastname = req.body.lastName;
+          req.session.userLogueado.email = req.body.email;
+          // req.session.userLogueado.password = pass;
+          res.clearCookie("userEmail");
+          return res.redirect("/users/userProfile");
         })
         .catch((error) => res.send(error));
     }

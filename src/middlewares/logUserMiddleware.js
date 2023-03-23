@@ -1,15 +1,14 @@
 const model = require("../models/jsonTableFunctions");
 // const User = model("users"); // models q nos permite hacer operaciones con la BD
 const db = require("../database/models/");
-const User = db.User;// models q nos permite hacer operaciones con la BD
-
+const User = db.User; // models q nos permite hacer operaciones con la BD
 
 function logUserMiddleware(req, res, next) {
   res.locals.isLog = false;
   res.locals.isAdmin = false;
 
-  console.log("req.session",req.session);
-  console.log("req.cookies.userEmail",req.cookies.userEmail);
+  console.log("req.session", req.session);
+  console.log("req.cookies.userEmail", req.cookies.userEmail);
   if (req.session.userLogueado) {
     // tengo a alguien en sesion?
     res.locals.isLog = true; // si hay alguien logueado = true
@@ -24,11 +23,13 @@ function logUserMiddleware(req, res, next) {
         email: { [db.Sequelize.Op.eq]: req.cookies.userEmail },
       },
     }).then((user) => {
-     console.log("user",user);
+      console.log("user", user);
       req.session.userLogueado = user;
       res.locals.isLog = true;
-      if (req.session.userLogueado.categories_id  == 2) {
-        res.locals.isAdmin = true;
+      if (req.session.userLogueado) {
+        if (req.session.userLogueado.categories_id == 2) {
+          res.locals.isAdmin = true;
+        }
       }
       res.locals.userLogueado = req.session.userLogueado;
       return next();

@@ -11,7 +11,7 @@ const validations = [
 	body('terminos').notEmpty().withMessage('Tienes que aceptar los terminos'),
 	body('imagen').custom((value, { req }) => {
 		let file = req.file;
-		let acceptedExtensions = ['.jpg', '.png', '.gif'];
+		let acceptedExtensions = ['.jpg','.jpeg', '.png', '.gif'];
 		
 		if (!file) {
 			throw new Error('Tienes que subir una imagen');

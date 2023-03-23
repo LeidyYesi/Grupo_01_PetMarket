@@ -63,6 +63,18 @@
             <label for="email">Ingrese su nuevo mail</label>
           </div>
 
+          <!-- <div class="input-box">
+            <% if (locals.errors && errors.email) { %>
+            <div class="text-danger"><%= errors.email.msg %></div>
+            <% } %>
+            <input
+              type="text"
+              name="email"
+              value="<%= locals.oldData ? oldData.email : user.email %>"
+            />
+            <label for="email">Ingrese su nuevo mail</label>
+          </div> -->
+
           <div class="input-box">
             <% if (locals.errors && errors.img) { %>
             <div class="text-danger"><%= errors.img.msg %></div>
