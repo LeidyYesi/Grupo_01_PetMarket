@@ -53,33 +53,25 @@ module.exports = (sequelize, dataTypes) => {
       otherKey: "color_id",
       timestamps: false,
     });
-  };
 
-  Product.associate = function (models) {
     Product.belongsTo(models.Pet, {
       //associate con el modelo de Pet
       as: "pets",
       foreignKey: "pets_id",
     });
-  };
 
-  Product.associate = function (models) {
     Product.belongsTo(models.Weight, {
       //associate con el modelo de Weight
       as: "weights",
       foreignKey: "weights_id",
     });
-  };
 
-  Product.associate = function (models) {
     Product.belongsTo(models.Category, {
       //associate con el modelo de Category
       as: "categories",
       foreignKey: "categories_id",
     });
-  };
 
-  Product.associate = function (models) {
     Product.belongsTo(models.Size, {
       //associate con el modelo de Size
       as: "sizes",
