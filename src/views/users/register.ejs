@@ -33,6 +33,7 @@
               placeholder="Nombre"
               value="<%= locals.oldData ? oldData.nombre : null %>"
             />
+            <div class="errores_nombre text-danger"> </div>
             <% if (locals.errors && errors.nombre) { %>
               <div class="text-danger">
                 <%= errors.nombre.msg %> 
@@ -49,6 +50,7 @@
               placeholder="Apellido"
               value="<%= locals.oldData ? oldData.apellido : null %>"
             />
+            <div class="errores_apellido text-danger"> </div>
             <% if (locals.errors && errors.apellido) { %>
               <div class="text-danger">
                 <%= errors.apellido.msg %> 
@@ -59,12 +61,13 @@
           <div class="control-formu">
             <input
               class="control"
-              type="email"
+              type="text"
               name="email"
               id="email"
               placeholder="Correo Electrónico"
               value="<%= locals.oldData ? oldData.email : null %>"
             />
+            <div class="errores_email text-danger"> </div>
             <% if (locals.errors && errors.email) { %>
               <div class="text-danger">
                 <%= errors.email.msg %> 
@@ -81,6 +84,7 @@
               placeholder="Contraseña"
               value="<%= locals.oldData ? oldData.password : null %>"
             />
+            <div class="errores_password text-danger"> </div>
             <% if (locals.errors && errors.password) { %>
               <div class="text-danger">
                 <%= errors.password.msg %> 
@@ -98,6 +102,7 @@
               name="imagen"
               placeholder="Imagen del perfil"
             />
+            <div class="errores_imagen text-danger"> </div>
             <% if (locals.errors && errors.imagen) { %>
               <div class="text-danger">
                 <%= errors.imagen.msg %>
@@ -109,7 +114,8 @@
               <div class="checkbox">
                 <label for="terminos"> Acepto los términos y condiciones.</label>
                 <input type="checkbox" name="terminos"  <%= locals.oldData && oldData.terminos ? 'checked' : null %>  />
-              </div>             
+              </div>     
+              <div class="errores_terminos text-danger"> </div>        
               <% if (locals.errors && errors.terminos) { %>
                 <div class="text-danger">
                   <%= errors.terminos.msg %>
@@ -130,5 +136,6 @@
     </main>
 
     <%- include('../partials/footer.ejs') %>
+    <script src="/js/register.js"></script>
   </body>
 </html>
