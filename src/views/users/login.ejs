@@ -23,21 +23,25 @@
         <img src="/img/Logo-pet-Market.jpg" alt="Logo" class="img" />
       </section>
 
+     
+          
+          <ul class="errors text-danger">
+
+          </ul>
+
       <form action="/users/login" method="POST" class="crear-formu">
 
         <div class="control-formu">
-          <input class="control" type="email" name="email" id="email" placeholder="Correo Electrónico" required />
+          <input class="control" type="email" name="email" id="email" placeholder="Correo Electrónico"/>
           <% if (locals.errors && errors.email) { %>
             <div class="text-danger">
               <%= errors.email.msg%> 
             </div>
           <% } %>
-           
-
         </div>
 
         <div class="control-formu">
-          <input class="control" type="password" name="password" id="password" placeholder="Contraseña" required >
+          <input class="control" type="password" name="password" id="password" placeholder="Contraseña">
           <% if (locals.errors && errors.password) { %>
             <div class="text-danger">
               <%= errors.password.msg%> 
@@ -46,7 +50,8 @@
         </div>
 
         <p class="olvidaste"><a href="#"> ¿Olvidaste tu contraseña? </a></p>
-        
+
+        <div>
         <label class="form-check-label" ></label>
           <input type="checkbox" class="form-check-input" name="remember_user">Recordar Usuario
         </div>
@@ -64,7 +69,7 @@
   </main>
 
   <%- include('../partials/footer.ejs') %>
-
+  <script src="/js/login.js"></script>
 </body>
 
 </html>
