@@ -31,48 +31,90 @@
         </div>
 
         <div class="edit-form">
-          <label for="category">Categoria</label>
-          <select name="category">
+          <label for="categories_id">Categoria</label>
+          <select name="categories_id">
             <option value="">Elegí una categoria</option>
-            <option value="alimentos" <%= producto.category == 'alimentos' ? 'selected' : '' %>> Alimentos</option>
-            <option value="accesorios" <%= producto.category == 'accesorios' ? 'selected' : '' %>> Accesorios</option>
-            <option value="aseo" <%= producto.category == 'aseo' ? 'selected' : '' %>> Aseo</option>
-            <option value="juguetes" <%= producto.category == 'juguetes' ? 'selected' : '' %>> Juguetes</option>
+            <option value="3" <%= producto.categories.category == 'alimentos' ? 'selected' : '' %>> Alimentos</option>
+            <option value="1" <%= producto.categories.category == 'accesorios' ? 'selected' : '' %>> Accesorios</option>
+            <option value="4" <%= producto.categories.category == 'aseo' ? 'selected' : '' %>> Aseo</option>
+            <option value="2" <%= producto.categories.category == 'juguetes' ? 'selected' : '' %>> Juguetes</option>
           </select>
         </div>
 
         <div class="edit-form">
-          <input type="text" id="mascota" placeholder="Mascota" class="control">
-          <select name="pet">
-            <option value=""> Elegi una mascota</option>
-            <option value="perros" <%= producto.pet == 'perros' ? 'selected' : '' %>> Perro</option>
-            <option value="gatos" <%= producto.pet == 'gatos' ? 'selected' : '' %>> Gato</option>
+          <input type="text" id="pets_id" placeholder="Mascota" class="control">
+          <select name="pets_id">
+            <option value="">Elegí una mascota</option>
+            <option value="1" <%= producto.pets.pet == 'perros' ? 'selected' : '' %>> Perro</option>
+            <option value="2" <%= producto.pets.pet == 'gatos' ? 'selected' : '' %>> Gato</option>
           </select>
         </div>
 
         <div class="edit-form">
-          <input value="<%= producto.color %>" class="control" type="text" name="color" id="color" placeholder="Color del producto">
-        </div>
-
-        <div class="edit-form">
-          <input type="text" id="weight" placeholder="Peso de la unidad" class="control">
-          <select name="weight">
-            <option value=""> Ingresa el peso</option>
-            <option value="1" <%= producto.weight == '1' ? 'selected' : '' %>> 1 kg</option>
-            <option value="3" <%= producto.weight == '3' ? 'selected' : '' %>> 3 kg</option>
-            <option value="5" <%= producto.weight == '5' ? 'selected' : '' %>> 5 kg</option>
-            <option value="15" <%= producto.weight == '15' ? 'selected' : '' %>> 15 kg</option>
+          <input type="text" id="color_id" placeholder="Color del producto" class="control">
+          <select name="color_id">
+            <option value="">Elegí un color</option>
+            <option value="1" <%= producto.colors[0].ProductColor.color_id == '1' ? 'selected' : '' %>> Negro</option>
+            <option value="2" <%= producto.colors[0].ProductColor.color_id == '2' ? 'selected' : '' %>> Azul</option>
+            <option value="3" <%= producto.colors[0].ProductColor.color_id == '3' ? 'selected' : '' %>> Marron</option>
+            <option value="4" <%= producto.colors[0].ProductColor.color_id == '4' ? 'selected' : '' %>> Gris</option>
+            <option value="5" <%= producto.colors[0].ProductColor.color_id == '5' ? 'selected' : '' %>> Verde</option>
+            <option value="6" <%= producto.colors[0].ProductColor.color_id == '6' ? 'selected' : '' %>> Naranja</option>
+            <option value="7" <%= producto.colors[0].ProductColor.color_id == '7' ? 'selected' : '' %>> Rosa</option>
+            <option value="8" <%= producto.colors[0].ProductColor.color_id == '8' ? 'selected' : '' %>> Púrpura</option>
+            <option value="9" <%= producto.colors[0].ProductColor.color_id == '9' ? 'selected' : '' %>> Rojo</option>
+            <option value="10" <%= producto.colors[0].ProductColor.color_id == '10' ? 'selected' : '' %>> Blanco</option>
+            <option value="11" <%= producto.colors[0].ProductColor.color_id == '11' ? 'selected' : '' %>> Amarillo</option>
+            <option value="12" <%= producto.colors[0].ProductColor.color_id == '12' ? 'selected' : '' %>> Turquesa</option>
+            <option value="13" <%= producto.colors[0].ProductColor.color_id == '13' ? 'selected' : '' %>> Verde oliva</option>
+            <option value="14" <%= producto.colors[0].ProductColor.color_id == '14' ? 'selected' : '' %>> Verde menta</option>
+            <option value="15" <%= producto.colors[0].ProductColor.color_id == '15' ? 'selected' : '' %>> Borgoña</option>
+            <option value="16" <%= producto.colors[0].ProductColor.color_id == '16' ? 'selected' : '' %>> Lavanda</option>
+            <option value="17" <%= producto.colors[0].ProductColor.color_id == '17' ? 'selected' : '' %>> Magenta</option>
+            <option value="18" <%= producto.colors[0].ProductColor.color_id == '18' ? 'selected' : '' %>> Salmon</option>
+            <option value="19" <%= producto.colors[0].ProductColor.color_id == '19' ? 'selected' : '' %>> Cian</option>
+            <option value="20" <%= producto.colors[0].ProductColor.color_id == '20' ? 'selected' : '' %>> Beige</option>
+            <option value="21" <%= producto.colors[0].ProductColor.color_id == '21' ? 'selected' : '' %>> Rosado</option>
+            <option value="22" <%= producto.colors[0].ProductColor.color_id == '22' ? 'selected' : '' %>> Verde oscuro</option>
+            <option value="23" <%= producto.colors[0].ProductColor.color_id == '23' ? 'selected' : '' %>> Aceituna</option>
+            <option value="24" <%= producto.colors[0].ProductColor.color_id == '24' ? 'selected' : '' %>> Lila</option>
+            <option value="25" <%= producto.colors[0].ProductColor.color_id == '25' ? 'selected' : '' %>> Amarillo palido</option>
+            <option value="26" <%= producto.colors[0].ProductColor.color_id == '26' ? 'selected' : '' %>> Fucsia</option>
+            <option value="27" <%= producto.colors[0].ProductColor.color_id == '27' ? 'selected' : '' %>> Mostaza</option>
+            <option value="28" <%= producto.colors[0].ProductColor.color_id == '28' ? 'selected' : '' %>> Ocre</option>
+            <option value="29" <%= producto.colors[0].ProductColor.color_id == '29' ? 'selected' : '' %>> Trullo</option>
+            <option value="30" <%= producto.colors[0].ProductColor.color_id == '30' ? 'selected' : '' %>> Malva</option>
+            <option value="31" <%= producto.colors[0].ProductColor.color_id == '31' ? 'selected' : '' %>> Púrpura oscuro</option>
+            <option value="32" <%= producto.colors[0].ProductColor.color_id == '32' ? 'selected' : '' %>> Verde lima</option>
+            <option value="33" <%= producto.colors[0].ProductColor.color_id == '33' ? 'selected' : '' %>> Verde claro</option>
+            <option value="34" <%= producto.colors[0].ProductColor.color_id == '34' ? 'selected' : '' %>> Ciruela</option>
+            <option value="35" <%= producto.colors[0].ProductColor.color_id == '35' ? 'selected' : '' %>> Azul claro</option>
+            <option value="36" <%= producto.colors[0].ProductColor.color_id == '36' ? 'selected' : '' %>> Melocotón</option>
+            <option value="37" <%= producto.colors[0].ProductColor.color_id == '37' ? 'selected' : '' %>> Violeta</option>
+            <option value="38" <%= producto.colors[0].ProductColor.color_id == '38' ? 'selected' : '' %>> Cafe Claro</option>
+            <option value="39" <%= producto.colors[0].ProductColor.color_id == '39' ? 'selected' : '' %>> Granate</option>
             <option value=""> </option>
           </select>
         </div>
 
         <div class="edit-form">
-          <input type="text" id="size" placeholder="Tamaño" class="control">
-          <select name="size">
+          <input type="text" id="weights_id" placeholder="Peso de la unidad" class="control">
+          <select name="weights_id">
+            <option value="">Elegí un peso</option>
+            <option value="1" <%= producto.weights.id == '1' ? 'selected' : '' %>> 1 kg</option>
+            <option value="2" <%= producto.weights.id == '2' ? 'selected' : '' %>> 3 kg</option>
+            <option value="3" <%= producto.weights.id == '3' ? 'selected' : '' %>> 7 kg</option>
+            <option value="4" <%= producto.weights.id == '4' ? 'selected' : '' %>> 15 kg</option>
+          </select>
+        </div>
+
+        <div class="edit-form">
+          <input type="text" id="sizes_id" placeholder="Tamaño" class="control">
+          <select name="sizes_id">
             <option value="">Elegí un tamaño</option>
-            <option value="chico" <%= producto.size == 'chico' ? 'selected' : '' %>> Chico</option>
-            <option value="mediano" <%= producto.size == 'mediano' ? 'selected' : '' %>> Mediano</option>
-            <option value="grande" <%= producto.size == 'grande' ? 'selected' : '' %>> Grande</option>
+            <option value="1" <%= producto.sizes.id == '1' ? 'selected' : '' %>> Pequeño</option>
+            <option value="2" <%= producto.sizes.id == '2' ? 'selected' : '' %>> Mediano</option>
+            <option value="3" <%= producto.sizes.id == '3' ? 'selected' : '' %>> Grande</option>
           </select>
         </div>
 
@@ -84,10 +126,9 @@
           <input value="<%= producto.discount %>" class="control" type="text" name="discount" id="discount" placeholder="Descuento del producto">
         </div>
 
-
         <div class="edit-form">
           <h4>Ingrese la imagen del producto:</h4>
-          <input type="file" name="image" id="image">
+          <input type="file" name="img" id="img">
         </div>
 
         <div>

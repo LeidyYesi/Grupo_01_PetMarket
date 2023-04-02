@@ -22,7 +22,7 @@ router.get('/detail/:id/', productsController.detail);
 
 // Editar un producto
 router.get('/edit/:id', adminAccess, productsController.edit);
-router.put('/edit/:id', uploadFile.single('image'), productsController.processEdit);
+router.put('/edit/:id', uploadFile.single('img'), productsController.processEdit);
 
 // Eliminar un producto
 router.delete('/delete/:id', adminAccess, productsController.destroy);
