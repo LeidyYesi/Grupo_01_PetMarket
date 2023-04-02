@@ -14,20 +14,25 @@
 
   <main>
 
+  <div class="container">
+
     <section class="formu-edit">
       <section class="inicio-logo">
         <h4>Editar Producto: <%= producto.name %></h4>
         <img src="/img/Logo-pet-market.jpg" whith="360" alt="logo-pet-market" class="img" />
       </section>
 
-      <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" class="edit-form" enctype="multipart/form-data">
+      <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" class="edit-form"
+        enctype="multipart/form-data">
 
         <div class="edit-form">
-          <input value="<%= producto.name %>" class="control" type="text" name="name" id="name" placeholder="Nombre del Producto">
+          <input value="<%= producto.name %>" class="control" type="text" name="name" id="name"
+            placeholder="Nombre del Producto">
         </div>
 
         <div class="edit-form">
-          <textarea name="description" id="description" placeholder="Descripcion del Producto" class="form-input"><%= producto.description %></textarea>
+          <textarea name="description" id="description" placeholder="Descripcion del Producto"
+            class="form-input"><%= producto.description %></textarea>
         </div>
 
         <div class="edit-form">
@@ -63,36 +68,61 @@
             <option value="7" <%= producto.colors[0].ProductColor.color_id == '7' ? 'selected' : '' %>> Rosa</option>
             <option value="8" <%= producto.colors[0].ProductColor.color_id == '8' ? 'selected' : '' %>> Púrpura</option>
             <option value="9" <%= producto.colors[0].ProductColor.color_id == '9' ? 'selected' : '' %>> Rojo</option>
-            <option value="10" <%= producto.colors[0].ProductColor.color_id == '10' ? 'selected' : '' %>> Blanco</option>
-            <option value="11" <%= producto.colors[0].ProductColor.color_id == '11' ? 'selected' : '' %>> Amarillo</option>
-            <option value="12" <%= producto.colors[0].ProductColor.color_id == '12' ? 'selected' : '' %>> Turquesa</option>
-            <option value="13" <%= producto.colors[0].ProductColor.color_id == '13' ? 'selected' : '' %>> Verde oliva</option>
-            <option value="14" <%= producto.colors[0].ProductColor.color_id == '14' ? 'selected' : '' %>> Verde menta</option>
-            <option value="15" <%= producto.colors[0].ProductColor.color_id == '15' ? 'selected' : '' %>> Borgoña</option>
-            <option value="16" <%= producto.colors[0].ProductColor.color_id == '16' ? 'selected' : '' %>> Lavanda</option>
-            <option value="17" <%= producto.colors[0].ProductColor.color_id == '17' ? 'selected' : '' %>> Magenta</option>
-            <option value="18" <%= producto.colors[0].ProductColor.color_id == '18' ? 'selected' : '' %>> Salmon</option>
+            <option value="10" <%= producto.colors[0].ProductColor.color_id == '10' ? 'selected' : '' %>> Blanco
+            </option>
+            <option value="11" <%= producto.colors[0].ProductColor.color_id == '11' ? 'selected' : '' %>> Amarillo
+            </option>
+            <option value="12" <%= producto.colors[0].ProductColor.color_id == '12' ? 'selected' : '' %>> Turquesa
+            </option>
+            <option value="13" <%= producto.colors[0].ProductColor.color_id == '13' ? 'selected' : '' %>> Verde oliva
+            </option>
+            <option value="14" <%= producto.colors[0].ProductColor.color_id == '14' ? 'selected' : '' %>> Verde menta
+            </option>
+            <option value="15" <%= producto.colors[0].ProductColor.color_id == '15' ? 'selected' : '' %>> Borgoña
+            </option>
+            <option value="16" <%= producto.colors[0].ProductColor.color_id == '16' ? 'selected' : '' %>> Lavanda
+            </option>
+            <option value="17" <%= producto.colors[0].ProductColor.color_id == '17' ? 'selected' : '' %>> Magenta
+            </option>
+            <option value="18" <%= producto.colors[0].ProductColor.color_id == '18' ? 'selected' : '' %>> Salmon
+            </option>
             <option value="19" <%= producto.colors[0].ProductColor.color_id == '19' ? 'selected' : '' %>> Cian</option>
             <option value="20" <%= producto.colors[0].ProductColor.color_id == '20' ? 'selected' : '' %>> Beige</option>
-            <option value="21" <%= producto.colors[0].ProductColor.color_id == '21' ? 'selected' : '' %>> Rosado</option>
-            <option value="22" <%= producto.colors[0].ProductColor.color_id == '22' ? 'selected' : '' %>> Verde oscuro</option>
-            <option value="23" <%= producto.colors[0].ProductColor.color_id == '23' ? 'selected' : '' %>> Aceituna</option>
+            <option value="21" <%= producto.colors[0].ProductColor.color_id == '21' ? 'selected' : '' %>> Rosado
+            </option>
+            <option value="22" <%= producto.colors[0].ProductColor.color_id == '22' ? 'selected' : '' %>> Verde oscuro
+            </option>
+            <option value="23" <%= producto.colors[0].ProductColor.color_id == '23' ? 'selected' : '' %>> Aceituna
+            </option>
             <option value="24" <%= producto.colors[0].ProductColor.color_id == '24' ? 'selected' : '' %>> Lila</option>
-            <option value="25" <%= producto.colors[0].ProductColor.color_id == '25' ? 'selected' : '' %>> Amarillo palido</option>
-            <option value="26" <%= producto.colors[0].ProductColor.color_id == '26' ? 'selected' : '' %>> Fucsia</option>
-            <option value="27" <%= producto.colors[0].ProductColor.color_id == '27' ? 'selected' : '' %>> Mostaza</option>
+            <option value="25" <%= producto.colors[0].ProductColor.color_id == '25' ? 'selected' : '' %>> Amarillo
+              palido</option>
+            <option value="26" <%= producto.colors[0].ProductColor.color_id == '26' ? 'selected' : '' %>> Fucsia
+            </option>
+            <option value="27" <%= producto.colors[0].ProductColor.color_id == '27' ? 'selected' : '' %>> Mostaza
+            </option>
             <option value="28" <%= producto.colors[0].ProductColor.color_id == '28' ? 'selected' : '' %>> Ocre</option>
-            <option value="29" <%= producto.colors[0].ProductColor.color_id == '29' ? 'selected' : '' %>> Trullo</option>
+            <option value="29" <%= producto.colors[0].ProductColor.color_id == '29' ? 'selected' : '' %>> Trullo
+            </option>
             <option value="30" <%= producto.colors[0].ProductColor.color_id == '30' ? 'selected' : '' %>> Malva</option>
-            <option value="31" <%= producto.colors[0].ProductColor.color_id == '31' ? 'selected' : '' %>> Púrpura oscuro</option>
-            <option value="32" <%= producto.colors[0].ProductColor.color_id == '32' ? 'selected' : '' %>> Verde lima</option>
-            <option value="33" <%= producto.colors[0].ProductColor.color_id == '33' ? 'selected' : '' %>> Verde claro</option>
-            <option value="34" <%= producto.colors[0].ProductColor.color_id == '34' ? 'selected' : '' %>> Ciruela</option>
-            <option value="35" <%= producto.colors[0].ProductColor.color_id == '35' ? 'selected' : '' %>> Azul claro</option>
-            <option value="36" <%= producto.colors[0].ProductColor.color_id == '36' ? 'selected' : '' %>> Melocotón</option>
-            <option value="37" <%= producto.colors[0].ProductColor.color_id == '37' ? 'selected' : '' %>> Violeta</option>
-            <option value="38" <%= producto.colors[0].ProductColor.color_id == '38' ? 'selected' : '' %>> Cafe Claro</option>
-            <option value="39" <%= producto.colors[0].ProductColor.color_id == '39' ? 'selected' : '' %>> Granate</option>
+            <option value="31" <%= producto.colors[0].ProductColor.color_id == '31' ? 'selected' : '' %>> Púrpura oscuro
+            </option>
+            <option value="32" <%= producto.colors[0].ProductColor.color_id == '32' ? 'selected' : '' %>> Verde lima
+            </option>
+            <option value="33" <%= producto.colors[0].ProductColor.color_id == '33' ? 'selected' : '' %>> Verde claro
+            </option>
+            <option value="34" <%= producto.colors[0].ProductColor.color_id == '34' ? 'selected' : '' %>> Ciruela
+            </option>
+            <option value="35" <%= producto.colors[0].ProductColor.color_id == '35' ? 'selected' : '' %>> Azul claro
+            </option>
+            <option value="36" <%= producto.colors[0].ProductColor.color_id == '36' ? 'selected' : '' %>> Melocotón
+            </option>
+            <option value="37" <%= producto.colors[0].ProductColor.color_id == '37' ? 'selected' : '' %>> Violeta
+            </option>
+            <option value="38" <%= producto.colors[0].ProductColor.color_id == '38' ? 'selected' : '' %>> Cafe Claro
+            </option>
+            <option value="39" <%= producto.colors[0].ProductColor.color_id == '39' ? 'selected' : '' %>> Granate
+            </option>
             <option value=""> </option>
           </select>
         </div>
@@ -119,11 +149,13 @@
         </div>
 
         <div class="edit-form">
-          <input value="<%= producto.price %>" class="control" type="text" name="price" id="price" placeholder="Precio del producto">
+          <input value="<%= producto.price %>" class="control" type="text" name="price" id="price"
+            placeholder="Precio del producto">
         </div>
 
         <div class="edit-form">
-          <input value="<%= producto.discount %>" class="control" type="text" name="discount" id="discount" placeholder="Descuento del producto">
+          <input value="<%= producto.discount %>" class="control" type="text" name="discount" id="discount"
+            placeholder="Descuento del producto">
         </div>
 
         <div class="edit-form">
@@ -137,6 +169,8 @@
 
       </form>
     </section>
+
+  </div>
 
   </main>
 
