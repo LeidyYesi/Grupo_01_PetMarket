@@ -4,6 +4,7 @@ const model = require("../models/jsonTableFunctions");
 const product = model("productsDataBase");
 const moveFile = require("../models/imageDistribution");
 const db = require("../database/models/");
+const { Op } = require("sequelize");
 const Product = db.Product;
 const Category = db.Category;
 const Pet = db.Pet;
@@ -221,25 +222,25 @@ const productsController = {
     }
 
     // Actualizar el producto en la base de datos
-  Product.update(productoEditado, { where: { id } })
-  .then(async () => {
-    const newColorId = req.body.color_id;
-    const oldColorId = productoAnterior.colors[0].ProductColor.color_id;
+    Product.update(productoEditado, { where: { id } })
+      .then(async () => {
+        const newColorId = req.body.color_id;
+        const oldColorId = productoAnterior.colors[0].ProductColor.color_id;
 
-    // Si el color ha cambiado, actualizamos la tabla ProductColor
-    if (newColorId !== oldColorId) {
-      await ProductColor.update(
-        { color_id: newColorId },
-        { where: { product_id: id } }
-      );
-    }
-    res.redirect("/");
-  })
-  .catch((error) => {
-    console.log(error);
-    res.status(500).send("Error al actualizar el producto");
-  });
-},
+        // Si el color ha cambiado, actualizamos la tabla ProductColor
+        if (newColorId !== oldColorId) {
+          await ProductColor.update(
+            { color_id: newColorId },
+            { where: { product_id: id } }
+          );
+        }
+        res.redirect("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(500).send("Error al actualizar el producto");
+      });
+  },
 
   // (delete) Delete - Eliminar un producto de la DB
   destroy: async (req, res) => {
@@ -251,6 +252,34 @@ const productsController = {
       console.error(err);
       res.status(500).send("Error eliminando producto");
     }
+  },
+
+  // Metodo para buscar productos por descripcion
+  search: (req, res) => {
+    let busqueda = req.query.search;
+
+    console.log("---------------Palabra de Busqueda---------------");
+    console.log(busqueda);
+
+    let titulo = "Productos con la palabra: " + busqueda;
+
+    let productos = db.Product.findAll({
+      where: {
+        description: { [Op.like]: "%" + busqueda + "%" },
+      },
+      include: [
+        { model: db.Category, as: "categories" },
+        { model: db.Pet, as: "pets" },
+        { model: db.Size, as: "sizes" },
+        { model: db.Weight, as: "weights" },
+        { model: Color, as: "colors" },
+      ],
+    })
+      .then((productos) => {
+        titulo = titulo.toUpperCase();
+        res.render("products/productList", { productos, titulo });
+      })
+      .catch((error) => console.log(error));
   },
 
   // Metodo para adicionar informacion al carrito de compras

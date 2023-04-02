@@ -43,12 +43,14 @@
               </li>
               <% } %>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control rounded me-2" type="search" placeholder="Search" aria-label="Search">
-              <span class="input-group-text border-0" id="search-addon">
+
+            <form class="d-flex" role="search" action="/products/search" method="get">
+              <input class="form-control rounded me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+              <button class="btn btn-outline-success" type="submit">
                 <i class="fas fa-search"></i>
-              </span>
+              </button>
             </form>
+
             <ul class="navbar-nav navbar-right">
               <ul class="navbar-nav aling-items-center">
                 <% if (locals.isLog) { %>
