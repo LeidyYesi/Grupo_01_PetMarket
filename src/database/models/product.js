@@ -46,13 +46,12 @@ module.exports = (sequelize, dataTypes) => {
 
   Product.associate = function (models) {
     Product.belongsToMany(models.Color, {
-      // models.Color -> Actors es el Color de alias en Color.js
-      as: "productsColors",
-      through: "products_colors",
+      as: "colors",
+      through: models.ProductColor,
       foreignKey: "product_id",
       otherKey: "color_id",
       timestamps: false,
-    });
+      });
 
     Product.belongsTo(models.Pet, {
       //associate con el modelo de Pet

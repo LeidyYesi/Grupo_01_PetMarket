@@ -18,7 +18,7 @@
 
 .col-12 {
   position: relative;
-  width: 50%;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -154,4 +154,11 @@ h2 {
 }
 .action-button.delete {
   background-color: #FF0000;
+}
+
+/*-------media queries--------*/
+@media (min-width: 768px) {
+  .col-12 {
+    width: 50%;
+  }
 }
