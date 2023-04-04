@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const adminAccess = require("../middlewares/adminAccess")
+const createValidation = require('../middlewares/validateCreateProducts');
 
 
 // ************ Controller Require ************
@@ -15,7 +16,7 @@ router.get('/list/:filtro/', productsController.index);
 
 // Crear un producto
 router.get('/create/', adminAccess, productsController.create);
-router.post('/create/', uploadFile.single('img'), productsController.processCreate);
+router.post('/create/', uploadFile.single('img'), createValidation, productsController.processCreate);
 
 // Devolver un producto
 router.get('/detail/:id/', productsController.detail);

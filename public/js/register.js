@@ -61,7 +61,7 @@ window.addEventListener("load", function () {
 
       let erroresPassword = document.querySelector(".errores_password");
       let formatPassword =
-        /(?=[A-Za-z0-9@#$%^&+!=]+$)^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+!=])(?=.{8,}).*$/;
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}/;
 
       if (!formatPassword.test(password.value)) {
         erroresPassword.innerHTML = "";

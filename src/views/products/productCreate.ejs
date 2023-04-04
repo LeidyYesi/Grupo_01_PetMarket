@@ -5,147 +5,176 @@
 
     <title>PetMarket - Create Product</title>
     <!-- Mi css -->
-    <link rel="stylesheet" href="/css/productCreate.css">
+    <link rel="stylesheet" href="/css/productCreate.css" />
   </head>
   <body>
     <%- include('../partials/header.ejs') %>
 
     <main>
+      <section class="formu-create">
+        <section class="inicio-logo">
+          <h4>Crear Nuevo Producto</h4>
+          <img
+            src="/img/Logo-pet-market.jpg"
+            whith="360"
+            alt="logo-pet-market"
+            class="img"
+          />
+        </section>
 
- <section class="formu-create">
-  <section class="inicio-logo">
-    <h4>Crear Nuevo Producto</h4>
-    <img
-      src="/img/Logo-pet-market.jpg"
-      whith="360"
-      alt="logo-pet-market"
-      class="img"
-    />
-  </section>
+        <ul class="errores"></ul>
 
-      <form
-        action="/products/create"
-        method="POST"
-        class="create-form"
-        enctype="multipart/form-data"
-      >
-      <div class="create-form">
-        <input class="control" type="text" name="name" id="name" placeholder="Nombre del Producto" >
-      </div>
+        <form
+          action="/products/create"
+          method="POST"
+          class="form"
+          enctype="multipart/form-data"
+        >
+          <div class="create-form">
+            <label for="name">Nombre:</label>
+            <input
+              class="control"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Nombre del Producto"
+            />
+          </div>
 
-      <div class="create-form">
-        <textarea name="description" id="description" placeholder="Descripcion del Producto" class="form-input"></textarea>
-      </div>
+          <div class="create-form">
+            <label for="description">Descripcion:</label>
+            <textarea
+              name="description"
+              id="description"
+              placeholder="Descripcion del Producto"
+              class="form-input"
+            ></textarea>
+          </div>
 
-      <div class="create-form">
-        <input type="text" id="categories_id"  placeholder="Categoria"  class="control">
-        <select name="categories_id">
-        <option value="">Elegí una categoria</option>
-        <option value= "3">Alimentos</option>
-        <option value="1">Accesorios</option> 
-        <option value= "4">Aseo</option>
-        <option value= "2">Juguetes</option>
-      </select>
-      </div>
+          <div class="create-form">
+            <label for="categories_id" class="categories_id">Categoria:</label>
+            <select name="categories_id">
+              <option value="0">Elegí una categoria</option>
+              <option value="3">Alimentos</option>
+              <option value="1">Accesorios</option>
+              <option value="4">Aseo</option>
+              <option value="2">Juguetes</option>
+            </select>
+          </div>
 
-      <div class="create-form">
-        <input type="text"   id="pets_id"  placeholder="Mascota"  class="control">
-        <select name="pets_id">
-        <option value="">Elegí una mascota</option> 
-        <option value= "1">Perro</option>
-        <option value="2">Gato</option> 
-      </select>
-      </div>
+          <div class="create-form">
+            <label for="pets_id">Mascota:</label>
+            <select name="pets_id">
+              <option value="0">Elegí una mascota</option>
+              <option value="1">Perro</option>
+              <option value="2">Gato</option>
+            </select>
+          </div>
 
-      <div class="create-form">
-        <input type="text"   id="color_id"  placeholder="Color"  class="control">
-        <select name="color_id">
-        <option value="">Elegí un color</option>
-        <option value="1"> Negro</option>
-        <option value="2"> Azul</option>
-        <option value="3"> Marron</option>
-        <option value="4"> Gris</option>
-        <option value="5"> Verde</option>
-        <option value="6"> Naranja</option>
-        <option value="7"> Rosa</option>
-        <option value="8"> Púrpura</option>
-        <option value="9"> Rojo</option>
-        <option value="10"> Blanco</option>
-        <option value="11"> Amarillo</option>
-        <option value="12"> Turquesa</option>
-        <option value="13"> Verde oliva</option>
-        <option value="14"> Verde menta</option>
-        <option value="15"> Borgoña</option>
-        <option value="16"> Lavanda</option>
-        <option value="17"> Magenta</option>
-        <option value="18"> Salmon</option>
-        <option value="19"> Cian</option>
-        <option value="20"> Beige</option>
-        <option value="21"> Rosado</option>
-        <option value="22"> Verde oscuro</option>
-        <option value="23"> Aceituna</option>
-        <option value="24"> Lila</option>
-        <option value="25"> Amarillo palido</option>
-        <option value="26"> Fucsia</option>
-        <option value="27"> Mostaza</option>
-        <option value="28"> Ocre</option>
-        <option value="29"> Trullo</option>
-        <option value="30"> Malva</option>
-        <option value="31"> Púrpura oscuro</option>
-        <option value="32"> Verde lima</option>
-        <option value="33"> Verde claro</option>
-        <option value="34"> Ciruela</option>
-        <option value="35"> Azul claro</option>
-        <option value="36"> Melocotón</option>
-        <option value="37"> Violeta</option>
-        <option value="38"> Cafe Claro</option>
-        <option value="39"> Granate</option>
-      </select>
-      </div>
+          <div class="create-form">
+            <label for="color_id">Color:</label>
+            <select name="color_id">
+              <option value="">Elegí un color</option>
+              <option value="1">Negro</option>
+              <option value="2">Azul</option>
+              <option value="3">Marron</option>
+              <option value="4">Gris</option>
+              <option value="5">Verde</option>
+              <option value="6">Naranja</option>
+              <option value="7">Rosa</option>
+              <option value="8">Púrpura</option>
+              <option value="9">Rojo</option>
+              <option value="10">Blanco</option>
+              <option value="11">Amarillo</option>
+              <option value="12">Turquesa</option>
+              <option value="13">Verde oliva</option>
+              <option value="14">Verde menta</option>
+              <option value="15">Borgoña</option>
+              <option value="16">Lavanda</option>
+              <option value="17">Magenta</option>
+              <option value="18">Salmon</option>
+              <option value="19">Cian</option>
+              <option value="20">Beige</option>
+              <option value="21">Rosado</option>
+              <option value="22">Verde oscuro</option>
+              <option value="23">Aceituna</option>
+              <option value="24">Lila</option>
+              <option value="25">Amarillo palido</option>
+              <option value="26">Fucsia</option>
+              <option value="27">Mostaza</option>
+              <option value="28">Ocre</option>
+              <option value="29">Trullo</option>
+              <option value="30">Malva</option>
+              <option value="31">Púrpura oscuro</option>
+              <option value="32">Verde lima</option>
+              <option value="33">Verde claro</option>
+              <option value="34">Ciruela</option>
+              <option value="35">Azul claro</option>
+              <option value="36">Melocotón</option>
+              <option value="37">Violeta</option>
+              <option value="38">Cafe Claro</option>
+              <option value="39">Granate</option>
+            </select>
+          </div>
 
-      <div class="create-form">
-        <input type="text"   id="weights_id"  placeholder="Peso de la unidad"  class="control">
-        <select name="weights_id">
-        <option value=""> Ingresa el peso</option>
-        <option value="1"> 1 kg</option>
-        <option value="2"> 3 kg</option>
-        <option value="3"> 7 kg</option>
-        <option value="4"> 15 kg</option>
-      </select>
-      </div>
+          <div class="create-form">
+            <label for="weights_id">Peso:</label>
+            <select name="weights_id">
+              <option value="">Ingresa el peso</option>
+              <option value="1">1 kg</option>
+              <option value="2">3 kg</option>
+              <option value="3">7 kg</option>
+              <option value="4">15 kg</option>
+            </select>
+          </div>
 
-      <div class="create-form">
-        <input type="text" id="sizes_id"  placeholder="Tamaño"  class="control">
-        <select name="sizes_id">
-        <option value="">Elegí un tamaño</option>
-        <option value= "1"> Pequeño</option>
-        <option value="2"> Mediano</option>
-        <option value= "3"> Grande</option>
-      </select>
-      </div>
+          <div class="create-form">
+            <label for="sizes_id">Tamaño:</label>
+            <select name="sizes_id">
+              <option value="">Elegí un tamaño</option>
+              <option value="1">Pequeño</option>
+              <option value="2">Mediano</option>
+              <option value="3">Grande</option>
+            </select>
+          </div>
 
-      <div class="create-form">
-        <input class="control" type="text" name="price" id="price" placeholder="Precio del producto">
-      </div>
+          <div class="create-form">
+            <label for="price">Precio:</label>
+            <input
+              class="control"
+              type="text"
+              name="price"
+              id="price"
+              placeholder="Precio del producto"
+            />
+          </div>
 
-      <div class="create-form">
-        <input class="control" type="text" name="discount" id="discount" placeholder="Descuento del producto">
-      </div>
+          <div class="create-form">
+            <label for="discount">Descuento:</label>
+            <input
+              class="control"
+              type="text"
+              name="discount"
+              id="discount"
+              placeholder="Descuento del producto"
+            />
+          </div>
 
-      <div class="create-form">
-        <h4>Ingrese la imagen del producto:</h4>
-        <input type="file" name="img" id="img">
-      </div>
+          <div class="create-form">
+            <label for="img">Ingrese la imagen del producto:</label>
+            <input type="file" name="img" id="img" />
+          </div>
 
-        <div>
-          <button class="botton" type="submit" class="boton" value="Crear">Crear</button>
-        </div>
-
-      </form>
-    </section>
-
+          <div>
+            <button class="botton" type="submit" class="boton" value="Crear">
+              Crear
+            </button>
+          </div>
+        </form>
+      </section>
     </main>
 
     <%- include('../partials/footer.ejs') %>
+    <script src="/js/createProduct.js"></script>
   </body>
 </html>

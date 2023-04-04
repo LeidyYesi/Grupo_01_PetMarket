@@ -94,6 +94,7 @@ const productsController = {
   // (post) Create - Método para guardar la info
   processCreate: (req, res) => {
     console.log(req.body);
+    
     try {
     let productoNuevo = {
       ...req.body,

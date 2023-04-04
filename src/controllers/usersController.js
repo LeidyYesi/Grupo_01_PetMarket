@@ -175,9 +175,7 @@ let userController = {
           name: req.body.name,
           lastname: req.body.lastName,
           email: req.body.email,
-          // password: pass,
-          // categories_id: 1,
-          // image: req.file.filename,
+          image: req.file.filename,
         },
         {
           where: { id: userId },
@@ -187,7 +185,9 @@ let userController = {
           req.session.userLogueado.name = req.body.name;
           req.session.userLogueado.lastname = req.body.lastName;
           req.session.userLogueado.email = req.body.email;
-          // req.session.userLogueado.password = pass;
+          let destinationPath = "./public/img/users";
+          moveFile(req.file.filename, req.file.destination, destinationPath);
+          req.session.userLogueado.image = req.file.filename;
           res.clearCookie("userEmail");
           return res.redirect("/users/userProfile");
         })
