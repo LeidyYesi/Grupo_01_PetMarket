@@ -31,6 +31,7 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 const mainRouter = require("./routers/mainRouter.js");
 const usersRouter = require("./routers/usersRouter.js");
 const productsRouter = require("./routers/productsRouter.js");
+const usersRouterApi = require('./routers/api/usersRouter.js');
 const logUserMiddleware = require("./middlewares/logUserMiddleware.js");
 const { createRequire } = require("module");
 
@@ -38,6 +39,7 @@ const { createRequire } = require("module");
 app.use("/", mainRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+app.use("/api/users", usersRouterApi);
 
 // ************ Set the server to listen - (don't touch) ************
 app.listen(3030, () => {
