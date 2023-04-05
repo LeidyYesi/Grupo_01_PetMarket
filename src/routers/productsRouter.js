@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const adminAccess = require("../middlewares/adminAccess")
 const createValidation = require('../middlewares/validateCreateProducts');
+const editValidation = require('../middlewares/validateEditProducts.js');
 
 
 // ************ Controller Require ************
@@ -26,7 +27,7 @@ router.get('/detail/:id/', productsController.detail);
 
 // Editar un producto
 router.get('/edit/:id', adminAccess, productsController.edit);
-router.put('/edit/:id', uploadFile.single('img'), productsController.processEdit);
+router.put('/edit/:id', uploadFile.single('img'), editValidation, productsController.processEdit);
 
 // Eliminar un producto
 router.delete('/delete/:id', adminAccess, productsController.destroy);

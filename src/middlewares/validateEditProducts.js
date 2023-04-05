@@ -22,25 +22,6 @@ const validations = [
   body("weights_id").notEmpty().withMessage("Tienes que ingresar el peso"),
   body("sizes_id").notEmpty().withMessage("Tienes que ingresar el tamaño"),
   body("price").notEmpty().withMessage("Tienes que ingresar el precio"),
-  body("img").custom((value, { req }) => {
-    let file = req.file;
-    let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
-
-    if (!file) {
-      throw new Error("Tienes que subir una imagen");
-    } else {
-      let fileExtension = path.extname(file.originalname);
-      if (!acceptedExtensions.includes(fileExtension)) {
-        throw new Error(
-          `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-            ", "
-          )}`
-        );
-      }
-    }
-
-    return true;
-  }),
 ];
 
 module.exports = validations;

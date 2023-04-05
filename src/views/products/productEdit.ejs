@@ -22,15 +22,19 @@
         <img src="/img/Logo-pet-market.jpg" whith="360" alt="logo-pet-market" class="img" />
       </section>
 
-      <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" class="edit-form"
+      <ul class="errores"></ul>
+
+      <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" class="form"
         enctype="multipart/form-data">
 
         <div class="edit-form">
+          <label for="name">Nombre:</label>
           <input value="<%= producto.name %>" class="control" type="text" name="name" id="name"
             placeholder="Nombre del Producto">
         </div>
 
         <div class="edit-form">
+          <label for="description">Descripcion:</label>
           <textarea name="description" id="description" placeholder="Descripcion del Producto"
             class="form-input"><%= producto.description %></textarea>
         </div>
@@ -47,7 +51,7 @@
         </div>
 
         <div class="edit-form">
-          <input type="text" id="pets_id" placeholder="Mascota" class="control">
+          <label for="pets_id">Mascota:</label>
           <select name="pets_id">
             <option value="">Elegí una mascota</option>
             <option value="1" <%= producto.pets.pet == 'perros' ? 'selected' : '' %>> Perro</option>
@@ -56,7 +60,7 @@
         </div>
 
         <div class="edit-form">
-          <input type="text" id="color_id" placeholder="Color del producto" class="control">
+          <label for="color_id">Color:</label>
           <select name="color_id">
             <option value="">Elegí un color</option>
             <option value="1" <%= producto.colors[0].ProductColor.color_id == '1' ? 'selected' : '' %>> Negro</option>
@@ -128,7 +132,7 @@
         </div>
 
         <div class="edit-form">
-          <input type="text" id="weights_id" placeholder="Peso de la unidad" class="control">
+          <label for="weights_id">Peso:</label>
           <select name="weights_id">
             <option value="">Elegí un peso</option>
             <option value="1" <%= producto.weights.id == '1' ? 'selected' : '' %>> 1 kg</option>
@@ -139,7 +143,7 @@
         </div>
 
         <div class="edit-form">
-          <input type="text" id="sizes_id" placeholder="Tamaño" class="control">
+          <label for="sizes_id">Tamaño:</label>
           <select name="sizes_id">
             <option value="">Elegí un tamaño</option>
             <option value="1" <%= producto.sizes.id == '1' ? 'selected' : '' %>> Pequeño</option>
@@ -149,17 +153,19 @@
         </div>
 
         <div class="edit-form">
+          <label for="price">Precio:</label>
           <input value="<%= producto.price %>" class="control" type="text" name="price" id="price"
             placeholder="Precio del producto">
         </div>
 
         <div class="edit-form">
+          <label for="discount">Descuento:</label>
           <input value="<%= producto.discount %>" class="control" type="text" name="discount" id="discount"
             placeholder="Descuento del producto">
         </div>
 
         <div class="edit-form">
-          <h4>Ingrese la imagen del producto:</h4>
+          <label for="img">Ingrese la imagen del producto:</label>
           <input type="file" name="img" id="img">
         </div>
 
@@ -175,6 +181,7 @@
   </main>
 
   <%- include('../partials/footer.ejs') %>
+  <script src="/js/editProduct.js"></script>
 </body>
 
 </html>

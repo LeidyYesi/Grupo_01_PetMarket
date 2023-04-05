@@ -54,7 +54,7 @@ h4{
   padding: 30px;
   margin:  auto;
   border-radius: 4px;
-  color: var(--gris-claro);
+  /* color: var(--gris-claro); */
   border: 1px solid var(--gris-claro);
   border-radius: 4px ;
 }
@@ -101,6 +101,26 @@ input {
 
 .radio{
 color: var(--#02020a);
+}
+
+#name.control {
+  background-color: #fff;
+}
+
+.is-valid {
+  border: 2px solid green;
+}
+
+.is-invalid {
+  border: 2px solid red;
+}
+
+.errores li{
+  color: red;
+  background-color: var(--gris-claro);
+  text-align: center;
+  font-size: 18px;
+  padding: 0;
 }
 
 /* Contenedor */

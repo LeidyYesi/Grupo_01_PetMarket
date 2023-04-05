@@ -5,6 +5,7 @@ const product = model("productsDataBase");
 const moveFile = require("../models/imageDistribution");
 const db = require("../database/models/");
 const { Op } = require("sequelize");
+const { validationResult } = require("express-validator");
 const Product = db.Product;
 const Category = db.Category;
 const Pet = db.Pet;
@@ -94,65 +95,73 @@ const productsController = {
 
   // (post) Create - Método para guardar la info
   processCreate: (req, res) => {
-    try {
-      let productoNuevo = {
-        ...req.body,
-        img: req.file ? req.file.filename : "default-image.png",
-      };
+    let resultValidation = validationResult(req);
 
-      console.log("---------------Producto Nuevo---------------");
-      console.log(productoNuevo);
-
-      if (req.file) {
-        if (req.body.categories_id == "1") {
-          categoria_img = "accesorios";
-        } else if (req.body.categories_id == "2") {
-          categoria_img = "juguetes";
-        } else if (req.body.categories_id == "3") {
-          categoria_img = "alimentos";
-        } else {
-          categoria_img = "aseo";
-        }
-
-        if (req.body.pets_id == "1") {
-          mascota_img = "perros";
-        } else {
-          mascota_img = "gatos";
-        }
-
-        let destinationPath =
-          "./public/img/" + categoria_img + "/" + mascota_img;
-        console.log("destinationPath", destinationPath);
-        moveFile(req.file.filename, req.file.destination, destinationPath);
-      }
-
-      // Crear un nuevo producto en la base de datos
-      Product.create(productoNuevo).then((producto) => {
-        const product_id = producto.id;
-        const color_id = req.body.color_id;
-
-        let productoColorNuevo = {
-          product_id,
-          color_id,
+    if (resultValidation.errors.length > 0) {
+      res.redirect("/products/create");
+    } else {
+      try {
+        let productoNuevo = {
+          ...req.body,
+          img: req.file ? req.file.filename : "default-image.png",
         };
 
-        console.log(
-          "El productoColorNuevo es: " + JSON.stringify(productoColorNuevo)
-        );
+        console.log("---------------Producto Nuevo---------------");
+        console.log(productoNuevo);
 
-        // Crear un nuevo registro en la tabla ProductColor
-        ProductColor.create(productoColorNuevo)
-          .then(() => {
-            res.redirect("/");
-          })
-          .catch((error) => {
-            console.log(error);
-            res.status(500).send("Error al crear el registro en ProductColor");
-          });
-      });
-    } catch (error) {
-      console.log(error);
-      res.status(500).send("Error al crear el producto");
+        if (req.file) {
+          if (req.body.categories_id == "1") {
+            categoria_img = "accesorios";
+          } else if (req.body.categories_id == "2") {
+            categoria_img = "juguetes";
+          } else if (req.body.categories_id == "3") {
+            categoria_img = "alimentos";
+          } else {
+            categoria_img = "aseo";
+          }
+
+          if (req.body.pets_id == "1") {
+            mascota_img = "perros";
+          } else {
+            mascota_img = "gatos";
+          }
+
+          let destinationPath =
+            "./public/img/" + categoria_img + "/" + mascota_img;
+          console.log("destinationPath", destinationPath);
+          moveFile(req.file.filename, req.file.destination, destinationPath);
+        }
+
+        // Crear un nuevo producto en la base de datos
+        Product.create(productoNuevo).then((producto) => {
+          const product_id = producto.id;
+          const color_id = req.body.color_id;
+
+          let productoColorNuevo = {
+            product_id,
+            color_id,
+          };
+
+          console.log(
+            "El productoColorNuevo es: " + JSON.stringify(productoColorNuevo)
+          );
+
+          // Crear un nuevo registro en la tabla ProductColor
+          ProductColor.create(productoColorNuevo)
+            .then(() => {
+              res.redirect("/");
+            })
+            .catch((error) => {
+              console.log(error);
+              res
+                .status(500)
+                .send("Error al crear el registro en ProductColor");
+            });
+        });
+      } catch (error) {
+        console.log(error);
+        res.status(500).send("Error al crear el producto");
+      }
     }
   },
 
@@ -178,68 +187,75 @@ const productsController = {
 
   // (put) Update - Método para actualizar la info
   processEdit: async (req, res) => {
+    let resultValidation = validationResult(req);
     let id = req.params.id;
 
-    let productoAnterior = await Product.findByPk(id, {
-      include: [
-        { model: db.Category, as: "categories" },
-        { model: db.Pet, as: "pets" },
-        { model: db.Size, as: "sizes" },
-        { model: db.Weight, as: "weights" },
-        { model: Color, as: "colors" },
-      ],
-    });
+    if (resultValidation.errors.length > 0) {
+      res.redirect("/products/edit/" + id);
+    } else {
 
-    let productoEditado = {
-      id: productoAnterior.id,
-      ...req.body,
-      img: req.file ? req.file.filename : productoAnterior.img,
-    };
-
-    console.log("---------------Producto Editado---------------");
-    console.log(productoEditado);
-
-    if (req.file) {
-      if (req.body.categories_id == "1") {
-        categoria_img = "accesorios";
-      } else if (req.body.categories_id == "2") {
-        categoria_img = "juguetes";
-      } else if (req.body.categories_id == "3") {
-        categoria_img = "alimentos";
-      } else {
-        categoria_img = "aseo";
-      }
-
-      if (req.body.pets_id == "1") {
-        mascota_img = "perros";
-      } else {
-        mascota_img = "gatos";
-      }
-
-      let destinationPath = "./public/img/" + categoria_img + "/" + mascota_img;
-      console.log("destinationPath", destinationPath);
-      moveFile(req.file.filename, req.file.destination, destinationPath);
-    }
-
-    // Actualizar el producto en la base de datos
-    Product.update(productoEditado, { where: { id } })
-      .then(async () => {
-        const newColorId = req.body.color_id;
-        const oldColorId = productoAnterior.colors[0].ProductColor.color_id;
-
-        // Si el color ha cambiado, actualizamos la tabla ProductColor
-        if (newColorId !== oldColorId) {
-          await ProductColor.update(
-            { color_id: newColorId },
-            { where: { product_id: id } }
-          );
-        }
-        res.redirect("/");
-      })
-      .catch((error) => {
-        console.log(error);
-        res.status(500).send("Error al actualizar el producto");
+      let productoAnterior = await Product.findByPk(id, {
+        include: [
+          { model: db.Category, as: "categories" },
+          { model: db.Pet, as: "pets" },
+          { model: db.Size, as: "sizes" },
+          { model: db.Weight, as: "weights" },
+          { model: Color, as: "colors" },
+        ],
       });
+
+      let productoEditado = {
+        id: productoAnterior.id,
+        ...req.body,
+        img: req.file ? req.file.filename : productoAnterior.img,
+      };
+
+      console.log("---------------Producto Editado---------------");
+      console.log(productoEditado);
+
+      if (req.file) {
+        if (req.body.categories_id == "1") {
+          categoria_img = "accesorios";
+        } else if (req.body.categories_id == "2") {
+          categoria_img = "juguetes";
+        } else if (req.body.categories_id == "3") {
+          categoria_img = "alimentos";
+        } else {
+          categoria_img = "aseo";
+        }
+
+        if (req.body.pets_id == "1") {
+          mascota_img = "perros";
+        } else {
+          mascota_img = "gatos";
+        }
+
+        let destinationPath =
+          "./public/img/" + categoria_img + "/" + mascota_img;
+        console.log("destinationPath", destinationPath);
+        moveFile(req.file.filename, req.file.destination, destinationPath);
+      }
+
+      // Actualizar el producto en la base de datos
+      Product.update(productoEditado, { where: { id } })
+        .then(async () => {
+          const newColorId = req.body.color_id;
+          const oldColorId = productoAnterior.colors[0].ProductColor.color_id;
+
+          // Si el color ha cambiado, actualizamos la tabla ProductColor
+          if (newColorId !== oldColorId) {
+            await ProductColor.update(
+              { color_id: newColorId },
+              { where: { product_id: id } }
+            );
+          }
+          res.redirect("/");
+        })
+        .catch((error) => {
+          console.log(error);
+          res.status(500).send("Error al actualizar el producto");
+        });
+    }
   },
 
   // (delete) Delete - Eliminar un producto de la DB

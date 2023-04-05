@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
   let erroresHtml = document.querySelector(".errores");
 
   form.addEventListener("submit", function (event) {
-    event.preventDefault();
+    
 
     let errores = [];
 
@@ -29,7 +29,7 @@ window.addEventListener("load", function () {
       form.description.classList.add("is-valid");
     }
 
-    if (form.categories_id.value == "0") {
+    if (form.categories_id.value == "") {
       errores.push("Debes que elegir una categoría");
       form.categories_id.classList.remove("is-valid");
       form.categories_id.classList.add("is-invalid");
@@ -38,13 +38,49 @@ window.addEventListener("load", function () {
       form.categories_id.classList.add("is-valid");
     }
 
-    if (form.pets_id.value == "0") {
+    if (form.pets_id.value == "") {
       errores.push("Debes que elegir una mascota");
       form.pets_id.classList.remove("is-valid");
       form.pets_id.classList.add("is-invalid");
     } else {
       form.pets_id.classList.remove("is-invalid");
       form.pets_id.classList.add("is-valid");
+    }
+
+    if (form.color_id.value == "") {
+      errores.push("Debes que elegir un color");
+      form.color_id.classList.remove("is-valid");
+      form.color_id.classList.add("is-invalid");
+    } else {
+      form.color_id.classList.remove("is-invalid");
+      form.color_id.classList.add("is-valid");
+    }
+
+    if (form.weights_id.value == "") {
+      errores.push("Debes que elegir el peso");
+      form.weights_id.classList.remove("is-valid");
+      form.weights_id.classList.add("is-invalid");
+    } else {
+      form.weights_id.classList.remove("is-invalid");
+      form.weights_id.classList.add("is-valid");
+    }
+
+    if (form.sizes_id.value == "") {
+      errores.push("Debes que elegir el tamaño");
+      form.sizes_id.classList.remove("is-valid");
+      form.sizes_id.classList.add("is-invalid");
+    } else {
+      form.sizes_id.classList.remove("is-invalid");
+      form.sizes_id.classList.add("is-valid");
+    }
+
+    if (form.price.value == "") {
+      errores.push("Debes ingresar el precio");
+      form.price.classList.remove("is-valid");
+      form.price.classList.add("is-invalid");
+    } else {
+      form.price.classList.remove("is-invalid");
+      form.price.classList.add("is-valid");
     }
 
 
@@ -61,8 +97,11 @@ window.addEventListener("load", function () {
     }
 
     erroresHtml.innerHTML = "";
-    errores.forEach((error) => {
-      erroresHtml.innerHTML += "<li>" + error + "</li>";
-    });
+    if (errores.length > 0) {
+      event.preventDefault();
+      errores.forEach((error) => {
+        erroresHtml.innerHTML += "<li>" + error + "</li>";
+      });
+    }
   });
 });
