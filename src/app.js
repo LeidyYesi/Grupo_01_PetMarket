@@ -5,6 +5,7 @@ const methodOverride = require('method-override'); // Para poder usar los métod
 const session = require("express-session")          //Para guardar la informacion del usuario
 const isLog = require("./middlewares/logUserMiddleware");
 const cookies = require("cookie-parser");
+const cors = require("cors");
 
 
 // ************ express() - (don't touch) ************
@@ -22,6 +23,7 @@ app.use(session({
 }));
 app.use(cookies());
 app.use(isLog);
+app.use(cors());
 
 // ************ Template Engine - (don't touch) ************
 app.set('view engine', 'ejs'); // Define que el motor que utilizamos es EJS
