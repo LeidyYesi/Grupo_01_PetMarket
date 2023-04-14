@@ -32,6 +32,7 @@ const mainRouter = require("./routers/mainRouter.js");
 const usersRouter = require("./routers/usersRouter.js");
 const productsRouter = require("./routers/productsRouter.js");
 const usersRouterApi = require('./routers/api/usersRouter.js');
+const productsRouterApi = require('./routers/api/apiProductsRouter.js');
 const logUserMiddleware = require("./middlewares/logUserMiddleware.js");
 const { createRequire } = require("module");
 
@@ -40,6 +41,7 @@ app.use("/", mainRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 app.use("/api/users", usersRouterApi);
+app.use("/api/products", productsRouterApi);
 
 // ************ Set the server to listen - (don't touch) ************
 app.listen(3030, () => {
