@@ -91,6 +91,34 @@ const productsController = {
       res.json(respuesta);
     });
   },
+  /* 
+  category: (req, res) => {
+    category.findAll({
+      include: [
+        { model: Category, as: "categories" },
+      ],
+    }).then((category) => {
+      let categoryData = [];
+      category.forEach((element) => {
+        let categoryLiteral = {
+          id: element.category.id,
+          name: element.category.name,
+          url: "/api/products/category" 
+        };
+        categoryData.push(categoryLiteral);
+      });
+      let respuesta = {
+        meta: {
+          status: 200,
+          count: category.length,
+          url: "/api/products/category",
+        },
+        data: categoryData,
+      };
+      res.json(respuesta);
+    });
+  },*/
+  
 };
 
 module.exports = productsController;
