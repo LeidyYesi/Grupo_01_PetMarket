@@ -169,13 +169,13 @@ let userController = {
       });
     } else {
       let userId = req.params.id;
-      // let pass = bcryptjs.hashSync(req.body.password, 10)
+      let imageEdit = req.file ? req.file.filename : req.session.userLogueado.image
       User.update(
         {
           name: req.body.name,
           lastname: req.body.lastName,
           email: req.body.email,
-          image: req.file.filename,
+          image: imageEdit
         },
         {
           where: { id: userId },
@@ -185,9 +185,11 @@ let userController = {
           req.session.userLogueado.name = req.body.name;
           req.session.userLogueado.lastname = req.body.lastName;
           req.session.userLogueado.email = req.body.email;
-          let destinationPath = "./public/img/users";
-          moveFile(req.file.filename, req.file.destination, destinationPath);
-          req.session.userLogueado.image = req.file.filename;
+          if(req.file) {
+            let destinationPath = "./public/img/users";
+            moveFile(req.file.filename, req.file.destination, destinationPath);
+            req.session.userLogueado.image = req.file.filename;
+          }
           res.clearCookie("userEmail");
           return res.redirect("/users/userProfile");
         })

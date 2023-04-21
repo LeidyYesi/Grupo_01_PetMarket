@@ -7,7 +7,7 @@ const { body, validationResult, check } = require("express-validator"); //requer
 // Middlewares
 const uploadFile = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validateRegisterMiddleware');
-// const editValidation = require('../middlewares/validateEditUserMiddleware')
+const editValidation = require('../middlewares/validateEditUserMiddleware')
 const logMiddelware = require("../middlewares/logMiddleware")
 const authLogMiddelware = require("../middlewares/authLogMiddleware")
 
@@ -24,7 +24,7 @@ router.get("/login", logMiddelware, usersController.login);
 // Proceso de Login
 router.post("/login", [
     check("email").isEmail().withMessage("Email invalido"),
-    check("password").isLength({min : 8}).withMessage("La contraceña debe tener almenos 8 caracteres")
+    check("password").isLength({min : 8}).withMessage("La contraseña debe tener almenos 8 caracteres")
 ] ,usersController.processLogin);
 
 //Perfil de Usuario
@@ -33,7 +33,7 @@ router.get("/userProfile", authLogMiddelware, usersController.profile);
 //edicion de usuario
 router.get("/edit/:id", usersController.edit);
 
-router.put("/edit/:id", uploadFile.single('img'), /*editValidation ,*/ usersController.processEdit);
+router.put("/edit/:id", uploadFile.single('img'), editValidation , usersController.processEdit);
 
 //Cerrar sesion
 router.get("/logout", usersController.logout);
