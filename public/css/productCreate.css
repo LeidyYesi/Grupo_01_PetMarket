@@ -102,7 +102,9 @@ input {
 color: var(--#02020a);
 }
 
-#name.control {
+#name.control,
+#price.control,
+#discount.control {
   background-color: #fff;
 }
 
