@@ -262,6 +262,7 @@ const productsController = {
   destroy: async (req, res) => {
     try {
       let id = req.params.id;
+      await ProductColor.destroy({ where: { product_id: id } });
       await Product.destroy({ where: { id } });
       res.redirect("/");
     } catch (err) {
