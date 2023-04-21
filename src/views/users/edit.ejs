@@ -3,7 +3,7 @@
   <head>
     <%- include('../partials/head.ejs') %>
 
-    <title>PetMarket - Editar Producto</title>
+    <title>PetMarket - Editar Perfil de Usuario</title>
     <!-- Mi css -->
     <link rel="stylesheet" href="/css/userEdit.css" />
   </head>
@@ -11,7 +11,7 @@
     <%- include('../partials/header.ejs') %>
 
     <main>
-      <section class="formu-edit">
+      <section class="formu-registro">
         <section class="inicio-logo">
           <h4>Editar Perfil: <%= user.name %></h4>
           <img
@@ -24,69 +24,65 @@
         <form
           action="/users/edit/<%= user.id %>?_method=PUT"
           method="POST"
-          class="edit-form"
           enctype="multipart/form-data"
         >
-          <div class="input-box">
+          <div class="control-formu">
             <% if (locals.errors && errors.name) { %>
             <div class="text-danger"><%= errors.name.msg %></div>
             <% } %>
             <input
               type="text"
               name="name"
-              value="<%= locals.oldData ? oldData.name : user.name %>"
+              value="<%= locals.oldData ? oldData.name : user.name %>" class="control" placeholder="Ingrese el nuevo nombre"
             />
-            <label for="name">Ingrese el nuevo nombre</label>
           </div>
 
-          <div class="input-box">
+          <div class="control-formu">
             <% if (locals.errors && errors.lastName) { %>
             <div class="text-danger"><%= errors.lastName.msg %></div>
             <% } %>
             <input
               type="text"
               name="lastName"
-              value="<%= locals.oldData ? oldData.lastName : user.lastname %>"
+              value="<%= locals.oldData ? oldData.lastName : user.lastname %>" class="control" placeholder="Ingrese el nuevo apellido"
             />
-            <label for="lastName">Ingrese el nuevo apellido</label>
           </div>
 
-          <div class="input-box">
+          <div class="control-formu">
             <% if (locals.errors && errors.email) { %>
             <div class="text-danger"><%= errors.email.msg %></div>
             <% } %>
             <input
               type="text"
               name="email"
-              value="<%= locals.oldData ? oldData.email : user.email %>"
-            />
-            <label for="email">Ingrese su nuevo mail</label>
+              value="<%= locals.oldData ? oldData.email : user.email %>" class="control"
+            placeholder="Ingrese su nuevo mail"/>
           </div>
 
-          <!-- <div class="input-box">
+          <!-- <div class="control-formu">
             <% if (locals.errors && errors.email) { %>
             <div class="text-danger"><%= errors.email.msg %></div>
             <% } %>
             <input
               type="text"
               name="email"
-              value="<%= locals.oldData ? oldData.email : user.email %>"
+              value="<%= locals.oldData ? oldData.email : user.email %>" class="control"
             />
             <label for="email">Ingrese su nuevo mail</label>
           </div> -->
 
-          <div class="input-box">
+          <div class="control-formu">
             <% if (locals.errors && errors.img) { %>
             <div class="text-danger"><%= errors.img.msg %></div>
             <% } %>
             <input
               type="file"
               name="img"
-              placeholder="Editar imagen del perfil"
+              placeholder="Editar imagen del perfil" 
             />
           </div>
 
-          <button type="submit" id="edit-button">Editar Información</button>
+          <button class="bottom" type="submit" id="edit-button">Editar Información</button>
         </form>
       </section>
     </main>

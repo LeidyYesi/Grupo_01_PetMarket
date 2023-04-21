@@ -1,14 +1,15 @@
+@import url(normalize.css);
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
 }
 
 :root {
   --Azul-Oscuro: #20165d;
   --Azul-Claro: #28bed1;
-  --celeste: #def7fa;
+  --caleste: #def7fa;
   --celeste-footer: #1259c3;
   --gris-oscuro: #666;
   --gris-claro: #ebebeb;
@@ -17,71 +18,172 @@
   --azul-header: #254969;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+header {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--azul-header);
 }
 
-.formu-edit {
-  position: relative;
-  border: 2px solid rgb(0, 0, 0, 0.5);
-  margin-left: 10%;
-  margin-right: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: var(--celeste);
-  max-width: 700px;
-  margin-top: 3em;
-  margin-bottom: 3em;
+a {
+  text-decoration: none;
+  color: var(--gris-claro);
 }
 
-.inicio-logo {
-  text-align: center;
-  background-color: var(--Azul-Claro);
-  font-weight: bold;
+img {
+  max-width: 100%;
+  vertical-align: top;
 }
-
 .img {
   width: 30%;
-  margin-bottom: 10px;
+  margin-bottom: 3%;
 }
-
-.edit-form {
-  /* width: 100%; */
-  padding: 3%;
+.formu-registro {
+  width: 400px;
+  background: rgb(37, 73, 105);
+  background: linear-gradient(
+    30deg,
+    rgba(37, 73, 105, 1) 13%,
+    rgba(50, 104, 188, 1) 100%
+  );
+  padding: 30px;
+  margin: auto;
+  border-radius: 4px;
+  color: var(--Negro);
+  border: 1px solid var(--gris-claro);
 }
-
-.input-box {
-  font-size: 0.8em;
-  position: relative;
+.inicio-logo {
   width: 100%;
-  height: 10%;
-  border-bottom: 2px solid black;
-  margin: 10% 0;
-  max-width: 300px;
+
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2%;
+  align-content: space-around;
+  flex-wrap: nowrap;
 }
 
-.input-box input {
-  background-color: white;
-  border: 2px solid rgb(0, 0, 0, 0.5);
-  border-radius: .3em;
+.control-formu {
+  color: var(--Negro);
+}
+.control {
   width: 100%;
-  height: 100%;
+  background: var(--gris-claro);
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 1px solid var(--gris-oscuro);
+}
+.bottom,
+input {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  color: var(--Negro);
 }
 
-.input-box label {
-  top: 50%;
-  left: 5px;
-  font-weight: bold;
+.bottom {
+  width: 100%;
+  background: var(--Azul-Claro);
+  padding: 9px;
+  color: var(--gris-claro);
+  margin: 16px 0;
+  border: none;
+  border-radius: 5px;
 }
 
-#edit-button {
-    border: 2px solid rgb(255, 255, 255, 0.5);
-    color: white;
-    background-color: var(--Azul-Claro);
-    font-weight: bold;
-    padding: 1em;
+.bottom:hover {
+  background-color: var(--Naranja);
+}
+
+.formu-registro a {
+  color: var(--Negro);
+  text-decoration: none;
+}
+
+.formu-registro a:hover {
+  color: var(--Negro);
+  text-decoration: underline;
+}
+
+
+
+/*=====cssedit===*/
+
+/*---- Validaciones----*/
+.is-invalid {
+  background-color: #dca8a9;
+  border: 1.5px solid #bb1619;
+}
+
+.is-valid {
+  background-color: #afe2a7;
+  border: 1.5px solid #24e059;
+}
+
+
+/*-------mediaqueri--------*/
+
+:root {
+  --gris-oscuro: #666666;
+}
+
+@media (min-width: 361px) {
+  .barra_busqueda {
+    width: 20%;
+  }
+
+  .credito {
+    width: 30%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+  }
+
+  .nav_opciones {
+    width: 40%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 2rem 0;
+    align-items: center;
+  }
+
+  .burger_menu {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .pie_de_pagina {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .campo_de_texto {
+    width: 40%;
+  }
+
+  .boton {
+    width: 40%;
+  }
 }
