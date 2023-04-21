@@ -47,86 +47,6 @@ input[type='checkbox']:hover {
   cursor: pointer;
 }
 
-li {
-  padding: 5px;
-}
-
-
-
-.barra_busqueda{
-  background-color: var(--gris-claro);
-  width: 35%;
-  align-self: center;
-  display: flex;
-  border-radius: 4px;
-}
-
-.barra_busqueda form{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin: 0.5rem;
-}
-
-.campo_busqueda{
-  width: 100%;
-  display: inline;
-}
-
-.campo_busqueda input{
-  width: 100%;
-}
-
-.icono_busqueda{
-  background-color: var(--blanco);
-  justify-self: flex-end;
-  display: inline;
-}
-
-.credito{
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-}
-
-.credito div{
-  display: inline;
-}
-
-nav{
-  display: none;
-}
-
-
-p, li{
-  font-size: 12px;
-}
-
-li{
-  list-style: none;
-}
-
-.burger_menu{
-  padding-bottom: 1rem;
-  color: var(--blanco);
-  width: 50%;
-  align-self: center;
-  text-align: center;
-  margin: auto;
-}
-
-.burger_menu i{
-  padding: 0.5rem;
-  border-radius: 15%;
-  background-color:  var(--azul);
-}
-
-.imagen_banner img{
-  width: -webkit-fill-available;
-  border: 1px solid var(--gris-oscuro);
-}
-
-
 /*--------------main----------*/
 
 main {
@@ -202,6 +122,9 @@ border: 1px solid var(--gris-oscuro);
   margin: 16px 0;
   border: none;
 }
+.bottom:hover{
+  background-color: var(--Naranja);
+}
 
 .formu-registro a{
   color: var(--Negro);
@@ -213,9 +136,6 @@ border: 1px solid var(--gris-oscuro);
   text-decoration: underline;
 }
 
-.bottom:hover{
-  background-color: var(--Naranja);
-}
 p{
   color: var(--Negro);
   height: 40px;
