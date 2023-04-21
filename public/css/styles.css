@@ -148,7 +148,7 @@ li{
 }
 
 .imagen_banner img{
-    width: -webkit-fill-available;
+    width: 100%;
 }
 
 main{

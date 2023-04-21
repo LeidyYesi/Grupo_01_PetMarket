@@ -132,7 +132,6 @@ li{
 main {
   font-family: "Roboto", sans-serif;
   background-color: var(--gris-claro);
-  height: 650px;
   display:flex;
   justify-content: center;
   align-items:center;
@@ -154,11 +153,12 @@ main {
 }
 
 .formu-registro {
-  width: 400px;
+  /* width: 400px; */
+  width: 500px;
   background: rgb(37,73,105);
     background: linear-gradient(30deg, rgba(37,73,105,1) 13%, rgba(50,104,188,1) 100%);
   padding: 17px;
-  margin:  auto;
+  /* margin:  auto; */
   color: var(--gris-claro);
   border: 1px solid var(--gris-claro);
   border-radius: 4px ;
