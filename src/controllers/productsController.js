@@ -234,6 +234,9 @@ const productsController = {
           "./public/img/" + categoria_img + "/" + mascota_img;
         console.log("destinationPath", destinationPath);
         moveFile(req.file.filename, req.file.destination, destinationPath);
+      } else {
+        // Si no se ha cargado una nueva imagen, mantener la imagen anterior.
+        productoEditado.img = productoAnterior.img;
       }
 
       // Actualizar el producto en la base de datos
