@@ -18,67 +18,64 @@
   --Naranja: #ec673f;
   --azul-header: #254969;
 }
-
-.a {
-  color: var(--celeste-footer);
-  text-decoration: underline;
-}
-
-h4{
-  font-size: 22px;
-  margin-bottom: 20px;
-  padding-left: 20px;
-  color: var(--Negro);
-}
-
-.inicio-logo{
-    width: 100%;
-    background-color: var(--caleste);
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2%;
-    align-content: space-around;
-    flex-wrap: nowrap;
-  }
-
-.img {
-  width: 20%;
-  margin-bottom: 4%;
-}
-
 .formu-create {
-  width: 100%;
-  background: #def7fa;
+  width: 50%;
+  background: rgb(37, 73, 105);
+  background: linear-gradient(
+    30deg,
+    rgba(37, 73, 105, 1) 13%,
+    rgba(50, 104, 188, 1) 100%
+  );
   padding: 30px;
   margin: auto;
   border-radius: 4px;
   border: 1px solid var(--gris-claro);
-  border-radius: 4px ;
 }
 
-.create-form {
+.inicio-logo {
+  width: 80%;
   display: flex;
-  flex-direction: column;
-  background-color: rgb(222, 247, 250, 0.5);
-  border: 1px solid #000000;
-  border-radius: 5px;
-  margin: 10%;
-  margin-bottom: 2%;
-  margin-top: 10px;
-  padding: 3%;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2%;
 }
 
-input {
-  border: none;
-  background-image: none;
-  background-color: transparent;
+h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.img {
+  width: 26%;
+}
+form {
+  /*border: 2px solid red;*/
+  padding: 0 16px;
+}
+.container-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.form-input,
+textarea,
+select {
+  width: 100%;
+  height: 50px;
+  background: var(--gris-claro);
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid var(--gris-oscuro);
   color: var(--gris-oscuro);
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  outline: none;
+}
+.container-form div {
+  width: calc(100% / 2 - 20px);
 }
 
 .botton {
@@ -94,12 +91,17 @@ input {
   transition: all 0.3s;
 }
 
-.botton:hover {
-  background-color: var(--Naranja);
+.bottom {
+  width: 100%;
+  background: var(--Azul-Claro);
+  padding: 9px;
+  color: var(--Azul-Oscuro);
+  margin: 16px 0;
+  border: none;
 }
 
-.radio{
-color: var(--#02020a);
+.bottom:hover {
+  background-color: var(--Naranja);
 }
 
 #name.control,
@@ -116,14 +118,13 @@ color: var(--#02020a);
   border: 2px solid red;
 }
 
-.errores li{
+.errores li {
   color: red;
   background-color: var(--gris-claro);
   text-align: center;
   font-size: 18px;
   padding: 0;
 }
-
 
 /*-------mediaqueri--------*/
 /* Contenedor */
@@ -139,12 +140,22 @@ color: var(--#02020a);
     width: 60%;
   }
 
-  .input {
-    border: 2px solid black;
-    border-radius: 5px;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    font-size: 12px;
-    padding: 1%;
+  .form-input,
+  textarea,
+  select {
+    width: 100%;
+    height: 40px;
+    background: var(--gris-claro);
+    padding: 6px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid var(--gris-oscuro);
+    color: var(--gris-oscuro);
+    font-size: smaller;
+  }
+  .container-form div {
+    width: calc(100% / 2 - 10px);
   }
 }
+
+
