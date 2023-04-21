@@ -25,61 +25,62 @@
           action="/users/edit/<%= user.id %>?_method=PUT"
           method="POST"
           enctype="multipart/form-data"
-        >
+          class="crear-formu"
           <div class="control-formu">
-            <% if (locals.errors && errors.name) { %>
-            <div class="text-danger"><%= errors.name.msg %></div>
-            <% } %>
             <input
+              class="control"
               type="text"
               name="name"
               value="<%= locals.oldData ? oldData.name : user.name %>" class="control" placeholder="Ingrese el nuevo nombre"
             />
+            <div class="errores_nombre text-danger"> </div>
+            <% if (locals.errors && errors.name) { %>
+              <div class="text-danger">
+                <%= errors.name.msg %> 
+              </div>
+            <% } %>
           </div>
 
           <div class="control-formu">
-            <% if (locals.errors && errors.lastName) { %>
-            <div class="text-danger"><%= errors.lastName.msg %></div>
-            <% } %>
             <input
               type="text"
               name="lastName"
               value="<%= locals.oldData ? oldData.lastName : user.lastname %>" class="control" placeholder="Ingrese el nuevo apellido"
             />
+            <div class="errores_apellido text-danger"> </div>
+            <% if (locals.errors && errors.lastName) { %>
+              <div class="text-danger">
+                <%= errors.lastName.msg %> 
+              </div>
+            <% } %>
           </div>
 
           <div class="control-formu">
-            <% if (locals.errors && errors.email) { %>
-            <div class="text-danger"><%= errors.email.msg %></div>
-            <% } %>
             <input
               type="text"
               name="email"
               value="<%= locals.oldData ? oldData.email : user.email %>" class="control"
             placeholder="Ingrese su nuevo mail"/>
-          </div>
-
-          <!-- <div class="control-formu">
+            <div class="errores_email text-danger"> </div>
             <% if (locals.errors && errors.email) { %>
-            <div class="text-danger"><%= errors.email.msg %></div>
+              <div class="text-danger">
+                <%= errors.email.msg %> 
+              </div>
             <% } %>
-            <input
-              type="text"
-              name="email"
-              value="<%= locals.oldData ? oldData.email : user.email %>" class="control"
-            />
-            <label for="email">Ingrese su nuevo mail</label>
-          </div> -->
-
+          </div>
+ 
           <div class="control-formu">
-            <% if (locals.errors && errors.img) { %>
-            <div class="text-danger"><%= errors.img.msg %></div>
-            <% } %>
             <input
               type="file"
               name="img"
               placeholder="Editar imagen del perfil" 
             />
+            <div class="errores_imagen text-danger"> </div>
+            <% if (locals.errors && errors.img) { %>
+              <div class="text-danger">
+                <%= errors.img.msg %>
+              </div>
+            <% } %>
           </div>
 
           <button class="bottom" type="submit" id="edit-button">Editar Información</button>
@@ -88,5 +89,6 @@
     </main>
 
     <%- include('../partials/footer.ejs') %>
+    <script src="/js/editUser.js"></script>
   </body>
 </html>
