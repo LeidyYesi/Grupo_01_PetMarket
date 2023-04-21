@@ -15,32 +15,38 @@
             <section class="contenido_ultima_visita">
                 <h2 class="titulo">Promociones</h2>
 
+                <% let productCounter = 0; %>
                 <% productos.forEach(producto => { %>
-                    <% if(producto.discount){ %>
-                    <article class="producto">
-                        <a href="/products/detail/<%= producto.id %>"><img src="img/<%= producto.category %>/<%= producto.pet %>/<%= producto.image %>" alt="" class="product_img" /></a>
-                        <section class="descripcion_producto">
-                            <% if(producto.pet == 'gatos'){ %>
-                                <i class="fas fa-cat"></i>
-                            <% } else{ %>
-                                <i class="fas fa-dog"></i>
-                            <% } %>
-                            <section class="descripcion_producto_detalle">
-                                <p class="valor">$<%= producto.price %></p>
-                                <p class="descuento"><%= producto.discount %>% off</p>
-                            </section>
-                            <p class="nombre_producto"><%= producto.name %></p>
+                <% if(producto.discount && productCounter < 4){ %>
+                <article class="producto">
+                    <a href="/products/detail/<%= producto.id %>"> <img
+                            src="/img/<%= producto.categories.category %>/<%= producto.pets.pet %>/<%= producto.img %>"
+                            alt="" class="product_img" /></a>
+                    <section class="descripcion_producto">
+                        <% if(producto.pets.pet == 'gatos'){ %>
+                        <i class="fas fa-cat"></i>
+                        <% } else{ %>
+                        <i class="fas fa-dog"></i>
+                        <% } %>
+                        <section class="descripcion_producto_detalle">
+                            <p class="valor">$<%= producto.price %></p>
+                            <p class="descuento"><%= producto.discount %><% if(producto.discount){ %> % off <% } %></p>
                         </section>
-                    </article>
-                    <% } %>
+                        <p class="nombre_producto"><%= producto.name %></p>
+                    </section>
+                </article>
+                <% productCounter++; %>
+                <% } %>
                 <% }) %>
+
             </section>
 
             <section class="oferta">
                 <h2 class="titulo">Categorias</h2>
 
                 <article class="producto">
-                    <a href="/products/list/alimentos"><img src="/img/alimentos/dog-bones.jpg" alt="" class="product_img" /></a>
+                    <a href="/products/list/alimentos"><img src="/img/alimentos/dog-bones.jpg" alt=""
+                            class="product_img" /></a>
                     <section class="descripcion_producto">
                         <i class="fas fa-dog"></i>
                         <section class="descripcion_producto_detalle">
@@ -54,7 +60,8 @@
                 </article>
 
                 <article class="producto">
-                    <a href="/products/list/accesorios"><img src="/img/accesorios/image_accesorios.jpg" alt="" class="product_img" /></a>
+                    <a href="/products/list/accesorios"><img src="/img/accesorios/image_accesorios.jpg" alt=""
+                            class="product_img" /></a>
                     <section class="descripcion_producto">
                         <i class="fas fa-cat"></i>
                         <section class="descripcion_producto_detalle">
@@ -68,7 +75,8 @@
                 </article>
 
                 <article class="producto">
-                    <a href="/products/list/juguetes"><img src="/img/juguetes/imagen_juguetes.jpg" alt="" class="product_img" /></a>
+                    <a href="/products/list/juguetes"><img src="/img/juguetes/imagen_juguetes.jpg" alt=""
+                            class="product_img" /></a>
                     <section class="descripcion_producto">
                         <i class="fas fa-dog"></i>
                         <section class="descripcion_producto_detalle">
@@ -82,7 +90,8 @@
                 </article>
 
                 <article class="producto">
-                    <a href="/products/list/aseo"><img src="/img/aseo/aseo_mascotas.jpeg" alt="" class="product_img" /></a>
+                    <a href="/products/list/aseo"><img src="/img/aseo/aseo_mascotas.jpeg" alt=""
+                            class="product_img" /></a>
                     <section class="descripcion_producto">
                         <i class="fas fa-cat"></i>
                         <section class="descripcion_producto_detalle">
