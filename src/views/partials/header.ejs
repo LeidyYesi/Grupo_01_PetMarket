@@ -44,6 +44,16 @@
               <% } %>
             </ul>
 
+            <% if (locals.user) { %>
+              <ul class="navbar-nav me-2">
+                <li class="nav-item">
+                  <a class="nav-link" href="/products/cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </a>
+                </li>
+              </ul>
+            <% } %>
+
             <form class="d-flex" role="search" action="/products/search" method="get">
               <input class="form-control rounded me-2" type="search" placeholder="Search" aria-label="Search" name="search">
               <button class="btn btn-outline-success" type="submit">

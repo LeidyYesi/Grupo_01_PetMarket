@@ -455,9 +455,7 @@ const productsController = {
           return acc + cartItem.product.price * cartItem.quantity;
         }, 0);
 
-        console.log(
-          "---------------Informacion Carrito de Compras---------------"
-        );
+        console.log("---------------Informacion Carrito de Compras---------------");
         console.log(cart);
 
         // Renderizar la vista del carrito con los productos y el total
