@@ -28,6 +28,11 @@
           <div class="col-12 col-lg-8">
             <img src="/img/<%= producto.categories.category %>/<%= producto.pets.pet %>/<%= producto.img %>"
               alt="foto producto" class="product_img" />
+
+              <ul class="actions-list">
+                
+              </ul>
+
           </div>
           <div class="col-12 col-md-4">
             <article class="product-detail-info">
@@ -37,6 +42,12 @@
               <p class="product-detail-price">Precio: $<%= producto.price %></p>
 
               <ul class="actions-list">
+                <% if (!locals.user && !locals.isAdmin) { %>
+                <li>
+                  <i class="fas fa-truck"></i>
+                  <p>Para realizar compras debe registrarse</p>
+                </li>
+                <% } %>
                 <li>
                   <i class="fas fa-credit-card"></i>
                   <p>Pagá en 12 cuotas sin interes</p>
