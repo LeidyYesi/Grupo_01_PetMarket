@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const fsx = require("fs-extra");
 const model = require("../models/jsonTableFunctions");
 const product = model("productsDataBase");
 const moveFile = require("../models/imageDistribution");
@@ -103,7 +104,6 @@ const productsController = {
       res.redirect("/products/create");
     } else {
       try {
-
         productoNuevo = {
           ...req.body,
           img: req.file ? req.file.filename : "default-image.png",
@@ -208,6 +208,10 @@ const productsController = {
         ],
       });
 
+      console.log("---------------Producto Anterior---------------");
+      console.log(productoAnterior);
+
+      // Crear un objeto con la información del producto editado
       let productoEditado = {
         id: productoAnterior.id,
         ...req.body,
@@ -219,6 +223,7 @@ const productsController = {
       console.log("---------------Producto Editado---------------");
       console.log(productoEditado);
 
+      // Si se ha cargado una nueva imagen, actualizar la ruta de la imagen
       if (req.file) {
         if (req.body.categories_id == "1") {
           categoria_img = "accesorios";
@@ -236,6 +241,7 @@ const productsController = {
           mascota_img = "gatos";
         }
 
+        // Mover la imagen a la ruta correcta
         let destinationPath =
           "./public/img/" + categoria_img + "/" + mascota_img;
         console.log("destinationPath", destinationPath);
@@ -243,6 +249,42 @@ const productsController = {
       } else {
         // Si no se ha cargado una nueva imagen, mantener la imagen anterior.
         productoEditado.img = productoAnterior.img;
+
+        // Si la categoría o la mascota han cambiado, mover la imagen a la nueva ruta
+        if (
+          productoAnterior.categories_id != req.body.categories_id ||
+          productoAnterior.pets_id != req.body.pets_id
+        ) {
+          if (req.body.categories_id == "1") {
+            categoria_img = "accesorios";
+          } else if (req.body.categories_id == "2") {
+            categoria_img = "juguetes";
+          } else if (req.body.categories_id == "3") {
+            categoria_img = "alimentos";
+          } else {
+            categoria_img = "aseo";
+          }
+
+          if (req.body.pets_id == "1") {
+            mascota_img = "perros";
+          } else {
+            mascota_img = "gatos";
+          }
+
+          // Definir la ruta de origen y destino
+          const sourcePath = "./public/img/" + productoAnterior.categories.category + "/" + productoAnterior.pets.pet + "/" + productoAnterior.img;
+          const destinationPath = "./public/img/" + categoria_img + "/" + mascota_img + "/" + productoAnterior.img;
+
+          console.log("sourcePath", sourcePath);
+          console.log("destinationPath", destinationPath);
+
+          // Mover la imagen a la ruta correcta usando fs-extra
+          try {
+            await fsx.move(sourcePath, destinationPath, { overwrite: true });
+          } catch (error) {
+            console.error("Error al mover la imagen:", error);
+          }
+        }
       }
 
       // Actualizar el producto en la base de datos
