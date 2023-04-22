@@ -30,7 +30,9 @@ let userController = {
         if (passwordOk) {
           delete userToLogin.password; //Eliminamos el password x seguridad
           req.session.userLogueado = userInDB[0]; //Guardamos el usuario en session
-          console.log("req.session.userLogueado", req.session.userLogueado);
+          console.log("--------------- Inicio Datos Sesion ---------------");
+          console.log(req.session.userLogueado);
+          console.log("--------------- Fin Datos Sesion ---------------");
           if (req.body.remember_user) {
             res.cookie("userEmail", req.body.email, { maxAge: 900000 }); // 900000 milisegundos = 15 minutos
           }
@@ -53,41 +55,6 @@ let userController = {
         });
       }
     });
-
-    // // let userToLogin = user.findByField("email", req.body.email);
-
-    // if (userToLogin) {
-    //   //Verificamos el passwprd
-    //   let passwordOk = bcryptjs.compareSync(
-    //     req.body.password,
-    //     userToLogin.password
-    //   );
-
-    //   if (passwordOk) {
-    //     delete userToLogin.password; //Eliminamos el password x seguridad
-    //     req.session.userLogueado = userToLogin; //Guardamos el usuario en session
-
-    //     if (req.body.remember_user) {
-    //       res.cookie("userEmail", req.body.email, { maxAge: 900000 }); // 900000 milisegundos = 15 minutos
-    //     }
-
-    //     return res.redirect("/");
-    //   }
-    //   return res.render("users/login", {
-    //     errors: {
-    //       password: {
-    //         msg: "Contraseña Incorrecta",
-    //       },
-    //     },
-    //   });
-    // }
-    // return res.render("users/login", {
-    //   errors: {
-    //     email: {
-    //       msg: "Su email no esta registrado",
-    //     },
-    //   },
-    // });
   },
 
   register: function (req, res) {
@@ -169,13 +136,15 @@ let userController = {
       });
     } else {
       let userId = req.params.id;
-      let imageEdit = req.file ? req.file.filename : req.session.userLogueado.image
+      let imageEdit = req.file
+        ? req.file.filename
+        : req.session.userLogueado.image;
       User.update(
         {
           name: req.body.name,
           lastname: req.body.lastName,
           email: req.body.email,
-          image: imageEdit
+          image: imageEdit,
         },
         {
           where: { id: userId },
@@ -185,7 +154,7 @@ let userController = {
           req.session.userLogueado.name = req.body.name;
           req.session.userLogueado.lastname = req.body.lastName;
           req.session.userLogueado.email = req.body.email;
-          if(req.file) {
+          if (req.file) {
             let destinationPath = "./public/img/users";
             moveFile(req.file.filename, req.file.destination, destinationPath);
             req.session.userLogueado.image = req.file.filename;

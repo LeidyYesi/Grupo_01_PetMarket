@@ -6,6 +6,7 @@ const User = db.User; // models q nos permite hacer operaciones con la BD
 function logUserMiddleware(req, res, next) {
   res.locals.isLog = false;
   res.locals.isAdmin = false;
+  res.locals.user = false;
 
   console.log("req.session", req.session);
   console.log("req.cookies.userEmail", req.cookies.userEmail);
@@ -14,7 +15,10 @@ function logUserMiddleware(req, res, next) {
     res.locals.isLog = true; // si hay alguien logueado = true
     if (req.session.userLogueado.categories_id == 2) {
       res.locals.isAdmin = true;
+    }else{
+      res.locals.user = true;
     }
+
     res.locals.userLogueado = req.session.userLogueado;
     return next();
   } else if (req.cookies.userEmail) {

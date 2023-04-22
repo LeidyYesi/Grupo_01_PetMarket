@@ -3,8 +3,6 @@ window.addEventListener("load", function () {
   let erroresHtml = document.querySelector(".errores");
 
   form.addEventListener("submit", function (event) {
-    
-
     let errores = [];
 
     if (form.name.value == "") {
@@ -83,12 +81,12 @@ window.addEventListener("load", function () {
       form.price.classList.add("is-valid");
     }
 
-
     let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
 
     if (!allowedExtensions.exec(form.img.value)) {
-      errores.push("Tienes que subir una imagen en formato JPG, JPEG o PNG");
-      //  erroresNombre.innerHTML += `${errores[0]}`
+      errores.push(
+        "Tienes que subir una imagen en formato JPG, JPEG, PNG o GIF"
+      );
       form.img.classList.remove("is-valid");
       form.img.classList.add("is-invalid");
     } else {

@@ -13,6 +13,8 @@ const Size = db.Size;
 const Weight = db.Weight;
 const Color = db.Color;
 const ProductColor = db.ProductColor;
+const Cart = db.Cart;
+const CartItem = db.CartItem;
 
 /* En la constante "products" ya tienen los productos que están
 guardados en la carpeta Data como Json (un array de objetos literales) */
@@ -101,9 +103,12 @@ const productsController = {
       res.redirect("/products/create");
     } else {
       try {
-        let productoNuevo = {
+
+        productoNuevo = {
           ...req.body,
           img: req.file ? req.file.filename : "default-image.png",
+          // Verificar si el campo discount está vacío y asignar un valor predeterminado
+          discount: req.body.discount ? parseInt(req.body.discount) : 0,
         };
 
         console.log("---------------Producto Nuevo---------------");
@@ -193,7 +198,6 @@ const productsController = {
     if (resultValidation.errors.length > 0) {
       res.redirect("/products/edit/" + id);
     } else {
-
       let productoAnterior = await Product.findByPk(id, {
         include: [
           { model: db.Category, as: "categories" },
@@ -208,6 +212,8 @@ const productsController = {
         id: productoAnterior.id,
         ...req.body,
         img: req.file ? req.file.filename : productoAnterior.img,
+        // Verificar si el campo discount está vacío y asignar un valor predeterminado
+        discount: req.body.discount ? parseInt(req.body.discount) : 0,
       };
 
       console.log("---------------Producto Editado---------------");
@@ -302,9 +308,123 @@ const productsController = {
       .catch((error) => console.log(error));
   },
 
-  // Metodo para adicionar informacion al carrito de compras
-  cart: (req, res) => {
-    res.render("products/productCart");
+  // Método para agregar productos al carrito de compras
+  addToCart: async (req, res) => {
+    try {
+      const userId = req.session.userLogueado.id; // Se toma el ID del usuario que se almacena en la sesión
+      const productId = req.params.id;
+      const quantity = parseInt(req.body.quantity) || 1;
+
+      // Buscar el carrito del usuario
+      let cart = await Cart.findOne({ where: { user_id: userId } });
+
+      // Si el usuario no tiene carrito, crear uno nuevo
+      if (!cart) {
+        cart = await Cart.create({ user_id: userId });
+      }
+
+      // Buscar si el producto ya está en el carrito
+      let cartItem = await CartItem.findOne({
+        where: { cart_id: cart.id, product_id: productId },
+      });
+
+      // Si el producto ya está en el carrito, actualizar la cantidad
+      if (cartItem) {
+        cartItem.quantity += quantity;
+        await cartItem.save();
+      } else {
+        // Si el producto no está en el carrito, agregarlo
+        await CartItem.create({
+          cart_id: cart.id,
+          product_id: productId,
+          quantity,
+        });
+      }
+
+      res.redirect("/products/cart");
+    } catch (err) {
+      console.error(err);
+      res.status(500).send("Error al agregar producto al carrito");
+    }
+  },
+
+  // Método para eliminar productos del carrito de compras
+  removeFromCart: async (req, res) => {
+    try {
+      const userId = req.session.userLogueado.id; // Se toma el ID del usuario que se almacena en la sesión
+      const productId = req.params.id;
+
+      // Buscar el carrito del usuario
+      const cart = await Cart.findOne({ where: { user_id: userId } });
+
+      if (cart) {
+        // Eliminar el producto del carrito
+        await CartItem.destroy({
+          where: { cart_id: cart.id, product_id: productId },
+        });
+      }
+
+      res.redirect("/products/cart");
+    } catch (err) {
+      console.error(err);
+      res.status(500).send("Error al eliminar producto del carrito");
+    }
+  },
+
+  // Método para mostrar el carrito de compras
+  showCart: async (req, res) => {
+    try {
+      const userId = req.session.userLogueado.id; // Se toma el ID del usuario que se almacena en la sesión
+
+      // Buscar el carrito del usuario y los productos asociados
+      const cart = await Cart.findOne({
+        where: { user_id: userId },
+        include: [
+          {
+            model: CartItem,
+            as: "cart_items",
+            include: [
+              {
+                model: Product,
+                as: "product",
+                include: [
+                  { model: Category, as: "categories" },
+                  { model: Pet, as: "pets" },
+                  { model: Size, as: "sizes" },
+                  { model: Weight, as: "weights" },
+                  {
+                    model: Color,
+                    as: "colors",
+                    through: { attributes: [] }, // Agrega esta línea para excluir los atributos de la tabla intermedia (ProductColor) en la respuesta
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      });
+
+      // Si no se encuentra el carrito, renderizar una vista vacía del carrito
+      if (!cart) {
+        res.render("products/productCart", { cart: null });
+      } else {
+        // Calcular el total del carrito
+        const total = cart.cart_items.reduce((acc, cartItem) => {
+          return acc + cartItem.product.price * cartItem.quantity;
+        }, 0);
+
+        console.log(
+          "---------------Informacion Carrito de Compras---------------"
+        );
+        console.log(cart);
+
+        // Renderizar la vista del carrito con los productos y el total
+        res.render("products/productCart", { cart, total });
+      }
+    } catch (err) {
+      console.error(err);
+      res.status(500).send("Error al mostrar el carrito de compras");
+    }
   },
 };
 

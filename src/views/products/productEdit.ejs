@@ -19,7 +19,7 @@
     <section class="formu-edit">
       <section class="inicio-logo">
         <h4>Editar Producto: <%= producto.name %></h4>
-        <img src="/img/Logo-pet-market.jpg" whith="360" alt="logo-pet-market" class="img" />
+        <img src="/img/<%= producto.categories.category %>/<%= producto.pets.pet %>/<%= producto.img %>" alt="<%= producto.name %>" class="img" />
       </section>
 
       <ul class="errores"></ul>

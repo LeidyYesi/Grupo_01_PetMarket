@@ -33,6 +33,12 @@ router.put('/edit/:id', uploadFile.single('img'), editValidation, productsContro
 router.delete('/delete/:id', adminAccess, productsController.destroy);
 
 // Adicionar productos al carrito de compras
-router.get("/cart",productsController.cart);
+router.post("/cart/add/:id", productsController.addToCart);
+
+// Eliminar productos del carrito de compras
+router.post("/cart/remove/:id", productsController.removeFromCart);
+
+// Mostrar carrito de compras
+router.get("/cart", productsController.showCart);
 
 module.exports = router;

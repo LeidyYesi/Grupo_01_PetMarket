@@ -16,22 +16,27 @@
                 <h2 class="titulo"><%= titulo %> </h2>
 
                 <% productos.forEach(producto => { %>
-                    <article class="producto">
-                        <a href="/products/detail/<%= producto.id %>"> <img src="/img/<%= producto.categories.category %>/<%= producto.pets.pet %>/<%= producto.img %>" alt=""
-                            class="product_img" /></a>
-                        <section class="descripcion_producto">
-                            <% if(producto.pets.pet == 'gatos'){ %>
-                                <i class="fas fa-cat"></i>
-                            <% } else{ %>
-                                <i class="fas fa-dog"></i>
+                <article class="producto">
+                    <a href="/products/detail/<%= producto.id %>"> <img
+                            src="/img/<%= producto.categories.category %>/<%= producto.pets.pet %>/<%= producto.img %>"
+                            alt="" class="product_img" /></a>
+                    <section class="descripcion_producto">
+                        <% if(producto.pets.pet == 'gatos'){ %>
+                        <i class="fas fa-cat"></i>
+                        <% } else{ %>
+                        <i class="fas fa-dog"></i>
+                        <% } %>
+                        <section class="descripcion_producto_detalle">
+                            <p class="valor">$<%= producto.price %></p>
+
+                            <% if (producto.discount && producto.discount > 0) { %>
+                            <p class="descuento"><%= producto.discount %> % off</p>
                             <% } %>
-                            <section class="descripcion_producto_detalle">
-                                <p class="valor">$<%= producto.price %></p>
-                                <p class="descuento"><%= producto.discount %><% if(producto.discount){ %> % off <% } %></p>
-                            </section>
-                            <p class="nombre_producto"><%= producto.name %></p>
+
                         </section>
-                    </article>
+                        <p class="nombre_producto"><%= producto.name %></p>
+                    </section>
+                </article>
                 <% }) %>
             </section>
         </section>

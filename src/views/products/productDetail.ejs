@@ -26,8 +26,8 @@
       <div class="product-detail">
         <div class="row">
           <div class="col-12 col-lg-8">
-            <img src="/img/<%= producto.categories.category %>/<%= producto.pets.pet %>/<%= producto.img %>" alt="foto producto"
-              class="product_img" />
+            <img src="/img/<%= producto.categories.category %>/<%= producto.pets.pet %>/<%= producto.img %>"
+              alt="foto producto" class="product_img" />
           </div>
           <div class="col-12 col-md-4">
             <article class="product-detail-info">
@@ -47,7 +47,14 @@
                 </li>
               </ul>
 
-              <a href="#" class="now-button cart-button">AGREGAR AL CARRITO</a>
+              <% if (locals.user) { %>
+              <form action="/products/cart/add/<%= producto.id %>" method="POST">
+                <label for="quantity">Cantidad:</label>
+                <input type="number" name="quantity" id="quantity" value="1" min="1">
+                <button type="submit" class="now-button cart-button">AGREGAR AL CARRITO</button>
+              </form>
+              <% } %>
+
               <% if (locals.isAdmin) { %>
               <a href="/products/edit/<%= producto.id %>" class="action-button edit">EDITAR PRODUCTO</a>
 
