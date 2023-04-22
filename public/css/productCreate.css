@@ -126,12 +126,16 @@ select {
   padding: 0;
 }
 
-/*-------mediaqueri--------*/
 /* Contenedor */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.form-group {
+  display: flex;
+  align-items: flex-end;
 }
 
 /*-------media queries--------*/
@@ -158,4 +162,18 @@ select {
   }
 }
 
+@media (max-width: 767px) {
+  .formu-create {
+    width: 90%;
+  }
 
+  .container-form div {
+    width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .formu-create {
+    width: 100%;
+  }
+}
