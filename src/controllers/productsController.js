@@ -272,13 +272,13 @@ const productsController = {
           }
 
           // Definir la ruta de origen y destino
-          const sourcePath =
-            "./public/img/" +
+          const sourcePath = "./public/img/" +
             productoAnterior.categories.category +
             "/" +
             productoAnterior.pets.pet +
             "/" +
             productoAnterior.img;
+
           const destinationPath =
             "./public/img/" +
             categoria_img +
@@ -325,7 +325,14 @@ const productsController = {
   destroy: async (req, res) => {
     try {
       let id = req.params.id;
+
+      // Primero, eliminar las referencias en la tabla cart_items
+      await CartItem.destroy({ where: { product_id: id } });
+
+      // Luego, eliminar las relaciones en la tabla ProductColor
       await ProductColor.destroy({ where: { product_id: id } });
+
+      // Finalmente, eliminar el producto en la tabla Product
       await Product.destroy({ where: { id } });
       res.redirect("/");
     } catch (err) {
