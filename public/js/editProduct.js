@@ -76,9 +76,22 @@ window.addEventListener("load", function () {
       errores.push("Debes ingresar el precio");
       form.price.classList.remove("is-valid");
       form.price.classList.add("is-invalid");
+    } else if (isNaN(form.price.value) || parseFloat(form.price.value) < 0) {
+      errores.push("El precio debe ser un número mayor o igual a 0");
+      form.price.classList.remove("is-valid");
+      form.price.classList.add("is-invalid");
     } else {
       form.price.classList.remove("is-invalid");
       form.price.classList.add("is-valid");
+    }
+
+    if (isNaN(form.discount.value) || parseFloat(form.discount.value) < 0 || parseFloat(form.discount.value) > 100) {
+      errores.push("El descuento debe ser un número entre 0 y 100");
+      form.discount.classList.remove("is-valid");
+      form.discount.classList.add("is-invalid");
+    } else {
+      form.discount.classList.remove("is-invalid");
+      form.discount.classList.add("is-valid");
     }
 
     let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
