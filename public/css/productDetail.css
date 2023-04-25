@@ -36,6 +36,7 @@ h2 {
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
+  padding: 15px;
 }
 
 .products-title {
@@ -75,7 +76,7 @@ h2 {
 
 .product-detail-description {
   padding: 15px;
-  font-size: 1.8em;
+  font-size: 1.3em;
   line-height: 1.5;
   text-transform: capitalize;
 }
@@ -101,8 +102,8 @@ h2 {
 .actions-list li {
   display: flex;
   align-items: center;
-  margin: 20px 0;
-  padding: 20px 0;
+  /*margin: 20px 0;
+  padding: 20px 0;*/
 }
 
 .actions-list i {
@@ -113,7 +114,7 @@ h2 {
 
 .actions-list p {
   color: gray;
-  font-size: 1.7em;
+  font-size: 1.5em;
   margin: 0;
 }
 

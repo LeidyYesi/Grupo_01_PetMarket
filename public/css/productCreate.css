@@ -78,7 +78,7 @@ select {
   width: calc(100% / 2 - 20px);
 }
 
-.botton {
+/*.botton {
   background-color: var(--Azul-Claro);
   color: #02020a;
   padding: 2%;
@@ -89,7 +89,7 @@ select {
   box-shadow: none;
   cursor: pointer;
   transition: all 0.3s;
-}
+}*/
 
 .bottom {
   width: 100%;
