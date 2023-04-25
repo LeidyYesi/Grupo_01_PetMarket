@@ -272,8 +272,20 @@ const productsController = {
           }
 
           // Definir la ruta de origen y destino
-          const sourcePath = "./public/img/" + productoAnterior.categories.category + "/" + productoAnterior.pets.pet + "/" + productoAnterior.img;
-          const destinationPath = "./public/img/" + categoria_img + "/" + mascota_img + "/" + productoAnterior.img;
+          const sourcePath =
+            "./public/img/" +
+            productoAnterior.categories.category +
+            "/" +
+            productoAnterior.pets.pet +
+            "/" +
+            productoAnterior.img;
+          const destinationPath =
+            "./public/img/" +
+            categoria_img +
+            "/" +
+            mascota_img +
+            "/" +
+            productoAnterior.img;
 
           console.log("sourcePath", sourcePath);
           console.log("destinationPath", destinationPath);
@@ -450,16 +462,32 @@ const productsController = {
       if (!cart) {
         res.render("products/productCart", { cart: null });
       } else {
-        // Calcular el total del carrito
-        const total = cart.cart_items.reduce((acc, cartItem) => {
+        // Calcular el total sin descuento y el descuento total
+        const totalWithoutDiscount = cart.cart_items.reduce((acc, cartItem) => {
           return acc + cartItem.product.price * cartItem.quantity;
         }, 0);
 
-        console.log("---------------Informacion Carrito de Compras---------------");
+        const totalDiscount = cart.cart_items.reduce((acc, cartItem) => {
+          const discount = cartItem.product.discount;
+          const price = cartItem.product.price;
+          const discountAmount = (price * discount) / 100;
+          return acc + discountAmount * cartItem.quantity;
+        }, 0);
+
+        const totalWithDiscount = totalWithoutDiscount - totalDiscount;
+
+        console.log(
+          "---------------Informacion Carrito de Compras---------------"
+        );
         console.log(cart);
 
-        // Renderizar la vista del carrito con los productos y el total
-        res.render("products/productCart", { cart, total });
+        // Renderizar la vista del carrito con los productos, el total sin descuento, el descuento total y el total con descuento
+        res.render("products/productCart", {
+          cart,
+          totalWithoutDiscount,
+          totalDiscount,
+          totalWithDiscount,
+        });
       }
     } catch (err) {
       console.error(err);

@@ -22,7 +22,9 @@
         <img src="/img/<%= producto.categories.category %>/<%= producto.pets.pet %>/<%= producto.img %>" alt="<%= producto.name %>" class="img" />
       </section>
 
-      <ul class="errores"></ul>
+      <div class="contenedor-errores">
+        <ul class="errores"></ul>
+      </div>
 
       <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" class="form"
         enctype="multipart/form-data">

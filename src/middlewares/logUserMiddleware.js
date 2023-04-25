@@ -33,6 +33,8 @@ function logUserMiddleware(req, res, next) {
       if (req.session.userLogueado) {
         if (req.session.userLogueado.categories_id == 2) {
           res.locals.isAdmin = true;
+        }else{
+          res.locals.user = true;
         }
       }
       res.locals.userLogueado = req.session.userLogueado;

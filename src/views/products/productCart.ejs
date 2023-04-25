@@ -30,6 +30,9 @@
             <p class="cantidad"><%= cartItem.quantity %>x</p>
             <p class="nombre-producto"><%= cartItem.product.name %></p>
             <p class="precio">$<%= cartItem.product.price %></p>
+            <% if (cartItem.product.discount && cartItem.product.discount > 0) { %>
+              <p class="descuento"><%= cartItem.product.discount %> % off</p>
+              <% } %>
           </div>
           <form action="/products/cart/remove/<%= cartItem.product.id %>" method="post">
             <input type="submit" class="remover" value="Remover" />
@@ -50,24 +53,24 @@
             <br />
             <input type="text" name="cupon" id="cupon" placeholder="Inserte cupon" />
           </div>
-
+  
           <article class="resumen-precios">
             <p>Sub-total</p>
-            <p class="precio-resumen">$<%= total %></p>
+            <p class="precio-resumen">$<%= totalWithoutDiscount %></p>
           </article>
-
+  
           <article class="resumen-precios">
-            <p>Envío</p>
-            <p class="precio-resumen">En el siguiente paso</p>
+            <p>Descuento</p>
+            <p class="precio-resumen">-$<%= totalDiscount %></p>
           </article>
-
+  
           <div class="linea"></div>
-
+  
           <article class="resumen-precios">
             <p>Total</p>
-            <p class="precio-resumen">$<%= total %></p>
+            <p class="precio-resumen">$<%= totalWithDiscount %></p>
           </article>
-
+  
           <input type="submit" class="boton" value="Pasar al pago" />
         </form>
       </section>

@@ -44,7 +44,7 @@
               <% } %>
             </ul>
 
-            <% if (locals.user) { %>
+            <% if (locals.user && !locals.isAdmin) { %>
               <ul class="navbar-nav me-2">
                 <li class="nav-item">
                   <a class="nav-link" href="/products/cart">

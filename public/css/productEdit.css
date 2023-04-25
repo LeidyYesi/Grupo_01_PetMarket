@@ -135,6 +135,22 @@ select {
   padding: 0;
 }
 
+/* Estilo para el contenedor de errores */
+.contenedor-errores {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+}
+
+/* Estilo para la lista de errores */
+.errores {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre los elementos de la lista */
+  padding: 0; /* Elimina el padding predeterminado de la lista */
+  list-style-type: none; /* Elimina los marcadores predeterminados de la lista */
+}
+
 /*-------media queries--------*/
 @media (min-width: 768px) {
   .formu-create {
