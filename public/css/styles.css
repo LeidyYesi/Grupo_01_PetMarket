@@ -147,6 +147,10 @@ li{
     background-color:  var(--azul);
 }
 
+.imagen_banner{
+    width: 100%;
+}
+
 .imagen_banner img{
     width: 100%;
 }
