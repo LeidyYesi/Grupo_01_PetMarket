@@ -115,7 +115,7 @@ select {
 }
 
 .is-invalid {
-  border: 2px solid red;
+  border: 2px solid red !important;
 }
 
 .errores li {
