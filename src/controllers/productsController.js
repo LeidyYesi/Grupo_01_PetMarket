@@ -272,7 +272,8 @@ const productsController = {
           }
 
           // Definir la ruta de origen y destino
-          const sourcePath = "./public/img/" +
+          const sourcePath =
+            "./public/img/" +
             productoAnterior.categories.category +
             "/" +
             productoAnterior.pets.pet +
@@ -467,7 +468,10 @@ const productsController = {
 
       // Si no se encuentra el carrito, renderizar una vista vacía del carrito
       if (!cart) {
-        res.render("products/productCart", { cart: null });
+        res.render("products/productCart", {
+          cart: null,
+          message: "No hay productos en el carrito de compras.",
+        });
       } else {
         // Calcular el total sin descuento y el descuento total
         const totalWithoutDiscount = cart.cart_items.reduce((acc, cartItem) => {
@@ -494,6 +498,7 @@ const productsController = {
           totalWithoutDiscount,
           totalDiscount,
           totalWithDiscount,
+          message: cart.cart_items.length === 0 ? "No hay productos en el carrito de compras." : "",
         });
       }
     } catch (err) {

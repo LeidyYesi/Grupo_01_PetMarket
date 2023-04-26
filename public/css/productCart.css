@@ -163,6 +163,17 @@ a {
   background-color: var(--Naranja);
 }
 
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ajusta esta altura según sea necesario */
+}
+
+.message-container p {
+  font-weight: bold;
+}
+
 @media (min-width: 768px) {
   .flex {
     display: flex;
