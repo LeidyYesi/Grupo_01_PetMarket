@@ -29,11 +29,19 @@
 
           </div>
           <div class="col-12 col-md-4">
-            <article class="product-detail-info"> 
-             <h2 class="product-detail-title"> <%= producto.name %></h2> <!--  -->
+            <article class="product-detail-info">
+
+             <h2 class="product-detail-title"> <%= producto.name %></h2>
+<!--  -->
               <p class="product-detail-description"><b>Categoria:</b> <%= producto.categories.category %></p>
               <p class="product-detail-description"><b>Descripcion:</b> <%= producto.description %></p>
-              <p class="product-detail-price">Precio: $<%= producto.price %></p>
+
+              <div class="price-container">
+                <p class="product-detail-price">Precio: $<%= producto.price %></p>
+                <% if (producto.discount && producto.discount > 0) { %>
+                  <p class="descuento"><b>Descuento:</b> <%= producto.discount %> % off</p>
+                <% } %>
+              </div>
 
               <ul class="actions-list">
                 <% if (!locals.user && !locals.isAdmin) { %>

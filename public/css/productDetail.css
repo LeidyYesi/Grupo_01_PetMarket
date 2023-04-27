@@ -157,6 +157,13 @@ h2 {
   background-color: #FF0000;
 }
 
+.price-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px; /* Ajusta el espacio entre los elementos según sea necesario */
+}
+
 /*-------media queries--------*/
 @media (min-width: 768px) {
   .col-12 {
